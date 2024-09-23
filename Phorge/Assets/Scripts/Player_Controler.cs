@@ -12,12 +12,17 @@ public class Movement : MonoBehaviour
     [Header("Ground")]
     public float playerHeight;
     public LayerMask whatisGround;
-    bool grounded;
+    public bool grounded;
+
+    [Header("Jump")]
+    public Vector3 jump;
+    public float jumpForce = 2.0f;
 
     public Transform orientation;
 
     float horizontalInput;
     float verticalInput;
+    bool jumpInput;
 
     Vector3 moveDirection;
 
@@ -28,23 +33,33 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        jump = new Vector3(0, 2f, 0);
+
     }
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatisGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, 0.2f, whatisGround);
         MyInput();
 
         if (grounded)
+        {
             rb.drag = groundDrag;
-        else
-            rb.drag = 0;
+        }
+        else rb.drag = 0f;
+
+        if (grounded && jumpInput)
+        {
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            grounded = false;
+        }
+        MovePlayer();
     }
 
     private void MovePlayer()
@@ -57,5 +72,6 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        jumpInput = Input.GetKeyDown(KeyCode.Space);
     }
 }
