@@ -64,12 +64,24 @@ public class Movement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        Vector3 horizontalMovement = orientation.right * horizontalInput;
+        Vector3 verticalMovement = orientation.forward * verticalInput;
         rb.AddForce(moveDirection * moveSpeed * 10f, ForceMode.Force);
-        if (moveDirection.magnitude >= orientation.forward.magnitude/100)
-            animator.SetBool("Run", true);
+
+        if (verticalInput > 0f)
+            animator.SetFloat("Vertical", 1f);
+        else if (verticalInput < 0f)
+            animator.SetFloat("Vertical", -1f);
         else
-            animator.SetBool("Run", false);
-        
+            animator.SetFloat("Vertical", 0f);
+
+        if (horizontalInput > 0f)
+            animator.SetFloat("Horizontal", 1f);
+        else if (horizontalInput < 0f)
+            animator.SetFloat("Horizontal", -1f);
+        else
+            animator.SetFloat("Horizontal", 0f);
+
     }
 
     private void MyInput()
