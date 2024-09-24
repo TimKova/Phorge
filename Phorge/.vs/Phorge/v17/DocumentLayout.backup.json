@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\",
+  "WorkspaceRootPath": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\player_controler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\documents\\github\\phorge\\phorge\\assets\\scripts\\player_controler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_controler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Player_Controler.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Controler.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Player_Controler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Controler.cs",
-              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Controler.cs",
+              "ToolTip": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Player_Controler.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Controler.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwEMAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwEoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T15:21:55.499Z",
               "EditorCaption": ""
