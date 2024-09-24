@@ -24,6 +24,8 @@ public class Movement : MonoBehaviour
     float verticalInput;
     bool jumpInput;
 
+    Animator animator;
+
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -34,12 +36,8 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         jump = new Vector3(0, 2f, 0);
+        animator = GetComponent<Animator>();
 
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     // Update is called once per frame
@@ -47,6 +45,7 @@ public class Movement : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, 0.2f, whatisGround);
         MyInput();
+        SpeedControl();
 
         if (grounded)
         {
@@ -66,6 +65,11 @@ public class Movement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         rb.AddForce(moveDirection * moveSpeed * 10f, ForceMode.Force);
+        if (moveDirection.magnitude >= orientation.forward.magnitude/100)
+            animator.SetBool("Run", true);
+        else
+            animator.SetBool("Run", false);
+        
     }
 
     private void MyInput()
@@ -73,5 +77,16 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         jumpInput = Input.GetKeyDown(KeyCode.Space);
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 }

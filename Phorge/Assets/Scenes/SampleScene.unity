@@ -171,15 +171,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f3c9d8f864f5840b4569dc08d8c433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  groundDrag: 10
+  moveSpeed: 2
+  groundDrag: 4
   playerHeight: 2
   whatisGround:
     serializedVersion: 2
     m_Bits: 1024
   grounded: 0
   jump: {x: 0, y: 0, z: 0}
-  jumpForce: 4
+  jumpForce: 3
   orientation: {fileID: 121035949}
 --- !u!136 &121035952
 CapsuleCollider:
@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4540229000190281644, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6bb5302f29d293d4282b3b998ffb8bae, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
