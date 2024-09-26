@@ -356,7 +356,9 @@
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/MouseCamLook.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
+"Assets/PickUpObject.cs"
 "Assets/Scripts/Camera_Controller.cs"
+"Assets/Scripts/Interact.cs"
 "Assets/Scripts/Player_Controler.cs"
 -langversion:9.0
 /deterministic

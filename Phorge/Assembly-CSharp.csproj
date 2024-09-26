@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera_Controller.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
+    <Compile Include="Assets\Scripts\Interact.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
+    <Compile Include="Assets\PickUpObject.cs" />
     <Compile Include="Assets\Scripts\Player_Controler.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
   </ItemGroup>
