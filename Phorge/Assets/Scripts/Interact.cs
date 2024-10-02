@@ -47,9 +47,15 @@ public class Interact : MonoBehaviour
         playermodel.GetComponent<Movement>().enabled = false;
         camera.GetComponent<Camera_Controller>().enabled = false;
 
-        Vector3 lookDir = transform.position - camera.transform.position;
+        Vector3 lookDir = this.transform.position - camera.transform.position;
         Quaternion q = Quaternion.LookRotation(lookDir);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * rotationSpeed);
+
+        //Either of the below methods will work, but we're getting issues with the camera seeing inside the player model.
+        //camera.transform.rotation = q;
+        camera.transform.LookAt(this.transform);
+
+        //I don't think this method is correct, but it might be more correct if fixed
+        //transform.rotation = Quaternion.RotateTowards(playermodel.transform.rotation, q, Time.deltaTime * rotationSpeed);
     }
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
