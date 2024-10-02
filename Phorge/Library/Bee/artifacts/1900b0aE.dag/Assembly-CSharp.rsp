@@ -109,6 +109,7 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -358,7 +359,9 @@
 "Assets/PickUpObject.cs"
 "Assets/Scripts/Camera_Controller.cs"
 "Assets/Scripts/Interact.cs"
-"Assets/Scripts/Player_Controler.cs"
+"Assets/Scripts/Player_Manager.cs"
+"Assets/Scripts/Player_Movement.cs"
+"Assets/Scripts/State_Manager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

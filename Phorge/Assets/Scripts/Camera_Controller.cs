@@ -14,10 +14,18 @@ public class Camera_Controller : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    float camXDiff;
+    float camYDiff;
+    float camZDiff;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        
+        camYDiff = transform.position.y - orientation.position.y;
+        
+
     }
 
     // Update is called once per frame
@@ -33,5 +41,6 @@ public class Camera_Controller : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        transform.position = new Vector3 (orientation.position.x, orientation.position.y + camYDiff, orientation.position.z);
     }
 }
