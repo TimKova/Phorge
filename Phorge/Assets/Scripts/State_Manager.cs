@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,20 +7,26 @@ public class State_Manager : MonoBehaviour
 {
     public GameObject player_manager;
     string state_to_be;
-    public bool task;
+    public bool doingTask;
     bool npc;
-    
+    public bool inTaskRange;
+    bool inNpcRange;
+    string taskName;
+
     // Start is called before the first frame update
     void Start()
     {
-        task = false;
+        doingTask = false;
         npc = false;
+        state_to_be = "free_move";
+        taskName = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (task)
+        
+        if (doingTask)
         {
             state_to_be = "task_int";
         }
@@ -27,25 +34,59 @@ public class State_Manager : MonoBehaviour
         {
             state_to_be = "npc_int";
         }
-        else 
+        else
         {
             state_to_be = "free_move";
-        }//end if-else
+        }
+       
+        taskInteraction();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
+        player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
+        //print(state_to_be);
+    }
+
+    void taskInteraction()
+    {
+        if (inTaskRange && Input.GetKeyDown(KeyCode.E))
+        {
+            print("Task Initiated)");
+            doingTask = true;
+        }
+
+        if (doingTask && Input.GetKeyDown(KeyCode.Escape))
+        {
+            print("Task Terminated");
+            doingTask = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
+        //print("Trigger Enter");
         if (other.gameObject.tag == "Task") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            task = true;
-            npc = false;
+            inTaskRange = true;
+            taskName = other.name;
+            print("In Task Range of " + taskName);
         }
         else if(other.gameObject.tag == "NPC")
         {
-            npc = true;
-            task = false;
+           inNpcRange = true;
         }//end if-else
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Task") //on the object you want to pick up set the tag to be anything, in this case "object"
+        {
+            print("Out of Task Range");
+            inTaskRange = false;
+
+        }
+        else if (other.gameObject.tag == "NPC")
+        {
+            inNpcRange = false;
+        }//end if-else
     }
 }

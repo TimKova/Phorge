@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,20 @@ public class Player_Manager : MonoBehaviour
 {
     [Header("Attributes")]
     public GameObject player_model;
-    string[] states = {"free_move","task_int","npc_int"};
     public GameObject camera;
+    string[] states = {"free_move","task_int","npc_int"};
+    public string cur_task;
+    public string cur_state;
+   
+    public void set_cur_task(string taskName)
+    {
+        cur_task = taskName;
+    }
 
-    string cur_state;
+    public string get_cur_task() 
+    { 
+        return cur_task; 
+    }
 
     public void set_cur_state(string new_state)
     {
@@ -20,6 +31,8 @@ public class Player_Manager : MonoBehaviour
 
     public string get_cur_state()
     {
+        //print("GETTING STATE HERE______________________________________");
         return cur_state;//needs to be dynamic later. For now this helps with testing.
     }//end get_cur_state
+
 }

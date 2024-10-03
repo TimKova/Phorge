@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Movement : MonoBehaviour
     [Header("Player Manager")]
     public GameObject player_manager;
     public string cur_state;
+    public string taskName;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -21,6 +23,10 @@ public class Movement : MonoBehaviour
     public Vector3 jump;
     public float jumpForce = 2.0f;
 
+    [Header("Tasks")]
+    public GameObject anvil_task;
+    public GameObject furnace_task;
+
     public Transform orientation;
 
     float horizontalInput;
@@ -34,6 +40,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print("TEST-------------------------------");
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         jump = new Vector3(0, 2f, 0);
@@ -48,18 +55,34 @@ public class Movement : MonoBehaviour
         MyInput();
         SpeedControl();
         cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
+        //print(cur_state);
         if(cur_state == "free_move")
         {
             FreeMove();
         }else if(cur_state == "task_int")
         {
-
+            TaskMove();
         }else if (cur_state == "npc_int")
         {
 
         }//end if-else
     }
+    private void TaskMove()
+    {
+        taskName = player_manager.GetComponent<Player_Manager>().get_cur_task();
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Horizontal", 0);
+        if (taskName == "Anvil")
+        {
+            transform.position = new Vector3(-13.81f,transform.position.y,-8.4f);
+            transform.LookAt(anvil_task.transform.position);
 
+        }else if(taskName == "Furnace")
+        {
+            transform.position = new Vector3(-12.255f, transform.position.y, -11.847f);
+            transform.LookAt(furnace_task.transform.position);
+        }
+    }
     private void FreeMove()
     {
         //Ground Movement

@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\",
+  "WorkspaceRootPath": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\onedrive\\desktop\\github repository\\phorge\\phorge\\assets\\pickupobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\pickupobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\onedrive\\desktop\\github repository\\phorge\\phorge\\assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\assets\\scripts\\interact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\camera_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camera_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\assets\\scripts\\player_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\player_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\assets\\scripts\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PickUpObject.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\PickUpObject.cs",
-              "RelativeDocumentMoniker": "Assets\\PickUpObject.cs",
-              "ToolTip": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\PickUpObject.cs",
-              "RelativeToolTip": "Assets\\PickUpObject.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:41:19.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Interact.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\Interact.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Interact.cs",
-              "ToolTip": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\Interact.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Interact.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Camera_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Camera_Controller.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Camera_Controller.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowEYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T15:42:16.28Z"
+              "WhenOpened": "2024-10-03T22:05:11.153Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "State_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State_Manager.cs",
-              "ToolTip": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
               "RelativeToolTip": "Assets\\Scripts\\State_Manager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwC8AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowEMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T15:16:40.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Player_Movement.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movement.cs",
-              "ToolTip": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Movement.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwFEAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T13:50:38.836Z"
+              "WhenOpened": "2024-10-02T13:50:38.836Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Player_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Manager.cs",
-              "ToolTip": "C:\\Users\\chees\\OneDrive\\Desktop\\github repository\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Manager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T13:32:26.251Z"
+              "WhenOpened": "2024-10-02T13:32:26.251Z",
+              "EditorCaption": ""
             }
           ]
         }
