@@ -25,7 +25,7 @@ public class State_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (doingTask)
         {
             state_to_be = "task_int";
@@ -38,7 +38,7 @@ public class State_Manager : MonoBehaviour
         {
             state_to_be = "free_move";
         }
-       
+
         taskInteraction();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
@@ -69,11 +69,11 @@ public class State_Manager : MonoBehaviour
             taskName = other.name;
             print("In Task Range of " + taskName);
         }
-        else if(other.gameObject.tag == "NPC")
+        else if (other.gameObject.tag == "NPC")
         {
-           inNpcRange = true;
+            inNpcRange = true;
         }//end if-else
-        
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -87,6 +87,11 @@ public class State_Manager : MonoBehaviour
         else if (other.gameObject.tag == "NPC")
         {
             inNpcRange = false;
+        }
+        else if (other.gameObject.tag == "Door")
+        {
+            print("Love is an open door");
+            other.gameObject.transform.Rotate(0f, 90f, 0f, Space.Self);
         }//end if-else
     }
 }
