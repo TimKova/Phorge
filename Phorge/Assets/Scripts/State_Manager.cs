@@ -48,16 +48,19 @@ public class State_Manager : MonoBehaviour
 
     void taskInteraction()
     {
-        if (inTaskRange && Input.GetKeyDown(KeyCode.E))
+        if (inTaskRange && Input.GetKeyDown(KeyCode.E) && !doingTask)
         {
             print("Task Initiated)");
             doingTask = true;
+            Cursor.lockState = CursorLockMode.Confined;
+
         }
 
         if (doingTask && Input.GetKeyDown(KeyCode.Q))
         {
             print("Task Terminated");
             doingTask = false;
+            Cursor.lockState = CursorLockMode.Locked;
             //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
         }
     }
