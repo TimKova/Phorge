@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.42f1 (2dcb6a0abc42) revision 3001194'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 32450 MB
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16232 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.42f1\Editor\Unity.exe
 -name
 AssetImportWorker2
 -projectPath
-C:/Users/chees/OneDrive/Desktop/github repository/Phorge/Phorge
+C:/Users/charl/proj/UnityBullshit/Phorge/Phorge
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-51552
-Successfully changed project path to: C:/Users/chees/OneDrive/Desktop/github repository/Phorge/Phorge
-C:/Users/chees/OneDrive/Desktop/github repository/Phorge/Phorge
+62401
+Successfully changed project path to: C:/Users/charl/proj/UnityBullshit/Phorge/Phorge
+C:/Users/charl/proj/UnityBullshit/Phorge/Phorge
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,75 +49,67 @@ C:/Users/chees/OneDrive/Desktop/github repository/Phorge/Phorge
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [29464]  Target information:
+Player connection [3912]  Target information:
 
-Player connection [29464]  * "[IP] 172.22.80.1 [Port] 0 [Flags] 2 [Guid] 1846528383 [EditorId] 1846528383 [Version] 1048832 [Id] WindowsEditor(7,CarlosLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [3912]  * "[IP] 11.20.13.69 [Port] 0 [Flags] 2 [Guid] 1338425965 [EditorId] 1338425965 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-SPO2S6H) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [29464]  * "[IP] 172.31.72.61 [Port] 0 [Flags] 2 [Guid] 1846528383 [EditorId] 1846528383 [Version] 1048832 [Id] WindowsEditor(7,CarlosLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [29464]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1846528383 [EditorId] 1846528383 [Version] 1048832 [Id] WindowsEditor(7,CarlosLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [29464]  * "[IP] 172.18.64.1 [Port] 0 [Flags] 2 [Guid] 1846528383 [EditorId] 1846528383 [Version] 1048832 [Id] WindowsEditor(7,CarlosLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [29464]  * "[IP] 192.168.1.234 [Port] 0 [Flags] 2 [Guid] 1846528383 [EditorId] 1846528383 [Version] 1048832 [Id] WindowsEditor(7,CarlosLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [29464] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [29464] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [3912] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [3912] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 47.44 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 30.28 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.42f1 (2dcb6a0abc42)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/chees/OneDrive/Desktop/github repository/Phorge/Phorge/Assets
+[Subsystems] Discovering subsystems at path C:/Users/charl/proj/UnityBullshit/Phorge/Phorge/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0xa7a0)
-    Vendor:   Intel
-    VRAM:     16225 MB
-    Driver:   31.0.101.4032
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2560)
+    Vendor:   NVIDIA
+    VRAM:     5996 MB
+    Driver:   32.0.15.5612
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56512
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.016799 seconds.
-- Loaded All Assemblies, in  1.180 seconds
+Registered in 0.016131 seconds.
+- Loaded All Assemblies, in  0.470 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.033 seconds
-Domain Reload Profiling: 2213ms
-	BeginReloadAssembly (512ms)
+- Finished resetting the current domain, in  0.337 seconds
+Domain Reload Profiling: 802ms
+	BeginReloadAssembly (160ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (3ms)
-	RebuildCommonClasses (111ms)
-	RebuildNativeTypeToScriptingClass (32ms)
-	initialDomainReloadingComplete (145ms)
-	LoadAllAssembliesAndSetupDomain (377ms)
-		LoadAssemblies (497ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (82ms)
+	LoadAllAssembliesAndSetupDomain (160ms)
+		LoadAssemblies (155ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (372ms)
-			TypeCache.Refresh (368ms)
-				TypeCache.ScanAssembly (329ms)
+		AnalyzeDomain (158ms)
+			TypeCache.Refresh (156ms)
+				TypeCache.ScanAssembly (140ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (1036ms)
+	FinalizeReload (338ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (833ms)
+		SetupLoadedEditorAssemblies (284ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (27ms)
-			SetLoadedEditorAssemblies (23ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (8ms)
-			ProcessInitializeOnLoadAttributes (486ms)
-			ProcessInitializeOnLoadMethodAttributes (289ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (202ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -126,57 +118,58 @@ Domain Reload Profiling: 2213ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.964 seconds
+- Loaded All Assemblies, in  0.908 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.323 seconds
-Domain Reload Profiling: 3278ms
-	BeginReloadAssembly (441ms)
+- Finished resetting the current domain, in  0.775 seconds
+Domain Reload Profiling: 1673ms
+	BeginReloadAssembly (253ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (14ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (46ms)
-	RebuildCommonClasses (148ms)
-	RebuildNativeTypeToScriptingClass (47ms)
-	initialDomainReloadingComplete (160ms)
-	LoadAllAssembliesAndSetupDomain (1157ms)
-		LoadAssemblies (1048ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (500ms)
+		LoadAssemblies (484ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (414ms)
-			TypeCache.Refresh (370ms)
-				TypeCache.ScanAssembly (338ms)
-			ScanForSourceGeneratedMonoScriptInfo (33ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (1324ms)
+		AnalyzeDomain (164ms)
+			TypeCache.Refresh (147ms)
+				TypeCache.ScanAssembly (135ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (776ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1004ms)
+		SetupLoadedEditorAssemblies (656ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
-			SetLoadedEditorAssemblies (10ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (143ms)
-			ProcessInitializeOnLoadAttributes (784ms)
-			ProcessInitializeOnLoadMethodAttributes (39ms)
-			AfterProcessingInitializeOnLoad (10ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (541ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (14ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 5.54 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 12.21 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3099 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 19 unused Assets / (54.6 KB). Loaded Objects now: 3568.
-Memory consumption went from 119.6 MB to 119.5 MB.
-Total: 5.256400 ms (FindLiveObjects: 0.295700 ms CreateObjectMapping: 0.114400 ms MarkObjects: 4.658000 ms  DeleteObjects: 0.185400 ms)
+Memory consumption went from 119.3 MB to 119.3 MB.
+Total: 3.498300 ms (FindLiveObjects: 0.253800 ms CreateObjectMapping: 0.111400 ms MarkObjects: 3.035400 ms  DeleteObjects: 0.096800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
@@ -190,76 +183,813 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 111720.632166 seconds.
-  path: Assets/Low-Poly Medieval Market/Prefabs/small_meat.prefab
-  artifactKey: Guid(96c31d99e8d69a04b9eb26a5942a33c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low-Poly Medieval Market/Prefabs/small_meat.prefab using Guid(96c31d99e8d69a04b9eb26a5942a33c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 497989.797819 seconds.
+  path: Assets/Low-Poly Medieval Market/Models/FBX Weapon market
+  artifactKey: Guid(bf2500a76bbc5fb4cb88ffb413a76d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Models/FBX Weapon market using Guid(bf2500a76bbc5fb4cb88ffb413a76d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '32ab89827b9e13c5b3546f2fe43eec21') in 0.003294 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.048911 seconds.
+  path: Assets/Low-Poly Medieval Market/Models/FBX Weapon market/anvil.fbx
+  artifactKey: Guid(735d4dedf0f26a94e96246dd7fa66c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Models/FBX Weapon market/anvil.fbx using Guid(735d4dedf0f26a94e96246dd7fa66c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a8e75ebdc2c54d5ceaf456daf0e96564') in 0.456521 seconds
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '18591854816c0ec1604787b2d1b5136a') in 0.144679 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Low-Poly Medieval Market/Models/FBX Weapon market/blacksmith_hammer.fbx
+  artifactKey: Guid(08c36fd1bcfd64446a57573b7990d6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Models/FBX Weapon market/blacksmith_hammer.fbx using Guid(08c36fd1bcfd64446a57573b7990d6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2e933408cb939712db30ef55d32b728a') in 0.018130 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Low-Poly Medieval Market/Models/FBX Weapon market/arrow.fbx
+  artifactKey: Guid(5cab68a22e51ff64088e8cd0e556ab8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Models/FBX Weapon market/arrow.fbx using Guid(5cab68a22e51ff64088e8cd0e556ab8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b5abeb6e7f530895c869bb284a2b6c68') in 0.018413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low-Poly Medieval Market/Models/FBX Weapon market/table_03.fbx
+  artifactKey: Guid(e161d11687078284aab116a597b89ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Models/FBX Weapon market/table_03.fbx using Guid(e161d11687078284aab116a597b89ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '88cc537a3b52f7d73cb75e287fbe2a0c') in 0.017351 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Low-Poly Medieval Market/Models/FBX Weapon market/section_06.fbx
+  artifactKey: Guid(78ff8483b89c12341a30768d76a697f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Models/FBX Weapon market/section_06.fbx using Guid(78ff8483b89c12341a30768d76a697f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7952cd7434279981982f2da93b31f253') in 0.015855 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 3.073718 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs
+  artifactKey: Guid(feba067cab574dc46aa4d47ea94c14ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs using Guid(feba067cab574dc46aa4d47ea94c14ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '976b38681a034fef30422214f7e2ac77') in 0.000766 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.428656 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/anvil.prefab
+  artifactKey: Guid(e4bc6212d5190564c92e2e1f443a750b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/anvil.prefab using Guid(e4bc6212d5190564c92e2e1f443a750b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '82074a1b95b122cdae2525db978d0a78') in 0.118409 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 9
 ========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.277 seconds
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.496 seconds
-Domain Reload Profiling: 4766ms
-	BeginReloadAssembly (411ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (93ms)
-	RebuildCommonClasses (112ms)
-	RebuildNativeTypeToScriptingClass (45ms)
-	initialDomainReloadingComplete (95ms)
-	LoadAllAssembliesAndSetupDomain (604ms)
-		LoadAssemblies (808ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (37ms)
-			TypeCache.Refresh (14ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (19ms)
-	FinalizeReload (3498ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2122ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (22ms)
-			SetLoadedEditorAssemblies (11ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (189ms)
-			ProcessInitializeOnLoadAttributes (1791ms)
-			ProcessInitializeOnLoadMethodAttributes (88ms)
-			AfterProcessingInitializeOnLoad (21ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (26ms)
-Refreshing native plugins compatible for Editor in 14.41 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3091 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 14 unused Assets / (28.5 KB). Loaded Objects now: 3579.
-Memory consumption went from 123.0 MB to 122.9 MB.
-Total: 15.686400 ms (FindLiveObjects: 0.879200 ms CreateObjectMapping: 0.426600 ms MarkObjects: 14.214700 ms  DeleteObjects: 0.160700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/cleaver.prefab
+  artifactKey: Guid(5a520c173ee63aa478171f69422ddc10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/cleaver.prefab using Guid(5a520c173ee63aa478171f69422ddc10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '43dba3bb39ba86ecc508af692ece4d0f') in 0.074866 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/Armor_stand.prefab
+  artifactKey: Guid(d6069e64bf7bd3b48a0548283484d8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/Armor_stand.prefab using Guid(d6069e64bf7bd3b48a0548283484d8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b47cde91b6005f96f2e8e5c73efb2377') in 0.057386 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 46
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/BakeryMarket.prefab
+  artifactKey: Guid(d9d36dec935d2024a9a49f82ed879fc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/BakeryMarket.prefab using Guid(d9d36dec935d2024a9a49f82ed879fc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5aab5ce7b2e5150a19dd0d0f0a3f70f9') in 0.051312 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/Fish_market_with_sections.prefab
+  artifactKey: Guid(5ed459fa9af3cc54a8803d749f445718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/Fish_market_with_sections.prefab using Guid(5ed459fa9af3cc54a8803d749f445718) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2aabcb561b8420042232da034d83433b') in 0.068915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 378
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/cookies.prefab
+  artifactKey: Guid(6a759dcb2b687cc43b7528b5eac955bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/cookies.prefab using Guid(6a759dcb2b687cc43b7528b5eac955bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5cab8bdb00870a2dbbfb36a099ffa864') in 0.044820 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 43
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/Fruits and vegetables
+  artifactKey: Guid(9044947c42758154e8ea125c3cdceb18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/Fruits and vegetables using Guid(9044947c42758154e8ea125c3cdceb18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '44936ba8d48e5b7135c5d55d2d804f45') in 0.001187 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/pretzel_box.prefab
+  artifactKey: Guid(c13aa8e236f8e5c43bcd9dc7046042fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/pretzel_box.prefab using Guid(c13aa8e236f8e5c43bcd9dc7046042fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ca93d991fc39872ea35a18791a0f3afd') in 0.055262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 70
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/section_with_objects_01.prefab
+  artifactKey: Guid(da97b80dc8fb25c42a1174c05c382bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/section_with_objects_01.prefab using Guid(da97b80dc8fb25c42a1174c05c382bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '397cb46bb2e7661cda5c05b9e82812dc') in 0.071966 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 173
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/table_with_meat_chease.prefab
+  artifactKey: Guid(0c54d0bf7635644479ee2a6d05ee16d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/table_with_meat_chease.prefab using Guid(0c54d0bf7635644479ee2a6d05ee16d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0386783032d41a23f0f8c520e93d3385') in 0.055251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 78
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/rag.prefab
+  artifactKey: Guid(ceee6e50c0e794d44b60f1f9c6d16a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/rag.prefab using Guid(ceee6e50c0e794d44b60f1f9c6d16a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '10caccade8fc69df95c6e095c5f73daa') in 0.019165 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/bag_of_gold.prefab
+  artifactKey: Guid(7c6a89aa75c99bc4cbf5e6213b60b6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/bag_of_gold.prefab using Guid(7c6a89aa75c99bc4cbf5e6213b60b6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4e0210dde251a485a593152f13b76eb9') in 0.016494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/Table_with_weapon.prefab
+  artifactKey: Guid(52eff72d3b1cec44ebdcabc26791c5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/Table_with_weapon.prefab using Guid(52eff72d3b1cec44ebdcabc26791c5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b2535217cf52e22469b5918762bd8ef5') in 0.043048 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 118
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/watermelon_box.prefab
+  artifactKey: Guid(4501448e1127cb043afc064a66502fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/watermelon_box.prefab using Guid(4501448e1127cb043afc064a66502fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '60fe7d88869be7a0287a859c6a1c4467') in 0.022917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 53
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/cake.prefab
+  artifactKey: Guid(42b20d68150a40f44ac9cd9a29123d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/cake.prefab using Guid(42b20d68150a40f44ac9cd9a29123d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0ee83a5a6e7cdee9f7ec3e4746cd4e8e') in 0.020430 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/pastry.prefab
+  artifactKey: Guid(837819cd64a76a44aa33dc4d23d05a4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/pastry.prefab using Guid(837819cd64a76a44aa33dc4d23d05a4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e791a629edf66558be4917153e2dd5eb') in 0.018944 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/table_03.prefab
+  artifactKey: Guid(38d4e31a986a6df45a81e209af43aa08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/table_03.prefab using Guid(38d4e31a986a6df45a81e209af43aa08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '001f35b5eb5c7b0834f864769103c64d') in 0.043404 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/table_02.prefab
+  artifactKey: Guid(98c36059c3fc374479c36f64599c6ef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/table_02.prefab using Guid(98c36059c3fc374479c36f64599c6ef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd69f18752402a25490330f5f05acf6f7') in 0.019986 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/leather_dressing_frame.prefab
+  artifactKey: Guid(67b057dff1beeba43bfbf108efc29593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/leather_dressing_frame.prefab using Guid(67b057dff1beeba43bfbf108efc29593) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1aedd9250f7727a1617cab6aca617f14') in 0.020726 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/fish.prefab
+  artifactKey: Guid(a0345e1ce04d44947b508fbb0489ea35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/fish.prefab using Guid(a0345e1ce04d44947b508fbb0489ea35) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '210222164ed819b75b3c05f72b279b19') in 0.021340 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/maneken.prefab
+  artifactKey: Guid(efaab5d802eafe74d9681146cf89b7b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/maneken.prefab using Guid(efaab5d802eafe74d9681146cf89b7b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a7f6ea4c34ad34ae001862533d91409c') in 0.031957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/egg_white.prefab
+  artifactKey: Guid(eb60cd9a4b02904449844343b2735c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/egg_white.prefab using Guid(eb60cd9a4b02904449844343b2735c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '566ada5818fea5ed30e6d4d18b96fe0f') in 0.019418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/coins.prefab
+  artifactKey: Guid(2a5990f46a7520d4bbc7fa6274caf1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/coins.prefab using Guid(2a5990f46a7520d4bbc7fa6274caf1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'db6f1680a89a0fb8109d8ba5dcac9c60') in 0.017262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000456 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/MeatMarket.prefab
+  artifactKey: Guid(15ec834161d65154592f89afb7c76fba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/MeatMarket.prefab using Guid(15ec834161d65154592f89afb7c76fba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '093bf1b0d06228a4723d8a1b12551967') in 0.024851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/wall_axes.prefab
+  artifactKey: Guid(a5ac0ea15b990ca45b36fec1464a9f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/wall_axes.prefab using Guid(a5ac0ea15b990ca45b36fec1464a9f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '554cc51db6aff38b3b2a782b510eb032') in 0.032682 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/wall_swords.prefab
+  artifactKey: Guid(f9ff7942b0a38aa49b165bfbf1372e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/wall_swords.prefab using Guid(f9ff7942b0a38aa49b165bfbf1372e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '876418ff0f32a3dc42805fafb6cb4f80') in 0.039801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 33
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/section_04.prefab
+  artifactKey: Guid(ad0aefc10a9ff4d428d2540ce49529d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/section_04.prefab using Guid(ad0aefc10a9ff4d428d2540ce49529d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7731d1a349a1c336ba37bb5f75f11ae0') in 0.019849 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/wooden_basin.prefab
+  artifactKey: Guid(49db4bdf073f5fe4b8d6d01bad6f7e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/wooden_basin.prefab using Guid(49db4bdf073f5fe4b8d6d01bad6f7e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'eb7c9f33ebd3137685a036c7207c3b40') in 0.020681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/fish_knife.prefab
+  artifactKey: Guid(343d04653a7bd604f91f1395a049ba38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/fish_knife.prefab using Guid(343d04653a7bd604f91f1395a049ba38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c4e30d1e3b3f4db4feacee8d829e05fc') in 0.019946 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/weapon_market.prefab
+  artifactKey: Guid(bdb02f806a3b44c4bba3eb022914c075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/weapon_market.prefab using Guid(bdb02f806a3b44c4bba3eb022914c075) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6f3d25613d155f3ba7a1280e725647ea') in 0.040607 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/section_03.prefab
+  artifactKey: Guid(2fae3373bd8c2a44ba7afa3ba44e47b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/section_03.prefab using Guid(2fae3373bd8c2a44ba7afa3ba44e47b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bebf0820869264f176543ca4949c56ce') in 0.016565 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 5.460815 seconds.
+  path: Assets/Low-Poly Medieval Market/Prefabs/wooden_box_destroyed.prefab
+  artifactKey: Guid(b82d9969aedb66c4b998ad0627711207) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low-Poly Medieval Market/Prefabs/wooden_box_destroyed.prefab using Guid(b82d9969aedb66c4b998ad0627711207) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '451c876bff35df76d5d74a2c7ecaa908') in 0.026571 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 253.173058 seconds.
+  path: Assets/Blink
+  artifactKey: Guid(c00ad85e04cb6a04797883dc5cbcaf57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink using Guid(c00ad85e04cb6a04797883dc5cbcaf57) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b48dcba54461de3a5901533cf9738d3f') in 0.000759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.386022 seconds.
+  path: Assets/Blink/Art
+  artifactKey: Guid(112ba712ff84fe54baee7ad2f700c3ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art using Guid(112ba712ff84fe54baee7ad2f700c3ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9a2c3c9930a087a09f3c1bc2e6dfd5e4') in 0.000649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.288977 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Models
+  artifactKey: Guid(7ce3730c24da2af4690c07144e2e819e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Models using Guid(7ce3730c24da2af4690c07144e2e819e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf72062d3c7af9bf69d8bfc3e371c14f') in 0.000682 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.460585 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs
+  artifactKey: Guid(739cb2b891d777d4381761a57c0e04f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs using Guid(739cb2b891d777d4381761a57c0e04f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf4940555d0a3b44f73a2351846c0b04') in 0.000668 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.132931 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles
+  artifactKey: Guid(0cde60a3546f51d41bdd7bf4a9dc8cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles using Guid(0cde60a3546f51d41bdd7bf4a9dc8cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c38272fdeaa9582fda6d081799c7a956') in 0.000708 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.068095 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony.prefab
+  artifactKey: Guid(a9c55b2fac05ba248a24bd117da7b964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony.prefab using Guid(a9c55b2fac05ba248a24bd117da7b964) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9c7e395fc0d2112eb41f53b2ce592b1d') in 0.018137 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.015262 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony_Railing.prefab
+  artifactKey: Guid(112473a489e4f4e47b0127b8a56f8582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony_Railing.prefab using Guid(112473a489e4f4e47b0127b8a56f8582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6bfbe4d44762c412567addc6fe0c7a53') in 0.125522 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall.prefab
+  artifactKey: Guid(c7af5921109b94141afd37e9fdd75443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall.prefab using Guid(c7af5921109b94141afd37e9fdd75443) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3b3cfd766331871ece4fbfb208c7d626') in 0.019185 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab
+  artifactKey: Guid(da9803df239bac641a76405e07eaaa8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab using Guid(da9803df239bac641a76405e07eaaa8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'eb2c4f0d97987c1eb4a22264d5eba208') in 0.022038 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var3.prefab
+  artifactKey: Guid(8cda7687928e5174ea2627e48a3c6d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var3.prefab using Guid(8cda7687928e5174ea2627e48a3c6d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5728c0f69b81526a20e0a1393363a832') in 0.017061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Quarter.prefab
+  artifactKey: Guid(a85a6c2c6af086848b326146d8a3b6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Quarter.prefab using Guid(a85a6c2c6af086848b326146d8a3b6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '407dd12a70183d5e6de017bfc85454d6') in 0.019596 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight.prefab
+  artifactKey: Guid(97a4b078c0091b947acd8736a2f47884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight.prefab using Guid(97a4b078c0091b947acd8736a2f47884) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9b06c0a639afbf5c6a114b83aaafc87e') in 0.019058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall_broken.prefab
+  artifactKey: Guid(e28b34a491d1b964a8f7abc908c7db72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall_broken.prefab using Guid(e28b34a491d1b964a8f7abc908c7db72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '74de4d9c12bb65191f943c500bd57d33') in 0.019256 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Pillar.prefab
+  artifactKey: Guid(27f210ed52b6c0f409f410ac194d0a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Pillar.prefab using Guid(27f210ed52b6c0f409f410ac194d0a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b41427316ef853c1f2f6e5d773ad6b01') in 0.016071 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Platform.prefab
+  artifactKey: Guid(9d3c6113164fd3b488040a35893b058c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Platform.prefab using Guid(9d3c6113164fd3b488040a35893b058c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '48a5936fd2aaea9f714f4254099e75b9') in 0.024665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var1.prefab
+  artifactKey: Guid(5e10be2f5a748844dbd0b2b7e6fafd4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var1.prefab using Guid(5e10be2f5a748844dbd0b2b7e6fafd4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '961c304d74912219f4de0e4a60edbe64') in 0.020469 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Curve_Short.prefab
+  artifactKey: Guid(ea89d7821ddb211478ce5ff6f3ea064d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Curve_Short.prefab using Guid(ea89d7821ddb211478ce5ff6f3ea064d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6f815786e0c52ae34a4849dfcda7d5d4') in 0.028020 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var3.prefab
+  artifactKey: Guid(3095027673429ac43888f84f7de0b80e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var3.prefab using Guid(3095027673429ac43888f84f7de0b80e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'aa233f6d49261e6b5bafa240b04e6e8c') in 0.029303 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/DoorGate_Wooden_Left.prefab
+  artifactKey: Guid(f5e4cf5af47ee60418f92554c028a4ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/DoorGate_Wooden_Left.prefab using Guid(f5e4cf5af47ee60418f92554c028a4ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'df2289f6064f6e2ff70e911fd9f29e25') in 0.024645 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Center_Stairs.prefab
+  artifactKey: Guid(f4372e02dd0e54440977f29b6a4c317b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Center_Stairs.prefab using Guid(f4372e02dd0e54440977f29b6a4c317b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8104d0334522858dde9b4cd80f5c80f7') in 0.023369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/FloorTIle.prefab
+  artifactKey: Guid(0d780173c250d334f80c9061373c8e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/FloorTIle.prefab using Guid(0d780173c250d334f80c9061373c8e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f38f173e71bc0cd9163f46cf7368d174') in 0.022933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner.prefab
+  artifactKey: Guid(d468aca3a4ae71b46a917597c89e70ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner.prefab using Guid(d468aca3a4ae71b46a917597c89e70ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bfbf7ca267734fec4998e0b7a96cfe14') in 0.028125 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Portcullis_Metal.prefab
+  artifactKey: Guid(2bde22b421d566c4d8da5d70dd666204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Portcullis_Metal.prefab using Guid(2bde22b421d566c4d8da5d70dd666204) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '407f581996eeb82fcc391d48d2a01dd0') in 0.041983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Iron_Right.prefab
+  artifactKey: Guid(e22e29840e07aca4693bb3288c909879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Iron_Right.prefab using Guid(e22e29840e07aca4693bb3288c909879) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '97a9a9fc43aaeaf3aefcbd67f04627d7') in 0.023162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Crossing.prefab
+  artifactKey: Guid(d8a87367ce3dea34381d129ffade9174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Crossing.prefab using Guid(d8a87367ce3dea34381d129ffade9174) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f56d3cbbbe8604c73d1c0e1fc620b078') in 0.023463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner_Inverted.prefab
+  artifactKey: Guid(a08fc365a6eb3a4479ec69b573a6c7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner_Inverted.prefab using Guid(a08fc365a6eb3a4479ec69b573a6c7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '63ccdeed7bec839c32277d658ab2da81') in 0.021669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage_Wood.prefab
+  artifactKey: Guid(398fe532ee92e2b478e8fd465e800786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage_Wood.prefab using Guid(398fe532ee92e2b478e8fd465e800786) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b2231daf335aadfcb92f2ba7c826c672') in 0.024414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab
+  artifactKey: Guid(5c582aa33048aaa428a9e969723d47dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab using Guid(5c582aa33048aaa428a9e969723d47dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd4e527279582fb59e422ced3eacec971') in 0.026907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Staircase.prefab
+  artifactKey: Guid(fe920f08a7bd91440b54ef922f9bf5b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Staircase.prefab using Guid(fe920f08a7bd91440b54ef922f9bf5b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '03e24bbc90212cc96f74ea1207fcdf6a') in 0.018642 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var1.prefab
+  artifactKey: Guid(e52fa0ab130d63b42bcdd15456a87141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var1.prefab using Guid(e52fa0ab130d63b42bcdd15456a87141) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ab23c209204c27c0d1a79253efc784ed') in 0.019660 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall.prefab
+  artifactKey: Guid(cc9f980ee3a12ab49af49ee894ebd89a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall.prefab using Guid(cc9f980ee3a12ab49af49ee894ebd89a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ea74f1a0d54f8b7755a2ebdf2b957a83') in 0.021228 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Right.prefab
+  artifactKey: Guid(8b2ac275d28767a4bbd00fec5cb82b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Right.prefab using Guid(8b2ac275d28767a4bbd00fec5cb82b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e5cf2bcf4662de1113dc91eafd7fa44e') in 0.025227 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight_Half.prefab
+  artifactKey: Guid(a0708bab0e06c414381a6861ecf05a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight_Half.prefab using Guid(a0708bab0e06c414381a6861ecf05a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ce4157ad29c60cfb79683592724029a4') in 0.025664 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Passage.prefab
+  artifactKey: Guid(b78909d98814b3d42aa488a008c30001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Passage.prefab using Guid(b78909d98814b3d42aa488a008c30001) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2f7c2f0ebdc12833f23d71426cf9605e') in 0.016824 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Left.prefab
+  artifactKey: Guid(c18611346c4c58945a94163404f2e1e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Left.prefab using Guid(c18611346c4c58945a94163404f2e1e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2507bb2cbc2584021a1d80161e44be40') in 0.026771 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_High.prefab
+  artifactKey: Guid(1e5e6584f4b365c49a0edc23ccafc87b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_High.prefab using Guid(1e5e6584f4b365c49a0edc23ccafc87b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '65e3986f3aa912bea50872d8f51552c5') in 0.030500 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Window.prefab
+  artifactKey: Guid(1c7f74f16e3c3bb49a9bed63da51a052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Window.prefab using Guid(1c7f74f16e3c3bb49a9bed63da51a052) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '23b44a8e1c48fdf05c7e22b86e5d473b') in 0.019540 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_toStaircase_Top.prefab
+  artifactKey: Guid(e4c0e291a3f433742ac8bad5c45ba01c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_toStaircase_Top.prefab using Guid(e4c0e291a3f433742ac8bad5c45ba01c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6237646e6ee28f42253ba05e44855f30') in 0.022724 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Basement_Right.prefab
+  artifactKey: Guid(16efa409f7809d6499a20bf293c5df05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Basement_Right.prefab using Guid(16efa409f7809d6499a20bf293c5df05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '25c48681b65ed843208050f1c9efb9de') in 0.020522 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Right.prefab
+  artifactKey: Guid(ed465ab6eaa568d4fa325d2c4ebf6436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Right.prefab using Guid(ed465ab6eaa568d4fa325d2c4ebf6436) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '951618a5b154f334856ab72335e768cf') in 0.026634 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab
+  artifactKey: Guid(672e720ef69a65b44a71577cd7cc26ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab using Guid(672e720ef69a65b44a71577cd7cc26ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '640f01dd8fb3d9720793b2bebf6809fb') in 0.020044 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Passage.prefab
+  artifactKey: Guid(4b0d2ea51ebd97f4d91249e4c9bbefc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Passage.prefab using Guid(4b0d2ea51ebd97f4d91249e4c9bbefc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2e52c463e7791cff0dae94c86a8d3b5a') in 0.027356 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

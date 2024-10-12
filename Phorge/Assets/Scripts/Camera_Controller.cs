@@ -11,7 +11,15 @@ public class Camera_Controller : MonoBehaviour
     public GameObject player_manager;
     public GameObject anvil_task;
     public GameObject furnace_task;
+    public Camera playerCam;
+    public Camera anvilCam;
+    public Camera furnaceCam;
+    public Camera finishCam;
     string taskName;
+
+    //private readonly Vector3 furnacePosition = new Vector3(0f, 1.243f, 2.885f);
+    //private readonly Vector3 anvilPosition = new Vector3Vector3(0.234f, 0.69f, 0f);
+
 
     public Transform orientation;
 
@@ -29,6 +37,8 @@ public class Camera_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //print("Player = " + orientation.position);
+        print("Camera = " + this.transform.position);
         cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
         taskName = player_manager.GetComponent<Player_Manager>().get_cur_task();
 
@@ -48,6 +58,7 @@ public class Camera_Controller : MonoBehaviour
 
     void FreeMove()
     {
+        SnapToPlayer();
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -61,16 +72,26 @@ public class Camera_Controller : MonoBehaviour
         //transform.position = new Vector3 (orientation.position.x, orientation.position.y + camYDiff, orientation.position.z);
     }
 
+
     void TaskMove()
     {
         if (taskName == "Anvil")
         {
-            transform.LookAt(anvil_task.transform.position);
+            playerCam.enabled = false;
+            anvilCam.enabled = true;
         }
         else if (taskName == "Furnace")
         {
-            transform.LookAt(furnace_task.transform.position);
+            playerCam.enabled = false;
+            furnaceCam.enabled = true;
         }
-
     }
+
+    public void SnapToPlayer()
+    {
+        playerCam.enabled = true;
+        anvilCam.enabled = false;
+        furnaceCam.enabled = false;
+    }
+
 }

@@ -9,18 +9,18 @@ public class Player_Manager : MonoBehaviour
     [Header("Attributes")]
     public GameObject player_model;
     public GameObject camera;
-    string[] states = {"free_move","task_int","npc_int"};
+    string[] states = { "free_move", "task_int", "npc_int" };
     public string cur_task;
     public string cur_state;
-   
+
     public void set_cur_task(string taskName)
     {
         cur_task = taskName;
     }
 
-    public string get_cur_task() 
-    { 
-        return cur_task; 
+    public string get_cur_task()
+    {
+        return cur_task;
     }
 
     public void set_cur_state(string new_state)

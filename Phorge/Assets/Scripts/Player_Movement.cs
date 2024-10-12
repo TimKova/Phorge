@@ -56,13 +56,15 @@ public class Movement : MonoBehaviour
         SpeedControl();
         cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
         //print(cur_state);
-        if(cur_state == "free_move")
+        if (cur_state == "free_move")
         {
             FreeMove();
-        }else if(cur_state == "task_int")
+        }
+        else if (cur_state == "task_int")
         {
             TaskMove();
-        }else if (cur_state == "npc_int")
+        }
+        else if (cur_state == "npc_int")
         {
 
         }//end if-else
@@ -74,10 +76,11 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Horizontal", 0);
         if (taskName == "Anvil")
         {
-            transform.position = new Vector3(-13.81f,transform.position.y,-8.4f);
+            transform.position = new Vector3(anvil_task.transform.position.x + 2f, transform.position.y, anvil_task.transform.position.z);
             transform.LookAt(anvil_task.transform.position);
 
-        }else if(taskName == "Furnace")
+        }
+        else if (taskName == "Furnace")
         {
             transform.position = new Vector3(-12.255f, transform.position.y, -11.847f);
             transform.LookAt(furnace_task.transform.position);

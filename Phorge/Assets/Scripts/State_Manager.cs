@@ -7,7 +7,7 @@ public class State_Manager : MonoBehaviour
 {
     public GameObject player_manager;
     string state_to_be;
-    public bool doingTask;
+    public bool doingTask, inHammerRange;
     bool npc;
     public bool inTaskRange;
     bool inNpcRange;
@@ -54,10 +54,11 @@ public class State_Manager : MonoBehaviour
             doingTask = true;
         }
 
-        if (doingTask && Input.GetKeyDown(KeyCode.Escape))
+        if (doingTask && Input.GetKeyDown(KeyCode.Q))
         {
             print("Task Terminated");
             doingTask = false;
+            //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
         }
     }
 
