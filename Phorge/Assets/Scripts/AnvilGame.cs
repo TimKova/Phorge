@@ -7,7 +7,8 @@ public class AnvilGame : MonoBehaviour
     public GameObject player_manager;
     private string cur_state;
 
-
+    public GameObject hammer;
+    Animator hammerAnimator;
     public GameObject ingotPrefab;
     public GameObject anvil;
     const float ingotScale = 2.5f;
@@ -16,7 +17,7 @@ public class AnvilGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        hammerAnimator = hammer.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,6 +49,14 @@ public class AnvilGame : MonoBehaviour
         foreach (GameObject ingot in GameObject.FindGameObjectsWithTag("ingotPrefab"))
         {
             Destroy(ingot);
+        }
+    }
+
+    public void SwingHammer()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            hammerAnimator.SetBool("HammerSwing", true);
         }
     }
 }
