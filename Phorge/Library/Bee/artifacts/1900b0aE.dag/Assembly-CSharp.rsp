@@ -366,6 +366,7 @@
 "Assets/Scripts/Door_Open.cs"
 "Assets/Scripts/hammer_swing.cs"
 "Assets/Scripts/Interact.cs"
+"Assets/Scripts/Player_Inventory.cs"
 "Assets/Scripts/Player_Manager.cs"
 "Assets/Scripts/Player_Movement.cs"
 "Assets/Scripts/State_Manager.cs"

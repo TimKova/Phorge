@@ -6,7 +6,6 @@ public class AnvilGame : MonoBehaviour
 {
     public GameObject player_manager;
     private string cur_state;
-    public GameObject playermanager;
     public GameObject hammer;
     Animator hammerAnimator;
     public GameObject ingotPrefab;
@@ -14,10 +13,10 @@ public class AnvilGame : MonoBehaviour
     const float ingotScale = 2.5f;
     private readonly Vector3 anvilTop = new Vector3(-15.321f, 0.9684f, -11.472f);
     private readonly Color RED = new Color(1f, 0f, 0f, 1f);
+
     // Start is called before the first frame update
     void Start()
     {
-        playermanager = GameObject.FindWithTag("Player");
         hammerAnimator = hammer.GetComponent<Animator>();
     }
 
@@ -41,12 +40,12 @@ public class AnvilGame : MonoBehaviour
         // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
         // It doesn't appear that the inventory field is updating, even though I think it logically should?
         Player_Inventory playerinventory;
-        playerinventory = playermanager.GetComponent<Player_Inventory>();
+        playerinventory = player_manager.GetComponent<Player_Inventory>();
         if (ingotType == "copper")
         {
             if (playerinventory != null)
             {
-                GameObject.FindWithTag("Player").GetComponent<Player_Inventory>().copper = playermanager.GetComponent<Player_Inventory>().copper - 1;
+                GameObject.FindWithTag("Player").GetComponent<Player_Inventory>().copper = player_manager.GetComponent<Player_Inventory>().copper - 1;
             }
         }
         else if (ingotType == "Bronze")
