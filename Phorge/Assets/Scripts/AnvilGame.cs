@@ -6,7 +6,7 @@ public class AnvilGame : MonoBehaviour
 {
     public GameObject player_manager;
     private string cur_state;
-
+    public GameObject playermanager;
     public GameObject hammer;
     Animator hammerAnimator;
     public GameObject ingotPrefab;
@@ -17,6 +17,7 @@ public class AnvilGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playermanager = GameObject.FindWithTag("Player");
         hammerAnimator = hammer.GetComponent<Animator>();
     }
 
@@ -37,6 +38,52 @@ public class AnvilGame : MonoBehaviour
 
     public void SpawnIngot(string ingotType)
     {
+        // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
+        // It doesn't appear that the inventory field is updating, even though I think it logically should?
+        Player_Inventory playerinventory;
+        playerinventory = playermanager.GetComponent<Player_Inventory>();
+        if (ingotType == "copper")
+        {
+            if (playerinventory != null)
+            {
+                GameObject.FindWithTag("Player").GetComponent<Player_Inventory>().copper = playermanager.GetComponent<Player_Inventory>().copper - 1;
+            }
+        }
+        else if (ingotType == "Bronze")
+        {
+            if (playerinventory != null)
+            {
+                playerinventory.bronze = playerinventory.bronze - 1;
+            }
+        }
+        else if (ingotType == "Iron")
+        {
+            if (playerinventory != null)
+            {
+                playerinventory.iron = playerinventory.iron - 1;
+            }
+        }
+        else if (ingotType == "Silver")
+        {
+            if (playerinventory != null)
+            {
+                playerinventory.silver = playerinventory.silver - 1;
+            }
+        }
+        else if (ingotType == "Gold")
+        {
+            if (playerinventory != null)
+            {
+                playerinventory.gold = playerinventory.gold - 1;
+            }
+        }
+        else if (ingotType == "Uranium")
+        {
+            if (playerinventory != null)
+            {
+                playerinventory.uranium = playerinventory.uranium - 1;
+            }
+        }
         GameObject templateIngot = Instantiate(ingotPrefab, anvilTop, Quaternion.identity);
         templateIngot.transform.localScale = new Vector3(ingotScale, ingotScale, ingotScale);
         Material ingotMat = Resources.Load(ingotType) as Material;
