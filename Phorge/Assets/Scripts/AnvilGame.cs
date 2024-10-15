@@ -95,7 +95,7 @@ public class AnvilGame : MonoBehaviour
         }
         var mat = playerInventory.getMaterial(currentIngot);
         print(mat.spend() + " " + mat.getName() + " ingots left");
-        GameObject.FindGameObjectsWithTag("materialQuantity")[5 - currentIngot].GetComponent<TextMeshProUGUI>().text = (mat.getQuantity()+"");
+        setCount(currentIngot);
         print("why");
         AnvilMenu.enabled = false;
     }
@@ -114,5 +114,19 @@ public class AnvilGame : MonoBehaviour
         {
             hammerAnimator.SetBool("HammerSwing", true);
         }
+    }
+
+    public void setCount(int matIndex)
+    {
+        var matName = playerInventory.materialNames[matIndex];
+        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
+        {
+            var textComp = quant.GetComponent<TextMeshProUGUI>();
+            if (textComp.name == (matName + " Quant"))
+            {
+                textComp.text = (playerInventory.getMaterial(currentIngot).getQuantity() + "");
+            }
+        }
+        //return materials[matIndex].getQuantity();
     }
 }

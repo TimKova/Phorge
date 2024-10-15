@@ -75,7 +75,8 @@ public class Player_Inventory : MonoBehaviour
     {
         for (int c = 0; c < materialNames.Length; c++)
         {
-            materials.Add(new IngotMaterial(materialNames[c], c+2));
+            materials.Add(new IngotMaterial(materialNames[c], c + 2));
+            print(materialNames[c]);
             setCount(c);
         }
     }
@@ -113,7 +114,14 @@ public class Player_Inventory : MonoBehaviour
 
     public int setCount(int matIndex)
     {
-        GameObject.FindGameObjectsWithTag("materialQuantity")[materialNames.Length - matIndex - 1].GetComponent<TextMeshProUGUI>().text = (materials[matIndex].getQuantity() + "");
+        var matName = materials[matIndex].getName();
+        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
+        {
+            var textComp = quant.GetComponent<TextMeshProUGUI>();
+            if (textComp.name == ( matName + " Quant")){
+               textComp.text = (materials[matIndex].getQuantity() + "");
+            }
+        }
         return materials[matIndex].getQuantity();
     }
 
