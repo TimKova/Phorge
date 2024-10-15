@@ -14,7 +14,10 @@ public class AnvilGame : MonoBehaviour
 
     public GameObject player_manager;
     public Canvas AnvilMenu;
+
     private string cur_state;
+    private string cur_task;
+
     public GameObject hammer;
     Animator hammerAnimator;
     public GameObject ingotPrefab;
@@ -37,8 +40,16 @@ public class AnvilGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SwingHammer();
         cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
-
+        if(cur_state == "task_int")
+        {
+            cur_task = player_manager.GetComponent<Player_Manager>().get_cur_task();
+            if(cur_task == "Anvil")
+            {
+                SwingHammer();
+            }
+        }
         //if (cur_state == "free_move")
         //{
         //    ClearIngots();

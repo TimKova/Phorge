@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     bool jumpInput;
+    bool leftMouseClick;
 
     Animator animator;
     Vector3 moveDirection;

@@ -125,5 +125,6 @@ public class State_Manager : MonoBehaviour
             print("Love is an open door");
             other.gameObject.transform.Rotate(0f, 90f, 0f, Space.Self);
         }//end if-else
+
     }
 }
