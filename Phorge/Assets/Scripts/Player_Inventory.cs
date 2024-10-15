@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player_Inventory : MonoBehaviour
 {
+
     public class IngotMaterial
     {
         public int quantity;
@@ -66,11 +68,16 @@ public class Player_Inventory : MonoBehaviour
     public readonly string[] materialNames = { "Copper", "Bronze", "Iron", "Silver", "Gold", "Uranium" };
 
     public AnvilGame AnvilTask;
+    //public Canvas AnvilMenu;
+
     // Start is called before the first frame update
     void Start()
     {
-        foreach (string mat in materialNames)
-            materials.Add(new IngotMaterial(mat, 5));
+        for (int c = 0; c < materialNames.Length; c++)
+        {
+            materials.Add(new IngotMaterial(materialNames[c], c+2));
+            setCount(c);
+        }
     }
 
     // Update is called once per frame
@@ -102,6 +109,12 @@ public class Player_Inventory : MonoBehaviour
     public int purchaseMaterial(int matIndex, int quant)
     {
         return materials[matIndex].gain(quant);
+    }
+
+    public int setCount(int matIndex)
+    {
+        GameObject.FindGameObjectsWithTag("materialQuantity")[materialNames.Length - matIndex - 1].GetComponent<TextMeshProUGUI>().text = (materials[matIndex].getQuantity() + "");
+        return materials[matIndex].getQuantity();
     }
 
     //void 

@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 362.2857
     height: 767.4286
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -246,14 +246,14 @@ MonoBehaviour:
     y: 767.4286
     width: 1784
     height: 326.5714
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 410.28564
     height: 1094
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -415,23 +415,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: feeeffff
-      m_LastClickedID: -4354
-      m_ExpandedIDs: c60cffff6035ffffc0faffffd65b0000005c00000c5c0000285c0000305c0000765c0000885c0000c05c0000005d0000165d0000465d00004e5d00005a5d00007a5d0000c45d0000045e00000e5e00002c5e00008e5e0000a25e0000ac5e0000245f0000665f0000
+      m_SelectedIDs: 505c0000
+      m_LastClickedID: 23632
+      m_ExpandedIDs: 2cfaffff0a5c0000345c0000505c0000625c0000705c0000ba5c00003a5d0000505d0000885d0000b45d0000dc5d0000fe5d0000505e00005a5e0000785e00009a5e0000da5e0000f05e0000fa5e0000725f0000b45f0000be5f0000fa5f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Anvil Menu
-        m_OriginalName: Anvil Menu
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 23580
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -862,9 +862,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -15.209185, y: 1.1596208, z: -11.340813}
+    m_Target: {x: -15.374492, y: 1.1092241, z: -11.250545}
     speed: 2
-    m_Value: {x: -15.209185, y: 1.1596208, z: -11.340813}
+    m_Value: {x: -15.374492, y: 1.1092241, z: -11.250545}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -910,20 +910,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.4097289, y: -0.5771392, z: 0.4225798, w: 0.5677045}
+    m_Target: {x: 0.5229282, y: -0.47335714, z: 0.5225235, w: 0.48092237}
     speed: 2
-    m_Value: {x: 0.40935463, y: -0.576612, z: 0.42219377, w: 0.5671859}
+    m_Value: {x: 0.5224483, y: -0.47292277, z: 0.522044, w: 0.48048106}
   m_Size:
-    m_Target: 1.453413
+    m_Target: 0.68301415
     speed: 2
-    m_Value: 1.453413
+    m_Value: 0.68301415
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.0846
-    m_SpeedNormalized: 0.53999996
+    m_Speed: 1.1442999
+    m_SpeedNormalized: 0.56999993
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1071,9 +1071,9 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 0
+    m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1081,16 +1081,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\charl\proj\UnityBullshit\Phorge\Phorge
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e720000
-    m_LastClickedID: 29214
-    m_ExpandedIDs: 000000001e72000042720000
+    m_SelectedIDs: a0720000
+    m_LastClickedID: 29344
+    m_ExpandedIDs: 00000000c21f000076720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1118,7 +1118,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e720000
+    m_ExpandedIDs: 0000000076720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1143,10 +1143,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 3c180000
+    m_LastClickedInstanceID: 6204
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300000e3d00009ad800000ad90000fcdb00000000000042df0200cc900000d2eb0000
+    m_ExpandedInstanceIDs: c62300000e3d00009ad800000ad90000fcdb00000000000042df0200cc900000d2eb000032200000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+
 
 public class AnvilGame : MonoBehaviour
 {
+    const float INGOT_SCALE = 2.5f;
+    private readonly Vector3 ANVIL_TOP = new Vector3(-15.321f, 0.9684f, -11.472f);
+    public const string MATERIAL_QUANTITY_TAG = "materialQuantity";
+
     public GameObject player_manager;
     public Canvas AnvilMenu;
     private string cur_state;
@@ -11,8 +19,7 @@ public class AnvilGame : MonoBehaviour
     Animator hammerAnimator;
     public GameObject ingotPrefab;
     public GameObject anvil;
-    const float ingotScale = 2.5f;
-    private readonly Vector3 anvilTop = new Vector3(-15.321f, 0.9684f, -11.472f);
+
     private static int currentIngot;
     //private readonly Color RED = new Color(1f, 0f, 0f, 1f);
 
@@ -49,6 +56,7 @@ public class AnvilGame : MonoBehaviour
         ClearIngots();
         if (ingotType < playerInventory.materialNames.Length)
         {
+            currentIngot = ingotType;
             var mat = playerInventory.getMaterial(ingotType);
             if (mat == null || mat.getQuantity() <= 0)
             {
@@ -56,12 +64,11 @@ public class AnvilGame : MonoBehaviour
                 return;
             }
             string ingotName = playerInventory.getMaterial(ingotType).name;
-            GameObject templateIngot = Instantiate(ingotPrefab, anvilTop, Quaternion.identity);
-            templateIngot.transform.localScale = new Vector3(ingotScale, ingotScale, ingotScale);
+            GameObject templateIngot = Instantiate(ingotPrefab, ANVIL_TOP, Quaternion.identity);
+            templateIngot.transform.localScale = new Vector3(INGOT_SCALE, INGOT_SCALE, INGOT_SCALE);
             Material ingotMat = Resources.Load(ingotName) as Material;
             templateIngot.GetComponent<Renderer>().material = ingotMat;
             templateIngot.tag = "ingotPrefab";
-            currentIngot = ingotType;
         }
     }
 
@@ -77,6 +84,8 @@ public class AnvilGame : MonoBehaviour
         }
         var mat = playerInventory.getMaterial(currentIngot);
         print(mat.spend() + " " + mat.getName() + " ingots left");
+        GameObject.FindGameObjectsWithTag("materialQuantity")[5 - currentIngot].GetComponent<TextMeshProUGUI>().text = (mat.getQuantity()+"");
+        print("why");
         AnvilMenu.enabled = false;
     }
 
