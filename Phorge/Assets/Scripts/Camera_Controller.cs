@@ -20,7 +20,7 @@ public class Camera_Controller : MonoBehaviour
     //private readonly Vector3 furnacePosition = new Vector3(0f, 1.243f, 2.885f);
     //private readonly Vector3 anvilPosition = new Vector3Vector3(0.234f, 0.69f, 0f);
 
-    public GameObject AnvilMenu;
+    public Canvas AnvilMenu;
 
 
     public Transform orientation;
@@ -34,7 +34,7 @@ public class Camera_Controller : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        AnvilMenu.SetActive(false);
+        AnvilMenu.enabled = true;
     }
 
     // Update is called once per frame
@@ -57,9 +57,10 @@ public class Camera_Controller : MonoBehaviour
         }//end if-else
     }
 
-    void FreeMove()
+    public void FreeMove()
     {
         SnapToPlayer();
+        ReopenMenus();
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -80,7 +81,7 @@ public class Camera_Controller : MonoBehaviour
         {
             playerCam.enabled = false;
             anvilCam.enabled = true;
-            AnvilMenu.SetActive(true);
+
         }
         else if (taskName == "Furnace")
         {
@@ -96,9 +97,9 @@ public class Camera_Controller : MonoBehaviour
         furnaceCam.enabled = false;
     }
 
-    public void DisableMenus()
+    public void ReopenMenus()
     {
-        AnvilMenu.SetActive(false);
+        AnvilMenu.enabled = true;
     }
 
 }

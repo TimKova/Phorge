@@ -4,23 +4,73 @@ using UnityEngine;
 
 public class Player_Inventory : MonoBehaviour
 {
-    public int copper;
-    public int bronze;
-    public int iron;
-    public int silver;
-    public int gold;
-    public int uranium;
+    public class IngotMaterial
+    {
+        public int quantity;
+        public string name;
+        public float value;
+        public bool unlocked;
+
+        public override string ToString() { return name; }
+
+        public IngotMaterial(string name)
+        {
+            this.name = name;
+            this.quantity = 0;
+            this.value = 0;
+            this.unlocked = false;
+        }
+
+        public IngotMaterial(string name, int quantity)
+        {
+            this.name = name;
+            this.quantity = quantity;
+            this.value = 0;
+            this.unlocked = false;
+        }
+
+        public string getName() { return this.name; }
+        public int getQuantity() { return this.quantity; }
+        public float getValue() { return this.value; }
+        public bool isLocked() { return this.unlocked; }
+
+        public void setName(string name) { this.name = name; }
+        public void setQuantity(int quantity) { this.quantity = quantity; }
+        public void setValue(float value) { this.value = value; }
+        public void unlock() { this.unlocked = true; }
+
+        public int spend()
+        {
+            this.quantity--;
+            return this.quantity;
+        }
+        public int spend(int quant)
+        {
+            this.quantity -= quant;
+            return this.quantity;
+        }
+
+        public int gain()
+        {
+            this.quantity++;
+            return this.quantity;
+        }
+        public int gain(int quant)
+        {
+            this.quantity += quant;
+            return this.quantity;
+        }
+    }
+
+    public List<IngotMaterial> materials = new List<IngotMaterial>();
+    public readonly string[] materialNames = { "Copper", "Bronze", "Iron", "Silver", "Gold", "Uranium" };
 
     public AnvilGame AnvilTask;
     // Start is called before the first frame update
     void Start()
     {
-        copper = 0;
-        bronze = 0;
-        iron = 0;
-        silver = 0;
-        gold = 0;
-        uranium = 0;
+        foreach (string mat in materialNames)
+            materials.Add(new IngotMaterial(mat, 5));
     }
 
     // Update is called once per frame
@@ -29,9 +79,29 @@ public class Player_Inventory : MonoBehaviour
         //if (game)
     }
 
-    void purchaseMetals()
+    public IngotMaterial getMaterial(int matIndex)
     {
-        //TO DO
+        return materials[matIndex];
+    }
+
+    public int useMaterial(int matIndex)
+    {
+        return materials[matIndex].spend();
+    }
+
+    public int useMaterial(int matIndex, int quant)
+    {
+        return materials[matIndex].spend(quant);
+    }
+
+    public int purchaseMaterial(int matIndex)
+    {
+        return materials[matIndex].gain();
+    }
+
+    public int purchaseMaterial(int matIndex, int quant)
+    {
+        return materials[matIndex].gain(quant);
     }
 
     //void 

@@ -8,7 +8,7 @@ public class Player_Manager : MonoBehaviour
 {
     [Header("Attributes")]
     public GameObject player_model;
-    public GameObject camera;
+    //public GameObject camera;
     string[] states = { "free_move", "task_int", "npc_int" };
     public string cur_task;
     public string cur_state;

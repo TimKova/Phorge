@@ -49,20 +49,24 @@ public class State_Manager : MonoBehaviour
     void taskInteraction()
     {
         if (inTaskRange && Input.GetKeyDown(KeyCode.E) && !doingTask)
-        {
-            print("Task Initiated)");
-            doingTask = true;
-            Cursor.lockState = CursorLockMode.Confined;
-
-        }
-
+            startTask();
         if (doingTask && Input.GetKeyDown(KeyCode.Q))
-        {
-            print("Task Terminated");
-            doingTask = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
-        }
+            endTask();
+    }
+
+    public void startTask()
+    {
+        print("Task Initiated)");
+        doingTask = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void endTask()
+    {
+        print("Task Terminated");
+        doingTask = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
     }
 
     void hammerInteraction()

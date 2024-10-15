@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnvilGame : MonoBehaviour
 {
     public GameObject player_manager;
+    public Canvas AnvilMenu;
     private string cur_state;
     public GameObject hammer;
     Animator hammerAnimator;
@@ -12,12 +13,18 @@ public class AnvilGame : MonoBehaviour
     public GameObject anvil;
     const float ingotScale = 2.5f;
     private readonly Vector3 anvilTop = new Vector3(-15.321f, 0.9684f, -11.472f);
-    private readonly Color RED = new Color(1f, 0f, 0f, 1f);
+    private static int currentIngot;
+    //private readonly Color RED = new Color(1f, 0f, 0f, 1f);
+
+    private Player_Inventory playerInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         hammerAnimator = hammer.GetComponent<Animator>();
+        playerInventory = player_manager.GetComponent<Player_Inventory>();
+        
+        currentIngot = -1;
     }
 
     // Update is called once per frame
@@ -35,59 +42,42 @@ public class AnvilGame : MonoBehaviour
         }
     }
 
-    public void SpawnIngot(string ingotType)
+    public void SpawnIngot(int ingotType)
     {
         // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
         // It doesn't appear that the inventory field is updating, even though I think it logically should?
-        Player_Inventory playerinventory;
-        playerinventory = player_manager.GetComponent<Player_Inventory>();
-        if (ingotType == "copper")
+        ClearIngots();
+        if (ingotType < playerInventory.materialNames.Length)
         {
-            if (playerinventory != null)
+            var mat = playerInventory.getMaterial(ingotType);
+            if (mat == null || mat.getQuantity() <= 0)
             {
-                GameObject.FindWithTag("Player").GetComponent<Player_Inventory>().copper = player_manager.GetComponent<Player_Inventory>().copper - 1;
+                print("Not enough of that Material!");
+                return;
             }
+            string ingotName = playerInventory.getMaterial(ingotType).name;
+            GameObject templateIngot = Instantiate(ingotPrefab, anvilTop, Quaternion.identity);
+            templateIngot.transform.localScale = new Vector3(ingotScale, ingotScale, ingotScale);
+            Material ingotMat = Resources.Load(ingotName) as Material;
+            templateIngot.GetComponent<Renderer>().material = ingotMat;
+            templateIngot.tag = "ingotPrefab";
+            currentIngot = ingotType;
         }
-        else if (ingotType == "Bronze")
+    }
+
+    public void ConfirmMaterial()
+    {
+        if (currentIngot < 0)
+            return;
+        if (playerInventory.getMaterial(currentIngot).getQuantity() <= 0)
         {
-            if (playerinventory != null)
-            {
-                playerinventory.bronze = playerinventory.bronze - 1;
-            }
+            ClearIngots();
+            print("Not enough of that Material!");
+            return;
         }
-        else if (ingotType == "Iron")
-        {
-            if (playerinventory != null)
-            {
-                playerinventory.iron = playerinventory.iron - 1;
-            }
-        }
-        else if (ingotType == "Silver")
-        {
-            if (playerinventory != null)
-            {
-                playerinventory.silver = playerinventory.silver - 1;
-            }
-        }
-        else if (ingotType == "Gold")
-        {
-            if (playerinventory != null)
-            {
-                playerinventory.gold = playerinventory.gold - 1;
-            }
-        }
-        else if (ingotType == "Uranium")
-        {
-            if (playerinventory != null)
-            {
-                playerinventory.uranium = playerinventory.uranium - 1;
-            }
-        }
-        GameObject templateIngot = Instantiate(ingotPrefab, anvilTop, Quaternion.identity);
-        templateIngot.transform.localScale = new Vector3(ingotScale, ingotScale, ingotScale);
-        Material ingotMat = Resources.Load(ingotType) as Material;
-        templateIngot.GetComponent<Renderer>().material = ingotMat;
-        templateIngot.tag = "ingotPrefab";
+        var mat = playerInventory.getMaterial(currentIngot);
+        print(mat.spend() + " " + mat.getName() + " ingots left");
+        AnvilMenu.enabled = false;
     }
 
     public void ClearIngots()
