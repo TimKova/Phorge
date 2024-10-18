@@ -40,7 +40,6 @@ public class AnvilGame : MonoBehaviour
         playerInventory = player_manager.GetComponent<Player_Inventory>();
         Countdown.gameObject.SetActive(false);
         anvilStarted = false;
-
         currentIngot = -1;
     }
 
@@ -63,6 +62,7 @@ public class AnvilGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             ClearIngots();
+            hammer.SetActive(false);
         }
     }
 
@@ -103,6 +103,8 @@ public class AnvilGame : MonoBehaviour
         print(mat.spend() + " " + mat.getName() + " ingots left");
         setCount(currentIngot);
         AnvilMenu.enabled = false;
+        Cursor.visible = false;
+        hammer.SetActive(true);
         StartCoroutine(RunMinigame(offsets));
     }
 
@@ -120,6 +122,7 @@ public class AnvilGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             hammerAnimator.SetBool("HammerSwing", true);
+            hammerAnimator.speed = 1.5f;
         }
     }
 

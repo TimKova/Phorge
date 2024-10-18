@@ -14,6 +14,9 @@ public class FurnaceGame : MonoBehaviour
 
     public GameObject player_manager;
     public Canvas FurnaceMenu;
+    public GameObject flameEffect;
+    Vector3 flameScale;
+    float originalFlameMagnitude;
 
     private string cur_state;
     private string cur_task;
@@ -32,7 +35,8 @@ public class FurnaceGame : MonoBehaviour
     {
         //hammerAnimator = hammer.GetComponent<Animator>();
         playerInventory = player_manager.GetComponent<Player_Inventory>();
-        
+        originalFlameMagnitude = flameEffect.transform.localScale.magnitude;
+        flameScale = flameEffect.transform.localScale;
         currentIngot = -1;
     }
 
@@ -53,6 +57,8 @@ public class FurnaceGame : MonoBehaviour
         //{
         //    ClearIngots();
         //}
+        Blow();
+        flameEffect.transform.localScale = flameScale;
         if (Input.GetKeyDown(KeyCode.F))
         {
             ClearIngots();
@@ -115,6 +121,21 @@ public class FurnaceGame : MonoBehaviour
     //        hammerAnimator.SetBool("HammerSwing", true);
     //    }
     //}
+
+    public void Blow()
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            flameScale += new Vector3(0.005f, 0.005f, 0.005f);
+        }
+        else
+        {
+            flameScale -= new Vector3(0.005f, 0.005f, 0.005f);
+        }
+        flameScale.x = Mathf.Clamp(flameScale.x, 0.78f, 1.75f);
+        flameScale.y = Mathf.Clamp(flameScale.y, 1f, 1.5f);
+        flameScale.z = Mathf.Clamp(flameScale.z, 0.21f, 1.75f);
+    }
 
     public void setCount(int matIndex)
     {
