@@ -10,6 +10,7 @@ TagManager:
   - Hammer
   - ingotPrefab
   - materialQuantity
+  - NPC
   layers:
   - Default
   - TransparentFX

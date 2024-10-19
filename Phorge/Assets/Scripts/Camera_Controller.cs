@@ -12,6 +12,7 @@ public class Camera_Controller : MonoBehaviour
     public GameObject anvil_task;
     public GameObject furnace_task;
     public Camera playerCam;
+    public Camera npcCam;
     public Camera anvilCam;
     public Camera furnaceCam;
     public Camera finishCam;
@@ -53,7 +54,7 @@ public class Camera_Controller : MonoBehaviour
         }
         else if (cur_state == "npc_int")
         {
-
+            NPCMove();
         }//end if-else
     }
 
@@ -90,11 +91,19 @@ public class Camera_Controller : MonoBehaviour
         }
     }
 
+    void NPCMove()
+    {
+        playerCam.enabled = false;
+        npcCam.enabled = true;
+    }
+
     public void SnapToPlayer()
     {
         playerCam.enabled = true;
         anvilCam.enabled = false;
         furnaceCam.enabled = false;
+        npcCam.enabled = false;
+        
     }
 
     public void ReopenMenus()

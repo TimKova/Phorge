@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
     public GameObject anvil_task;
     public GameObject furnace_task;
 
+    public GameObject MrItemMan;
     public Transform orientation;
 
     float horizontalInput;
@@ -86,6 +87,10 @@ public class Movement : MonoBehaviour
             transform.position = new Vector3(-12.255f, transform.position.y, -11.847f);
             transform.LookAt(furnace_task.transform.position);
         }
+    }
+    private void NPCMove()
+    {
+        
     }
     private void FreeMove()
     {

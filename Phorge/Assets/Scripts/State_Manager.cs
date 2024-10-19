@@ -12,6 +12,7 @@ public class State_Manager : MonoBehaviour
     public bool inTaskRange;
     bool inNpcRange;
     string taskName;
+    public Canvas npcCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class State_Manager : MonoBehaviour
             state_to_be = "free_move";
         }
 
+        npcInteraction();
         taskInteraction();
         hammerInteraction();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
@@ -67,6 +69,28 @@ public class State_Manager : MonoBehaviour
         doingTask = false;
         Cursor.lockState = CursorLockMode.Locked;
         //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
+    }
+
+    void npcInteraction()
+    {
+        if (inNpcRange && Input.GetKeyDown(KeyCode.E))
+            startNpcInt();
+        if (inNpcRange && Input.GetKeyDown(KeyCode.Q))
+            endNpcInt();
+    }
+    public void startNpcInt()
+    {
+        print("Interaction Engaged");
+        npc = true;
+        npcCanvas.enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void endNpcInt()
+    {
+        print("Interaction Terminated");
+        npc = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void hammerInteraction()
