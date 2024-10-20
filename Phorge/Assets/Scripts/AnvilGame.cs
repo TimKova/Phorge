@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 
 
@@ -179,6 +180,16 @@ public class AnvilGame : MonoBehaviour
             Countdown.gameObject.SetActive(false);
         }
         county.text = ("POUNDING COMPLETE!");
+        yield return new WaitForSeconds(1);
+        if (resultQuality < 0.50)
+        {
+            county.text = ("You have failed to Phorge your item!");
+        }
+        else 
+        {
+            county.text = ("Your item's quality was: " + (int)(resultQuality * 100) + "%");
+        }
+        resultQuality = 0;
         Countdown.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         Countdown.gameObject.SetActive(false);
