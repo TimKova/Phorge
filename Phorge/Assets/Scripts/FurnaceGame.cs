@@ -14,8 +14,10 @@ public class FurnaceGame : MonoBehaviour
 
     public GameObject player_manager;
     public Canvas FurnaceMenu;
+    public GameObject Blower;
     public GameObject flameEffect;
     Vector3 flameScale;
+    float blowerPressCoefficient;
     float originalFlameMagnitude;
 
     private string cur_state;
@@ -38,28 +40,29 @@ public class FurnaceGame : MonoBehaviour
         originalFlameMagnitude = flameEffect.transform.localScale.magnitude;
         flameScale = flameEffect.transform.localScale;
         currentIngot = -1;
+        blowerPressCoefficient = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //SwingHammer();
-        //cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
-        //if(cur_state == "task_int")
-        //{
-        //    cur_task = player_manager.GetComponent<Player_Manager>().get_cur_task();
-        //    if(cur_task == "Anvil")
-        //    {
-        //        SwingHammer();
-        //    }
-        //}
-        //if (cur_state == "free_move")
-        //{
-        //    ClearIngots();
-        //}
-        Blow();
+
+        cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
+        if (cur_state == "task_int")
+        {
+            cur_task = player_manager.GetComponent<Player_Manager>().get_cur_task();
+            if (cur_task == "Furnace")
+            {
+                Blow();
+            }
+        }
+        if (cur_state == "free_move")
+        {
+            ClearIngots();
+        }
+        Blower.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, blowerPressCoefficient);
         flameEffect.transform.localScale = flameScale;
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ClearIngots();
         }
@@ -122,21 +125,34 @@ public class FurnaceGame : MonoBehaviour
     //    }
     //}
 
+    bool pressable = false;//Makes sure that the player can only press the blow 1 time per click regardless of how far they push it down
     public void Blow()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        Cursor.visible = false;
+        if (Input.GetKey(KeyCode.Mouse0) && blowerPressCoefficient != 100f && pressable)
         {
-            flameScale += new Vector3(0.005f, 0.005f, 0.005f);
+            flameScale += new Vector3(0.003f, 0.003f, 0.003f);
+            blowerPressCoefficient += 1f;
+            if(blowerPressCoefficient >= 100f)
+            {
+                pressable = false;
+            }
         }
         else
         {
-            flameScale -= new Vector3(0.005f, 0.005f, 0.005f);
+            pressable = false;
+            flameScale -= new Vector3(0.0006f, 0.0006f, 0.0006f);
+            blowerPressCoefficient -= 0.5f;
+            if (blowerPressCoefficient <= 0f)
+            {
+                pressable = true;
+            }
         }
+        blowerPressCoefficient = Mathf.Clamp(blowerPressCoefficient, 0, 100); 
         flameScale.x = Mathf.Clamp(flameScale.x, 0.78f, 1.75f);
         flameScale.y = Mathf.Clamp(flameScale.y, 1f, 1.5f);
         flameScale.z = Mathf.Clamp(flameScale.z, 0.21f, 1.75f);
     }
-
     public void setCount(int matIndex)
     {
         var matName = Player_Inventory.materialNames[matIndex];

@@ -135,6 +135,7 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         jumpInput = Input.GetKeyDown(KeyCode.Space);
+
     }
 
     private void SpeedControl()

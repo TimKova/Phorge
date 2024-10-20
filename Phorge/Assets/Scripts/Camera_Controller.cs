@@ -95,6 +95,7 @@ public class Camera_Controller : MonoBehaviour
         {
             playerCam.enabled = false;
             furnaceCam.enabled = true;
+            
         }
     }
 
