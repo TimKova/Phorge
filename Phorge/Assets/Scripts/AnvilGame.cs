@@ -69,7 +69,7 @@ public class AnvilGame : MonoBehaviour
         //{
         //    ClearIngots();
         //}
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ClearIngots();
             hammer.SetActive(false);
@@ -113,8 +113,6 @@ public class AnvilGame : MonoBehaviour
         print(mat.spend() + " " + mat.getName() + " ingots left");
         setCount(currentIngot);
         AnvilMenu.enabled = false;
-        Cursor.visible = false;
-        hammer.SetActive(true);
         StartCoroutine(RunMinigame(offsets));
     }
 
@@ -155,6 +153,8 @@ public class AnvilGame : MonoBehaviour
 
     IEnumerator RunMinigame(float[] offsetList)
     {
+        
+        hammer.SetActive(true);
         Countdown.gameObject.SetActive(true);
         anvilStarted = true;
         var county = Countdown.gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
@@ -182,6 +182,7 @@ public class AnvilGame : MonoBehaviour
         Countdown.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         Countdown.gameObject.SetActive(false);
+        hammer.SetActive(false);
     }
 
     public void setCount(int matIndex)
