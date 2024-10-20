@@ -17,11 +17,16 @@ public class AnvilGame : MonoBehaviour
     public GameObject player_manager;
     public Canvas AnvilMenu;
     public Canvas Countdown;
+    //private GameObject forShowHammer;
 
 
     private string cur_state;
     private string cur_task;
     private bool anvilStarted;
+    private bool canStoreTime;
+    private float playerHammerTime;
+    private float hammerTimeStart;
+    public float resultQuality;
 
     public GameObject hammer;
     Animator hammerAnimator;
@@ -37,10 +42,14 @@ public class AnvilGame : MonoBehaviour
     void Start()
     {
         hammerAnimator = hammer.GetComponent<Animator>();
+        //forShowHammer = GameObject.FindGameObjectsWithTag('')
         playerInventory = player_manager.GetComponent<Player_Inventory>();
         Countdown.gameObject.SetActive(false);
         anvilStarted = false;
+        canStoreTime = false;
         currentIngot = -1;
+        resultQuality = 0;
+        playerInventory.listMerchantGoods();
     }
 
     // Update is called once per frame
@@ -53,6 +62,7 @@ public class AnvilGame : MonoBehaviour
             if (anvilStarted)
             {
                 SwingHammer();
+
             }
         }
         //if (cur_state == "free_move")
@@ -71,7 +81,7 @@ public class AnvilGame : MonoBehaviour
         // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
         // It doesn't appear that the inventory field is updating, even though I think it logically should?
         ClearIngots();
-        if (ingotType < playerInventory.materialNames.Length)
+        if (ingotType < Player_Inventory.materialNames.Length)
         {
             currentIngot = ingotType;
             var mat = playerInventory.getMaterial(ingotType);
@@ -115,12 +125,29 @@ public class AnvilGame : MonoBehaviour
             Destroy(ingot);
         }
     }
-     
+
     public void SwingHammer()
     {
         hammer.transform.parent.position = new Vector3(hammer.transform.position.x, hammer.transform.position.y, (Input.mousePosition.x / 2560f * 2) - 12.319f);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            if (canStoreTime)
+            {
+                playerHammerTime = Time.time;
+                canStoreTime = false;
+                float timeDif = Mathf.Abs(playerHammerTime - hammerTimeStart);
+                print("You were " + timeDif + " seconds off");
+                if (timeDif < 1)
+                {
+                    print("Hit!");
+                    resultQuality += 1f / (float)offsets.Length;
+                    print("Item quality = " + resultQuality);
+                }
+                else
+                {
+                    print("MISS! (Womp womp)");
+                }
+            }
             hammerAnimator.SetBool("HammerSwing", true);
             hammerAnimator.speed = 1.5f;
         }
@@ -130,7 +157,6 @@ public class AnvilGame : MonoBehaviour
     {
         Countdown.gameObject.SetActive(true);
         anvilStarted = true;
-        Time hitStamp;
         var county = Countdown.gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
         for (int c = 0; c < 3; c++)
         {
@@ -138,7 +164,7 @@ public class AnvilGame : MonoBehaviour
             print(READY_PHRASES[c]);
             county.text = READY_PHRASES[c];
             yield return new WaitForSeconds(1);
-            print(Time.time);
+            //print(Time.time);
         }
         Countdown.gameObject.SetActive(false);
         int tempy = 0;
@@ -147,6 +173,8 @@ public class AnvilGame : MonoBehaviour
             county.text = ("HIT " + tempy++);
             yield return new WaitForSeconds(offset);
             Countdown.gameObject.SetActive(true);
+            canStoreTime = true;
+            hammerTimeStart = Time.time;
             yield return new WaitForSeconds(1);
             Countdown.gameObject.SetActive(false);
         }
@@ -158,7 +186,7 @@ public class AnvilGame : MonoBehaviour
 
     public void setCount(int matIndex)
     {
-        var matName = playerInventory.materialNames[matIndex];
+        var matName = Player_Inventory.materialNames[matIndex];
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();

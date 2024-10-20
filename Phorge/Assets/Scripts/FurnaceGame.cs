@@ -71,7 +71,7 @@ public class FurnaceGame : MonoBehaviour
         // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
         // It doesn't appear that the inventory field is updating, even though I think it logically should?
         ClearIngots();
-        if (ingotType < playerInventory.materialNames.Length)
+        if (ingotType < Player_Inventory.materialNames.Length)
         {
             currentIngot = ingotType;
             var mat = playerInventory.getMaterial(ingotType);
@@ -139,7 +139,7 @@ public class FurnaceGame : MonoBehaviour
 
     public void setCount(int matIndex)
     {
-        var matName = playerInventory.materialNames[matIndex];
+        var matName = Player_Inventory.materialNames[matIndex];
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();

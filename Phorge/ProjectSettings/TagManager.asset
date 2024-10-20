@@ -11,6 +11,7 @@ TagManager:
   - ingotPrefab
   - materialQuantity
   - NPC
+  - MenuBody
   layers:
   - Default
   - TransparentFX

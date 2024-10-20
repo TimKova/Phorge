@@ -17,11 +17,13 @@ public class Camera_Controller : MonoBehaviour
     public Camera furnaceCam;
     public Camera finishCam;
     string taskName;
+    public bool hasRelevantMenuOpened;
 
     //private readonly Vector3 furnacePosition = new Vector3(0f, 1.243f, 2.885f);
     //private readonly Vector3 anvilPosition = new Vector3Vector3(0.234f, 0.69f, 0f);
 
     public Canvas AnvilMenu;
+    public Canvas MerchantMenu;
 
 
     public Transform orientation;
@@ -35,7 +37,7 @@ public class Camera_Controller : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        AnvilMenu.enabled = true;
+        hasRelevantMenuOpened = false;
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class Camera_Controller : MonoBehaviour
     public void FreeMove()
     {
         SnapToPlayer();
-        ReopenMenus();
+        CloseMenus();
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -82,8 +84,13 @@ public class Camera_Controller : MonoBehaviour
         {
             playerCam.enabled = false;
             anvilCam.enabled = true;
-
+            if (!hasRelevantMenuOpened)
+            {
+                AnvilMenu.enabled = true;
+                hasRelevantMenuOpened = true;
+            }
         }
+
         else if (taskName == "Furnace")
         {
             playerCam.enabled = false;
@@ -95,6 +102,7 @@ public class Camera_Controller : MonoBehaviour
     {
         playerCam.enabled = false;
         npcCam.enabled = true;
+        MerchantMenu.enabled = true;
     }
 
     public void SnapToPlayer()
@@ -103,12 +111,14 @@ public class Camera_Controller : MonoBehaviour
         anvilCam.enabled = false;
         furnaceCam.enabled = false;
         npcCam.enabled = false;
+        hasRelevantMenuOpened = false;
         
     }
 
-    public void ReopenMenus()
+    public void CloseMenus()
     {
-        AnvilMenu.enabled = true;
+        AnvilMenu.enabled = false;
+        MerchantMenu.enabled = false;
     }
 
 }
