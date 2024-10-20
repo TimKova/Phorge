@@ -32,6 +32,8 @@ public class AnvilGame : MonoBehaviour
     public GameObject hammer;
     Animator hammerAnimator;
     public GameObject ingotPrefab;
+    float damage;
+    float squish;
     public GameObject anvil;
 
     private static int currentIngot;
@@ -63,7 +65,7 @@ public class AnvilGame : MonoBehaviour
             if (anvilStarted)
             {
                 SwingHammer();
-
+                changeIngotAppearance();
             }
         }
         //if (cur_state == "free_move")
@@ -77,6 +79,7 @@ public class AnvilGame : MonoBehaviour
         }
     }
 
+    GameObject templateIngot;
     public void SpawnIngot(int ingotType)
     {
         // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
@@ -92,7 +95,7 @@ public class AnvilGame : MonoBehaviour
                 return;
             }
             string ingotName = playerInventory.getMaterial(ingotType).name;
-            GameObject templateIngot = Instantiate(ingotPrefab, ANVIL_TOP, Quaternion.identity);
+            templateIngot = Instantiate(ingotPrefab, ANVIL_TOP, Quaternion.identity);
             templateIngot.transform.localScale = new Vector3(INGOT_SCALE, INGOT_SCALE, INGOT_SCALE);
             Material ingotMat = Resources.Load(ingotName) as Material;
             templateIngot.GetComponent<Renderer>().material = ingotMat;
@@ -140,6 +143,7 @@ public class AnvilGame : MonoBehaviour
                 {
                     print("Hit!");
                     resultQuality += 1f / (float)offsets.Length;
+                    damage = resultQuality * 10;
                     print("Item quality = " + resultQuality);
                 }
                 else
@@ -149,6 +153,7 @@ public class AnvilGame : MonoBehaviour
             }
             hammerAnimator.SetBool("HammerSwing", true);
             hammerAnimator.speed = 1.5f;
+            squish += 10;
         }
     }
 
@@ -190,10 +195,18 @@ public class AnvilGame : MonoBehaviour
             county.text = ("Your item's quality was: " + (int)(resultQuality * 100) + "%");
         }
         resultQuality = 0;
+        squish = 0;
+        damage = 0;
         Countdown.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         Countdown.gameObject.SetActive(false);
         hammer.SetActive(false);
+    }
+
+    public void changeIngotAppearance()
+    {
+        templateIngot.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, squish);
+        templateIngot.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(1, damage);
     }
 
     public void setCount(int matIndex)
