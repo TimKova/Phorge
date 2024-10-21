@@ -91,6 +91,9 @@ public class Camera_Controller : MonoBehaviour
             if (!hasRelevantMenuOpened)
             {
                 anvilGame.refreshQuantities();
+                //added this here so that anytime you open the menu the cursor appears, but once the game starts the cursor goes away
+                //It's kinda scuffed rn but we can make it better if/when we refactor the code
+                Cursor.visible = true;
                 AnvilMenu.enabled = true;
                 hasRelevantMenuOpened = true;
             }

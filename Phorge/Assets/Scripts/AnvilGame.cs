@@ -220,7 +220,9 @@ public class AnvilGame : MonoBehaviour
                     canStillScore = false;
                     hasMissed = true;
                     print("MISS! (Bad Swing)");
-                    damage += 2f / (float)offsets.Length;
+                    //the ingot takes damage and squishes even if you miss the timing of the swing since the player is still "hitting" the ingot
+                    damage += 100f / (float)offsets.Length;
+                    squish += 100f / (float)offsets.Length;
                     timingIndicator.color = Color.red;
                     (hitIcons[currentStriker].GetComponentAtIndex(1) as SpriteRenderer).color = Color.red;
                     NowText.color = Color.red;
@@ -242,7 +244,10 @@ public class AnvilGame : MonoBehaviour
     {
         // Show relevant assets (rhythm game canvas, hammer, etc.)
         AnvilRhythmGUI.enabled = true;
+        Cursor.visible = false;
         hammer.SetActive(true);
+        squish = 0f;
+        damage = 0f;
         Countdown.gameObject.SetActive(true);
         anvilStarted = true;
 
@@ -283,14 +288,16 @@ public class AnvilGame : MonoBehaviour
             county.text = ("Your item's quality was: " + (int)(resultQuality * 100) + "%");
         }
         resultQuality = 0;
-        squish = 0;
-        damage = 0;
         // Flash results
         Countdown.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         // Close menus and destroy hit icon prefabs
         Countdown.gameObject.SetActive(false);
         hammer.SetActive(false);
+        //added stopGame() so that the player is automatically booted from the anvil once they are done
+        //Also added stopGame() because previously the player could keep clicking and stretch the ingot into infinity
+        stopGame();
+        ClearIngots();
         foreach (GameObject hitIcon in hitIcons)
             Destroy(hitIcon);
         hitIcons = new List<GameObject>();
