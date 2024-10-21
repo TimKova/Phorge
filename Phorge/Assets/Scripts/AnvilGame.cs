@@ -244,7 +244,7 @@ public class AnvilGame : MonoBehaviour
     {
         // Show relevant assets (rhythm game canvas, hammer, etc.)
         AnvilRhythmGUI.enabled = true;
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         hammer.SetActive(true);
         squish = 0f;
         damage = 0f;
