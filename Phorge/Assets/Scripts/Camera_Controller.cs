@@ -24,6 +24,8 @@ public class Camera_Controller : MonoBehaviour
 
     public Canvas AnvilMenu;
     public Canvas MerchantMenu;
+    private AnvilGame anvilGame;
+    private Merchant merchantManager;
 
 
     public Transform orientation;
@@ -38,6 +40,8 @@ public class Camera_Controller : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         hasRelevantMenuOpened = false;
+        anvilGame = anvil_task.GetComponent<AnvilGame>();
+        merchantManager = MerchantMenu.GetComponent<Merchant>();
     }
 
     // Update is called once per frame
@@ -86,6 +90,7 @@ public class Camera_Controller : MonoBehaviour
             anvilCam.enabled = true;
             if (!hasRelevantMenuOpened)
             {
+                anvilGame.refreshQuantities();
                 AnvilMenu.enabled = true;
                 hasRelevantMenuOpened = true;
             }
@@ -104,6 +109,12 @@ public class Camera_Controller : MonoBehaviour
         playerCam.enabled = false;
         npcCam.enabled = true;
         MerchantMenu.enabled = true;
+        if (!hasRelevantMenuOpened)
+        {
+            merchantManager.refreshQuantities();
+            hasRelevantMenuOpened = true;
+        }
+
     }
 
     public void SnapToPlayer()

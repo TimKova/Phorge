@@ -42,6 +42,8 @@ public class Merchant : MonoBehaviour
             title.text = name;
 
             var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+            currentAmount.gameObject.tag = "materialQuantity";
+            currentAmount.gameObject.name = "materialQuantity" + c;
             currentAmount.text = playerInventory.materials[c].quantity+"";
             
             buttons.Add(templateButton);
@@ -66,5 +68,29 @@ public class Merchant : MonoBehaviour
         print("you now have $" + Player_Inventory.money);
         //return price;
         playerInventory.purchaseMaterial(index);
+        setCount(index);
+    }
+
+    public void refreshQuantities()
+    {
+        for (int i = 0; i < Player_Inventory.numMaterials; i++)
+        {
+            setCount(i);
+        }
+    }
+
+    
+    public void setCount(int matIndex)
+    {
+        print("BOOYAH");
+        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
+        {
+            var textComp = quant.GetComponent<TextMeshProUGUI>();
+            if (textComp.name == ("materialQuantity"+matIndex))
+            {
+                textComp.text = (playerInventory.getMaterial(matIndex).getQuantity() + "");
+            }
+        }
+        //return materials[matIndex].getQuantity();
     }
 }
