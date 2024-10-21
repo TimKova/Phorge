@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 
 
@@ -14,9 +15,14 @@ public class FurnaceGame : MonoBehaviour
 
     public GameObject player_manager;
     public Canvas FurnaceMenu;
+
+    public Slider TemperatureSlider;
     public GameObject Blower;
     public GameObject flameEffect;
     Vector3 flameScale;
+    float maxFlameMagnitude;
+    float minFlameMagnitude;
+
     float blowerPressCoefficient;
     float originalFlameMagnitude;
 
@@ -41,6 +47,8 @@ public class FurnaceGame : MonoBehaviour
         flameScale = flameEffect.transform.localScale;
         currentIngot = -1;
         blowerPressCoefficient = 0f;
+        maxFlameMagnitude = Vector3.Magnitude(new Vector3(1.57f,1.5f,1.75f));
+        minFlameMagnitude = flameScale.magnitude;
     }
 
     // Update is called once per frame
@@ -53,6 +61,7 @@ public class FurnaceGame : MonoBehaviour
             cur_task = player_manager.GetComponent<Player_Manager>().get_cur_task();
             if (cur_task == "Furnace")
             {
+                TemperatureSlider.gameObject.SetActive(true);
                 Blow();
             }
         }
@@ -62,9 +71,11 @@ public class FurnaceGame : MonoBehaviour
         }
         Blower.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, blowerPressCoefficient);
         flameEffect.transform.localScale = flameScale;
+        setTempSlider();
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ClearIngots();
+            TemperatureSlider.gameObject.SetActive(false);
         }
     }
 
@@ -153,6 +164,18 @@ public class FurnaceGame : MonoBehaviour
         flameScale.y = Mathf.Clamp(flameScale.y, 1f, 1.5f);
         flameScale.z = Mathf.Clamp(flameScale.z, 0.21f, 1.75f);
     }
+
+    public void setTempSlider()
+    {
+        float heatAsPercentage = 0f;
+        float range = maxFlameMagnitude - minFlameMagnitude;
+        float curFlameMagnitude = flameScale.magnitude;
+        heatAsPercentage = (curFlameMagnitude - minFlameMagnitude)/range;
+
+        TemperatureSlider.value = heatAsPercentage;
+    }
+    
+
     public void setCount(int matIndex)
     {
         var matName = Player_Inventory.materialNames[matIndex];

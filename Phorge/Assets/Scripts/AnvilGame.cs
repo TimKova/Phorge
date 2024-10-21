@@ -20,7 +20,6 @@ public class AnvilGame : MonoBehaviour
     public Canvas Countdown;
     //private GameObject forShowHammer;
 
-
     private string cur_state;
     private string cur_task;
     private bool anvilStarted;
@@ -68,10 +67,6 @@ public class AnvilGame : MonoBehaviour
                 changeIngotAppearance();
             }
         }
-        //if (cur_state == "free_move")
-        //{
-        //    ClearIngots();
-        //}
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ClearIngots();
@@ -154,6 +149,8 @@ public class AnvilGame : MonoBehaviour
             hammerAnimator.SetBool("HammerSwing", true);
             hammerAnimator.speed = 1.5f;
             squish += 10;
+            squish = Mathf.Clamp(squish, 0f, 100f);
+            damage = Mathf.Clamp(squish, 0f, 100f);
         }
     }
 

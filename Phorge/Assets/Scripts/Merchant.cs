@@ -41,9 +41,9 @@ public class Merchant : MonoBehaviour
             var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
             title.text = name;
 
-            //var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            //currentAmount.text = playerInventory.materials[c].quantity+"";
-
+            var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+            currentAmount.text = playerInventory.materials[c].quantity+"";
+            
             buttons.Add(templateButton);
             //Material ingotMat = Resources.Load(ingotName) as Material;
             //templateIngot.GetComponent<Renderer>().material = ingotMat;
@@ -65,5 +65,6 @@ public class Merchant : MonoBehaviour
         Player_Inventory.money -= price;
         print("you now have $" + Player_Inventory.money);
         //return price;
+        playerInventory.purchaseMaterial(index);
     }
 }

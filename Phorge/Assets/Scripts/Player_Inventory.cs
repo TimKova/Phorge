@@ -90,6 +90,8 @@ public class Player_Inventory : MonoBehaviour
     public static readonly int numMaterials = materialNames.Length;
     public static bool[] merchantGoods = new bool[materialNames.Length];
     public AnvilGame AnvilTask;
+
+    public Canvas moneyUI;
     public static float money;
     //public Canvas AnvilMenu;
 
@@ -112,6 +114,7 @@ public class Player_Inventory : MonoBehaviour
     void Update()
     {
         //if (game)
+        updateMoneyUI();
     }
 
     public IngotMaterial getMaterial(int matIndex)
@@ -146,6 +149,12 @@ public class Player_Inventory : MonoBehaviour
             if (merchantGoods[c])
                 print("Merchant sells" + materials[c].getName() + " for $" + materials[c].getPrice());
         }
+    }
+
+    public void updateMoneyUI()
+    {
+        var moneyText = moneyUI.gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
+        moneyText.text = "$" + money.ToString();
     }
 
     public int setCount(int matIndex)
