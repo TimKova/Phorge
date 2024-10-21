@@ -3381,14 +3381,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_manager: {fileID: 121407110}
+  hammer: {fileID: 579011250}
+  anvil: {fileID: 303893596}
   AnvilRhythmGUI: {fileID: 82396721}
   AnvilMenu: {fileID: 121195844}
   Countdown: {fileID: 750536055}
-  resultQuality: 0
-  hammer: {fileID: 579011250}
   ingotPrefab: {fileID: 919132149155446097, guid: 8b70668c15ee2fd44a045f96e7f4ff1c, type: 3}
-  anvil: {fileID: 303893596}
   hitIconPrefab: {fileID: 6880715200927494431, guid: 1dbe6069724df0445a713b68501d69d8, type: 3}
+  resultQuality: 0
 --- !u!1001 &304115540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6302,7 +6302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.102015704, y: 37.411804}
+  m_AnchoredPosition: {x: -0.102015704, y: 37.411865}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &629914601
@@ -13357,6 +13357,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7918335002988649766, guid: 30032e3ffb7451a46979a2ee46fcd643, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a3fadbf7118177444b4c1b56adf83c55, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 30032e3ffb7451a46979a2ee46fcd643, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00698ba7b7241bb4b87f031a1e7786d1, type: 2}
     - target: {fileID: -1538112130698044685, guid: 30032e3ffb7451a46979a2ee46fcd643, type: 3}
       propertyPath: m_LocalScale.y
       value: 100
@@ -13394,9 +13402,17 @@ PrefabInstance:
       value: 0.0070124813
       objectReference: {fileID: 0}
     - target: {fileID: 1602564128540957456, guid: 30032e3ffb7451a46979a2ee46fcd643, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62720d68441adef4483c3663a95d5702, type: 2}
+    - target: {fileID: 1602564128540957456, guid: 30032e3ffb7451a46979a2ee46fcd643, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: 30032e3ffb7451a46979a2ee46fcd643, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a3fadbf7118177444b4c1b56adf83c55, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
