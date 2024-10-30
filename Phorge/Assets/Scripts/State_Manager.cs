@@ -7,7 +7,7 @@ public class State_Manager : MonoBehaviour
 {
     public GameObject player_manager;
     string state_to_be;
-    public bool doingTask, inHammerRange;
+    public bool doingTask, inHammerRange, pause;
     bool npc;
     public bool inTaskRange;
     bool inNpcRange;
@@ -17,6 +17,7 @@ public class State_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pause = false;
         doingTask = false;
         npc = false;
         state_to_be = "free_move";
@@ -35,6 +36,10 @@ public class State_Manager : MonoBehaviour
         {
             state_to_be = "npc_int";
         }
+        else if (pause)
+        {
+            Time.timeScale = 0;
+        }
         else
         {
             state_to_be = "free_move";
@@ -43,6 +48,7 @@ public class State_Manager : MonoBehaviour
         npcInteraction();
         taskInteraction();
         hammerInteraction();
+        pauseState();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
         //print(state_to_be);
@@ -58,14 +64,14 @@ public class State_Manager : MonoBehaviour
 
     public void startTask()
     {
-        print("Task Initiated)");
+        //print("Task Initiated)");
         doingTask = true;
         Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void endTask()
     {
-        print("Task Terminated");
+        //print("Task Terminated");
         doingTask = false;
         Cursor.lockState = CursorLockMode.Locked;
         //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
@@ -80,7 +86,7 @@ public class State_Manager : MonoBehaviour
     }
     public void startNpcInt()
     {
-        print("Interaction Engaged");
+        //print("Interaction Engaged");
         npc = true;
         npcCanvas.enabled = false;
         Cursor.lockState = CursorLockMode.Confined;
@@ -88,16 +94,29 @@ public class State_Manager : MonoBehaviour
 
     public void endNpcInt()
     {
-        print("Interaction Terminated");
+        //print("Interaction Terminated");
         npc = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    private void pauseState()
+    {
+        if (!pause && Input.GetKeyDown(KeyCode.Escape)){
+            state_to_be = "pause";
+            pause = true;
+        }else if(pause && Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause = false;
+            Time.timeScale = 1;
+        }
+
+    }//end pauseState
 
     void hammerInteraction()
     {
         if (inHammerRange && Input.GetKeyDown(KeyCode.Q))
         {
-            print("attemping item pickup");
+            //print("attemping item pickup");
             GameObject hammer = GameObject.FindWithTag("Hammer");
             GameObject hands = GameObject.FindWithTag("Hands");
             GameObject test = GameObject.FindWithTag("Test");
@@ -118,11 +137,11 @@ public class State_Manager : MonoBehaviour
         {
             inTaskRange = true;
             taskName = other.name;
-            print("In Task Range of " + taskName);
+            //print("In Task Range of " + taskName);
         }
         else if (other.gameObject.tag == "Hammer")
         {
-            print("In Range of Hammer");
+            //print("In Range of Hammer");
             inHammerRange = true;
         }
         else if (other.gameObject.tag == "NPC")
@@ -136,7 +155,7 @@ public class State_Manager : MonoBehaviour
     {
         if (other.gameObject.tag == "Task") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            print("Out of Task Range");
+            //print("Out of Task Range");
             inTaskRange = false;
 
         }
@@ -146,7 +165,7 @@ public class State_Manager : MonoBehaviour
         }
         else if (other.gameObject.tag == "Door")
         {
-            print("Love is an open door");
+            //print("Love is an open door");
             other.gameObject.transform.Rotate(0f, 90f, 0f, Space.Self);
         }//end if-else
 

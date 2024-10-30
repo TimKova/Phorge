@@ -44,7 +44,7 @@ public class Merchant : MonoBehaviour
             var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
             currentAmount.gameObject.tag = "materialQuantity";
             currentAmount.gameObject.name = "materialQuantity" + c;
-            currentAmount.text = playerInventory.materials[c].quantity+"";
+            currentAmount.text = playerInventory.ingots[c].getQuantity()+"";
             
             buttons.Add(templateButton);
             //Material ingotMat = Resources.Load(ingotName) as Material;
@@ -62,8 +62,8 @@ public class Merchant : MonoBehaviour
     public void buyUp(int index)
     {
         print(index);
-        float price = playerInventory.materials[index].getPrice();
-        print("Buying " + playerInventory.materials[index].getName() + " for " + price);
+        float price = playerInventory.ingots[index].getPrice();
+        print("Buying " + playerInventory.ingots[index].getName() + " for " + price);
         Player_Inventory.money -= price;
         print("you now have $" + Player_Inventory.money);
         //return price;
@@ -82,7 +82,7 @@ public class Merchant : MonoBehaviour
     
     public void setCount(int matIndex)
     {
-        print("BOOYAH");
+        //print("BOOYAH");
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();

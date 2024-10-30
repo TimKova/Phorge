@@ -3,87 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Player_Inventory : MonoBehaviour
+public class Player_Inventory : MonoBehaviour, IDataPersistence
 {
-
-    public class IngotMaterial
-    {
-        public int quantity;
-        public string name;
-        public float price;
-        public bool unlocked;
-
-        public override string ToString() { return name; }
-
-        public IngotMaterial(string name)
-        {
-            this.name = name;
-            this.quantity = 0;
-            this.price = 0;
-            this.unlocked = true;
-        }
-
-        public IngotMaterial(string name, int quantity)
-        {
-            this.name = name;
-            this.quantity = quantity;
-            this.price = 0;
-            this.unlocked = true;
-        }
-
-        public IngotMaterial(string name, int quantity, float price)
-        {
-            this.name = name;
-            this.quantity = quantity;
-            this.price = price;
-            this.unlocked = true;
-        }
-
-        public IngotMaterial(string name, int quantity, float price, bool unlocked)
-        {
-            this.name = name;
-            this.quantity = quantity;
-            this.price = price;
-            this.unlocked = unlocked;
-        }
-
-
-        public string getName() { return this.name; }
-        public int getQuantity() { return this.quantity; }
-        public float getPrice() { return this.price; }
-        public bool isUnlocked() { return this.unlocked; }
-
-        public void setName(string name) { this.name = name; }
-        public void setQuantity(int quantity) { this.quantity = quantity; }
-        public void setPrice(float value) { this.price = value; }
-        public void unlock() { this.unlocked = true; }
-
-        public int spend()
-        {
-            this.quantity--;
-            return this.quantity;
-        }
-        public int spend(int quant)
-        {
-            this.quantity -= quant;
-            return this.quantity;
-        }
-
-        public int gain()
-        {
-            this.quantity++;
-            return this.quantity;
-        }
-        public int gain(int quant)
-        {
-            this.quantity += quant;
-            return this.quantity;
-        }
-    }
     public const bool LOCKED = false;
     public const bool UNLOCKED = true;
+    
+    //the following 3 lists store all the materials that the player has in their inventory.
+    //it's important to remember that one instance of each object stores the quantity
+    //that the player has of the object, so there shouldn't be any repeat items in these lists
+    public List<IngotMaterial> ingots = new List<IngotMaterial>();
+    public List<OreMaterial> ores = new List<OreMaterial>();
+    public List<Weapon> weapons = new List<Weapon>();
 
-    public List<IngotMaterial> materials = new List<IngotMaterial>();
     public static readonly string[] materialNames = { "Copper", "Bronze", "Iron", "Silver", "Gold", "Uranium" };
     public float[] materialBasePrices = { 1f, 2f, 3f, 4f, 5f, 6f };
     public bool[] materialsUnlocked = { UNLOCKED, LOCKED, LOCKED, LOCKED, UNLOCKED, UNLOCKED };
@@ -102,7 +33,7 @@ public class Player_Inventory : MonoBehaviour
         {
             IngotMaterial mat = new IngotMaterial(materialNames[c], c + 2, materialBasePrices[c], materialsUnlocked[c]);
             // Save me ig?
-            materials.Add(mat);
+            ingots.Add(mat);
             merchantGoods[c] = mat.isUnlocked();
             print(materialNames[c]);
             setCount(c);
@@ -117,29 +48,39 @@ public class Player_Inventory : MonoBehaviour
         updateMoneyUI();
     }
 
+    //GameData Methods------------------------------------------
+    public void LoadData(GameData data)
+    {
+        money = data.money;
+    }
+    public void SaveData(ref GameData data)
+    {
+        data.money = money;
+    }
+
     public IngotMaterial getMaterial(int matIndex)
     {
-        return materials[matIndex];
+        return ingots[matIndex];
     }
 
     public int useMaterial(int matIndex)
     {
-        return materials[matIndex].spend();
+        return ingots[matIndex].spend();
     }
 
     public int useMaterial(int matIndex, int quant)
     {
-        return materials[matIndex].spend(quant);
+        return ingots[matIndex].spend(quant);
     }
 
     public int purchaseMaterial(int matIndex)
     {
-        return materials[matIndex].gain();
+        return ingots[matIndex].gain();
     }
 
     public int purchaseMaterial(int matIndex, int quant)
     {
-        return materials[matIndex].gain(quant);
+        return ingots[matIndex].gain(quant);
     }
 
     public void listMerchantGoods()
@@ -147,7 +88,7 @@ public class Player_Inventory : MonoBehaviour
         for(int c = 0;c<numMaterials; c++)
         {
             if (merchantGoods[c])
-                print("Merchant sells" + materials[c].getName() + " for $" + materials[c].getPrice());
+                print("Merchant sells" + ingots[c].getName() + " for $" + ingots[c].getPrice());
         }
     }
 
@@ -159,15 +100,15 @@ public class Player_Inventory : MonoBehaviour
 
     public int setCount(int matIndex)
     {
-        var matName = materials[matIndex].getName();
+        var matName = ingots[matIndex].getName();
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == ( matName + " Quant")){
-               textComp.text = (materials[matIndex].getQuantity() + "");
+               textComp.text = (ingots[matIndex].getQuantity() + "");
             }
         }
-        return materials[matIndex].getQuantity();
+        return ingots[matIndex].getQuantity();
     }
 
     //void 
