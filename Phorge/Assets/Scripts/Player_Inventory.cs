@@ -19,6 +19,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     public float[] materialBasePrices = { 1f, 2f, 3f, 4f, 5f, 6f };
     public bool[] materialsUnlocked = { UNLOCKED, LOCKED, LOCKED, LOCKED, UNLOCKED, UNLOCKED };
     public static readonly int numMaterials = materialNames.Length;
+
     public static bool[] merchantGoods = new bool[materialNames.Length];
     public AnvilGame AnvilTask;
 

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory_Item : ScriptableObject
+[Serializable]
+public class Inventory_Item : MonoBehaviour, IDataPersistence
 {
     private new string name;
     private int quantity;
@@ -47,7 +49,26 @@ public class Inventory_Item : ScriptableObject
         this.price = price;
         this.unlocked = unlocked;
     }
-
+    //Data Persistence------------------------------------------------------------
+    public void LoadData(GameData data)
+    {
+        data.unlockedItems.TryGetValue(name, out Inventory_Item item);
+        if (item.isUnlocked())
+        {
+            setName(item.name);
+            setPrice(item.price);
+            setQuantity(item.quantity);
+            setUnlocked(true);
+        }
+    }
+    public void SaveData(ref GameData data)
+    {
+        if (data.unlockedItems.ContainsKey(name))
+        {
+            data.unlockedItems.Remove(name);
+        }
+        data.unlockedItems.Add(name, this);
+    }
     //Getters---------------------------------------------------------------------
     public string getName(){return this.name;}
     public int getQuantity(){ return this.quantity;}
