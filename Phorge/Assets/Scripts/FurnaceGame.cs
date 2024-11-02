@@ -74,7 +74,7 @@ public class FurnaceGame : MonoBehaviour
         }
         if (cur_state == "free_move")
         {
-            ClearIngots();
+            ClearPrefabs();
             WholeBlower.transform.localPosition = BELLOWS_START_POSITION;
             WholeBlower.transform.localRotation = BELLOWS_START_ROTATION;
             TemperatureSlider.gameObject.SetActive(false);
@@ -89,22 +89,22 @@ public class FurnaceGame : MonoBehaviour
         print("FURN");
         // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
         // It doesn't appear that the inventory field is updating, even though I think it logically should?
-        ClearIngots();
+        ClearPrefabs();
         if (ingotType < Player_Inventory.materialNames.Length)
         {
             currentIngot = ingotType;
-            var mat = playerInventory.getMaterial(ingotType);
+            var mat = playerInventory.getIngot(ingotType);
             if (mat == null || mat.getQuantity() <= 0)
             {
                 print("Not enough of that Material!");
                 return;
             }
-            string ingotName = playerInventory.getMaterial(ingotType).name;
+            string ingotName = mat.getName();
             GameObject templateIngot = Instantiate(ingotPrefab, FURNACE_TOP, Quaternion.identity);
             templateIngot.transform.localScale = new Vector3(INGOT_SCALE, INGOT_SCALE, INGOT_SCALE);
             Material ingotMat = Resources.Load(ingotName) as Material;
             templateIngot.GetComponent<Renderer>().material = ingotMat;
-            templateIngot.tag = "ingotPrefab";
+            templateIngot.tag = "instancedPrefab";
         }
     }
 
@@ -112,24 +112,24 @@ public class FurnaceGame : MonoBehaviour
     {
         if (currentIngot < 0)
             return;
-        if (playerInventory.getMaterial(currentIngot).getQuantity() <= 0)
+        if (playerInventory.getIngot(currentIngot).getQuantity() <= 0)
         {
-            ClearIngots();
+            ClearPrefabs();
             print("Not enough of that Material!");
             return;
         }
-        var mat = playerInventory.getMaterial(currentIngot);
+        var mat = playerInventory.getIngot(currentIngot);
         print(mat.spend() + " " + mat.getName() + " ingots left");
         setCount(currentIngot);
         print("why");
         FurnaceMenu.enabled = false;
     }
 
-    public void ClearIngots()
+    public void ClearPrefabs()
     {
-        foreach (GameObject ingot in GameObject.FindGameObjectsWithTag("ingotPrefab"))
+        foreach (GameObject preff in GameObject.FindGameObjectsWithTag("instancedPrefab"))
         {
-            Destroy(ingot);
+            Destroy(preff);
         }
     }
 
@@ -196,7 +196,7 @@ public class FurnaceGame : MonoBehaviour
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == (matName + " Quant"))
             {
-                textComp.text = (playerInventory.getMaterial(currentIngot).getQuantity() + "");
+                textComp.text = (playerInventory.getIngot(currentIngot).getQuantity() + "");
             }
         }
         //return materials[matIndex].getQuantity();

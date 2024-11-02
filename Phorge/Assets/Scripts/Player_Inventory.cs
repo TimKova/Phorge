@@ -7,18 +7,24 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
 {
     public const bool LOCKED = false;
     public const bool UNLOCKED = true;
-    
+
     //the following 3 lists store all the materials that the player has in their inventory.
     //it's important to remember that one instance of each object stores the quantity
     //that the player has of the object, so there shouldn't be any repeat items in these lists
-    public List<IngotMaterial> ingots = new List<IngotMaterial>();
     public List<OreMaterial> ores = new List<OreMaterial>();
+    public List<IngotMaterial> ingots = new List<IngotMaterial>();
     public List<Weapon> weapons = new List<Weapon>();
 
     public static readonly string[] materialNames = { "Copper", "Bronze", "Iron", "Silver", "Gold", "Uranium" };
     public float[] materialBasePrices = { 1f, 2f, 3f, 4f, 5f, 6f };
     public bool[] materialsUnlocked = { UNLOCKED, LOCKED, LOCKED, LOCKED, UNLOCKED, UNLOCKED };
     public static readonly int numMaterials = materialNames.Length;
+
+    public static readonly string[] weaponNames = { "Sword", "Shield", "Bow", "Arrow", "Dagger", "Hatchet", "Hammer", "Pitchfork" };
+    public bool[] schematicsUnlocked = { UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED };
+    public static readonly int numSchematics = weaponNames.Length;
+
+
 
     public static bool[] merchantGoods = new bool[materialNames.Length];
     public AnvilGame AnvilTask;
@@ -35,10 +41,19 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             IngotMaterial mat = new IngotMaterial(materialNames[c], c + 2, materialBasePrices[c], materialsUnlocked[c]);
             // Save me ig?
             ingots.Add(mat);
-            merchantGoods[c] = mat.isUnlocked();
-            print(materialNames[c]);
+            //merchantGoods[c] = mat.isUnlocked();
+            //print(materialNames[c]);
             setCount(c);
+        }
             money = 500;
+        for (int w = 0; w < numSchematics; w++)
+        {
+            Weapon wep = new Weapon(weaponNames[w], 1f);
+            weapons.Add(wep);
+        }
+        foreach (Weapon weppy in weapons)
+        {
+            print(weppy);
         }
     }
 
@@ -59,34 +74,34 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         data.money = money;
     }
 
-    public IngotMaterial getMaterial(int matIndex)
+    public IngotMaterial getIngot(int matIndex)
     {
         return ingots[matIndex];
     }
 
-    public int useMaterial(int matIndex)
+    public int useIngot(int matIndex)
     {
         return ingots[matIndex].spend();
     }
 
-    public int useMaterial(int matIndex, int quant)
+    public int useIngot(int matIndex, int quant)
     {
         return ingots[matIndex].spend(quant);
     }
 
-    public int purchaseMaterial(int matIndex)
+    public int purchaseIngot(int matIndex)
     {
         return ingots[matIndex].gain();
     }
 
-    public int purchaseMaterial(int matIndex, int quant)
+    public int purchaseIngot(int matIndex, int quant)
     {
         return ingots[matIndex].gain(quant);
     }
 
     public void listMerchantGoods()
     {
-        for(int c = 0;c<numMaterials; c++)
+        for (int c = 0; c < numMaterials; c++)
         {
             if (merchantGoods[c])
                 print("Merchant sells" + ingots[c].getName() + " for $" + ingots[c].getPrice());
@@ -105,8 +120,9 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();
-            if (textComp.name == ( matName + " Quant")){
-               textComp.text = (ingots[matIndex].getQuantity() + "");
+            if (textComp.name == (matName + " Quant"))
+            {
+                textComp.text = (ingots[matIndex].getQuantity() + "");
             }
         }
         return ingots[matIndex].getQuantity();

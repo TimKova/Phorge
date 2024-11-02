@@ -67,7 +67,7 @@ public class Merchant : MonoBehaviour
         Player_Inventory.money -= price;
         print("you now have $" + Player_Inventory.money);
         //return price;
-        playerInventory.purchaseMaterial(index);
+        playerInventory.purchaseIngot(index);
         setCount(index);
     }
 
@@ -88,7 +88,7 @@ public class Merchant : MonoBehaviour
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == ("materialQuantity"+matIndex))
             {
-                textComp.text = (playerInventory.getMaterial(matIndex).getQuantity() + "");
+                textComp.text = (playerInventory.getIngot(matIndex).getQuantity() + "");
             }
         }
         //return materials[matIndex].getQuantity();

@@ -8,10 +8,11 @@ TagManager:
   - Task
   - Door
   - Hammer
-  - ingotPrefab
   - materialQuantity
   - NPC
   - MenuBody
+  - IconCamera
+  - instancedPrefab
   layers:
   - Default
   - TransparentFX
