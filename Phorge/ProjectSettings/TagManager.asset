@@ -13,6 +13,8 @@ TagManager:
   - MenuBody
   - IconCamera
   - instancedPrefab
+  - Waypoint
+  - AmbienceNPC
   layers:
   - Default
   - TransparentFX

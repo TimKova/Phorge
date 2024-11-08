@@ -13,7 +13,8 @@ public class State_Manager : MonoBehaviour
     bool inNpcRange;
     string taskName;
     public Canvas npcCanvas;
-
+    public Canvas npcCanvas2;
+    public string npcName;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,8 @@ public class State_Manager : MonoBehaviour
         pauseState();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
+        player_manager.GetComponent<Player_Manager>().set_cur_npc(npcName);
+        //print("Our NPC's name is " + npcName);
         //print(state_to_be);
     }
 
@@ -88,7 +91,14 @@ public class State_Manager : MonoBehaviour
     {
         //print("Interaction Engaged");
         npc = true;
-        npcCanvas.enabled = false;
+        if (npcName == "MrItemMan")
+        {
+            npcCanvas.enabled = false;
+        }
+        else
+        {
+            npcCanvas2.enabled = false;
+        }
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -146,6 +156,9 @@ public class State_Manager : MonoBehaviour
         }
         else if (other.gameObject.tag == "NPC")
         {
+            //print("In range of NPC");
+            npcName = other.name;
+
             inNpcRange = true;
         }//end if-else
 
@@ -165,6 +178,7 @@ public class State_Manager : MonoBehaviour
         }
         else if (other.gameObject.tag == "Door")
         {
+
             //print("Love is an open door");
             other.gameObject.transform.Rotate(0f, 90f, 0f, Space.Self);
         }//end if-else

@@ -12,6 +12,7 @@ public class Player_Manager : MonoBehaviour
     string[] states = { "free_move", "task_int", "npc_int", "pause"};
     public string cur_task;
     public string cur_state;
+    public string cur_npc;
 
     public void set_cur_task(string taskName)
     {
@@ -35,4 +36,12 @@ public class Player_Manager : MonoBehaviour
         return cur_state;//needs to be dynamic later. For now this helps with testing.
     }//end get_cur_state
 
+    public string get_cur_npc()
+    {
+        return cur_npc;
+    }
+    public void set_cur_npc(string new_npc)
+    {
+        cur_npc = new_npc;
+    }
 }

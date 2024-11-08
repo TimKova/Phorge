@@ -13,9 +13,12 @@ public class Camera_Controller : MonoBehaviour
     public GameObject furnace_task;
     public Camera playerCam;
     public Camera npcCam;
+    public Camera npcCam2;
     public Camera anvilCam;
     public Camera furnaceCam;
     public Camera finishCam;
+    //public GameObject merchant;
+    //[SerializeField] public List<GameObject> questGivers;
     string taskName;
     public bool hasRelevantMenuOpened;
 
@@ -34,10 +37,12 @@ public class Camera_Controller : MonoBehaviour
     float yRotation;
 
     string cur_state;
+    private string npcName;
 
     // Start is called before the first frame update
     void Start()
     {
+        npcCam2.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
         hasRelevantMenuOpened = false;
         anvilGame = anvil_task.GetComponent<AnvilGame>();
@@ -49,7 +54,7 @@ public class Camera_Controller : MonoBehaviour
     {
         cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
         taskName = player_manager.GetComponent<Player_Manager>().get_cur_task();
-
+        npcName = player_manager.GetComponent<Player_Manager>().get_cur_npc();
         if (cur_state == "free_move")
         {
             FreeMove();
@@ -109,13 +114,28 @@ public class Camera_Controller : MonoBehaviour
 
     void NPCMove()
     {
-        playerCam.enabled = false;
-        npcCam.enabled = true;
-        MerchantMenu.enabled = true;
-        if (!hasRelevantMenuOpened)
+        //print(npcName);
+        if (npcName == "MrItemMan")
         {
-            merchantManager.refreshQuantities();
-            hasRelevantMenuOpened = true;
+            playerCam.enabled = false;
+            npcCam.enabled = true;
+            MerchantMenu.enabled = true;
+            if (!hasRelevantMenuOpened)
+            {
+                merchantManager.refreshQuantities();
+                hasRelevantMenuOpened = true;
+            }
+        }
+        else if (npcName == "QuestGiver1")
+        {
+            playerCam.enabled = false;
+            npcCam2.enabled = true;
+            //MerchantMenu.enabled = true;
+            //if (!hasRelevantMenuOpened)
+            //{
+            //    merchantManager.refreshQuantities();
+            //    hasRelevantMenuOpened = true;
+            //}
         }
 
     }
@@ -126,6 +146,7 @@ public class Camera_Controller : MonoBehaviour
         anvilCam.enabled = false;
         furnaceCam.enabled = false;
         npcCam.enabled = false;
+        npcCam2.enabled = false;
         hasRelevantMenuOpened = false;
         
     }
