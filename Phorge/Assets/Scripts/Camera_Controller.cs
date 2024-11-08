@@ -146,7 +146,7 @@ public class Camera_Controller : MonoBehaviour
         anvilCam.enabled = false;
         furnaceCam.enabled = false;
         npcCam.enabled = false;
-        npcCam2.enabled = false;
+        npcCam2.enabled = false; 
         hasRelevantMenuOpened = false;
         
     }
