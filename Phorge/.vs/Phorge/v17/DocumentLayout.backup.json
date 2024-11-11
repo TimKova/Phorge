@@ -1,46 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\",
+  "WorkspaceRootPath": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FurnaceGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Camera_Controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Inventory_Items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Data Persistence\\IDataPersistence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Data Persistence\\IDataPersistence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Data Persistence\\DataPersistenceManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Data Persistence\\DataPersistenceManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\QuestMarkScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\QuestMarkScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,135 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AnvilGame.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AnvilGame.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AnvilGame.cs",
-              "ViewState": "AgIAAFsBAAAAAAAAAADwv30BAAAbAAAAAAAAAA==",
+              "Title": "Main_Menu.cs",
+              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Main_Menu.cs",
+              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Main_Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T18:58:08.559Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-11-11T17:17:13.023Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player_Inventory.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Inventory.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player_Inventory.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T18:55:12.875Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Inventory_Items.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory_Items.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Inventory_Items.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T13:15:16.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IDataPersistence.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Data Persistence\\IDataPersistence.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data Persistence\\IDataPersistence.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Data Persistence\\IDataPersistence.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data Persistence\\IDataPersistence.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T21:37:49.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Merchant.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Merchant.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Merchant.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Merchant.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Merchant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T15:46:40.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DataPersistenceManager.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Data Persistence\\DataPersistenceManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data Persistence\\DataPersistenceManager.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Data Persistence\\DataPersistenceManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data Persistence\\DataPersistenceManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T21:37:48.682Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Player_Movement.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movement.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player_Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T14:46:20.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Camera_Controller.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Camera_Controller.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Camera_Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T14:53:24.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FurnaceGame.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FurnaceGame.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FurnaceGame.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAjwEwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T14:02:17.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "QuestMarkScript.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\QuestMarkScript.cs",
-              "RelativeDocumentMoniker": "Assets\\QuestMarkScript.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\QuestMarkScript.cs",
-              "RelativeToolTip": "Assets\\QuestMarkScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T06:04:25.881Z"
             }
           ]
         }
