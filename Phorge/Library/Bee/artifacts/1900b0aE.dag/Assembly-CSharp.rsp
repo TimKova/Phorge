@@ -379,6 +379,7 @@
 "Assets/Scripts/Data Persistence/FileDataHandler.cs"
 "Assets/Scripts/Data Persistence/IDataPersistence.cs"
 "Assets/Scripts/Door_Open.cs"
+"Assets/Scripts/FadeMenu.cs"
 "Assets/Scripts/FurnaceGame.cs"
 "Assets/Scripts/hammer_swing.cs"
 "Assets/Scripts/Interact.cs"

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\mmcamsway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mmcamsway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\inventory_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\fademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\assets\\scripts\\mmcamsway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mmcamsway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MMCamSway.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MMCamSway.cs",
-              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MMCamSway.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FadeMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FadeMenu.cs",
+              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FadeMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:21:58.977Z",
+              "WhenOpened": "2024-11-11T18:21:22.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Main_Menu.cs",
               "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Main_Menu.cs",
               "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
               "RelativeToolTip": "Assets\\Scripts\\Main_Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T17:17:13.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Inventory_Items.cs",
-              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory_Items.cs",
-              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Inventory_Items.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MMCamSway.cs",
+              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MMCamSway.cs",
+              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MMCamSway.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:25:42.047Z",
+              "WhenOpened": "2024-11-11T17:21:58.977Z",
               "EditorCaption": ""
             }
           ]

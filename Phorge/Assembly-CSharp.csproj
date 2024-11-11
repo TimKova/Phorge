@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\hammer_swing.cs" />
     <Compile Include="Assets\Scripts\TrafficManager.cs" />
     <Compile Include="Assets\Scripts\Merchant.cs" />
+    <Compile Include="Assets\Scripts\FadeMenu.cs" />
     <Compile Include="Assets\PickUpObject.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
