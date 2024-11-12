@@ -47,8 +47,8 @@ public class NavScript : MonoBehaviour
         //    }
         //}
 
-        
-       if (this.gameObject.tag != "AmbienceNPC")
+
+        if (this.gameObject.tag != "AmbienceNPC")
         {
             occupancyChecker();
         }
@@ -56,6 +56,8 @@ public class NavScript : MonoBehaviour
 
     private void occupancyChecker()
     {
+        if (counter1Script == null)
+            return;
         if (!counter1Script.isOccupied)
         {
             npc.destination = counter1.position;
@@ -85,7 +87,7 @@ public class NavScript : MonoBehaviour
     }
     IEnumerator AmbienceCoroutine()
     {
-        while(true)
+        while (true)
         {
             print("Heyoooo");
             yield return new WaitForSeconds(10);

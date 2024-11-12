@@ -37,15 +37,15 @@ MonoBehaviour:
   m_Name: Image Sequence
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 10
+  take: 7
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
-      m_Root: 0
+      m_Root: 1
       m_Leaf: Recordings
       m_ForceAssetFolder: 0
       m_AbsolutePath: 
-    m_FileName: <Recorder>_<Take>_<Frame>
+    m_FileName: Ore_<Take>
   m_Version: 1
   outputFormat: 0
   captureAlpha: 1

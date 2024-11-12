@@ -36,8 +36,11 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     // Start is called before the first frame update
     void Start()
     {
+
         for (int c = 0; c < materialNames.Length; c++)
         {
+            OreMaterial orrey = new OreMaterial(materialNames[c]+" Ore", c + 2, materialBasePrices[c], UNLOCKED, 0.5f);
+            ores.Add(orrey);
             IngotMaterial mat = new IngotMaterial(materialNames[c], c + 2, materialBasePrices[c], materialsUnlocked[c]);
             // Save me ig?
             ingots.Add(mat);
@@ -45,7 +48,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             //print(materialNames[c]);
             setCount(c);
         }
-            money = 500;
+        money = 500;
         for (int w = 0; w < numSchematics; w++)
         {
             Weapon wep = new Weapon(weaponNames[w], 1f);
@@ -97,6 +100,11 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     public int purchaseIngot(int matIndex, int quant)
     {
         return ingots[matIndex].gain(quant);
+    }
+
+    public OreMaterial getOre(int matIndex)
+    {
+        return ores[matIndex];
     }
 
     public void listMerchantGoods()

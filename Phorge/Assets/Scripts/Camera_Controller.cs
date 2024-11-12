@@ -26,6 +26,7 @@ public class Camera_Controller : MonoBehaviour
     //private readonly Vector3 anvilPosition = new Vector3Vector3(0.234f, 0.69f, 0f);
 
     public Canvas AnvilMenu;
+    public Canvas FurnaceMenu;
     public Canvas MerchantMenu;
     private AnvilGame anvilGame;
     private Merchant merchantManager;
@@ -108,6 +109,7 @@ public class Camera_Controller : MonoBehaviour
         {
             playerCam.enabled = false;
             furnaceCam.enabled = true;
+            FurnaceMenu.enabled = true;
             
         }
     }
@@ -154,6 +156,7 @@ public class Camera_Controller : MonoBehaviour
     public void CloseMenus()
     {
         AnvilMenu.enabled = false;
+        FurnaceMenu.enabled = false;
         MerchantMenu.enabled = false;
     }
 

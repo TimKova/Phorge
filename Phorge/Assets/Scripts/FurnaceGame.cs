@@ -9,13 +9,15 @@ using Unity.VisualScripting;
 
 public class FurnaceGame : MonoBehaviour
 {
-    const float INGOT_SCALE = 2.5f;
-    private readonly Vector3 FURNACE_TOP = new Vector3(-12.243f, 0.906f, -14.466f);
+    const float ORE_SCALE = 5f;
+    private readonly Vector3 FURNACE_TOP = new Vector3(-12.22f, 0.91f, -13.95f);
     public const string MATERIAL_QUANTITY_TAG = "materialQuantity";
     public readonly Vector3 BELLOWS_START_POSITION = new Vector3(-1.383f, 0.178f, 0.627f);
     public readonly Quaternion BELLOWS_START_ROTATION = new Quaternion(0.424148679f, -0.636672974f, -0.357055634f, -0.535963356f);
     public readonly Vector3 BELLOWS_END_POSITION = new Vector3(0.799f, 0.855f, 1.992f);
     public readonly Quaternion BELLOWS_END_ROTATION = new Quaternion(0.0241820589f, -0.960221767f, -0.00242961245f, 0.278178722f);
+    public readonly Vector3 MENU_TLC = new Vector3(-800f, 320f, 9f);
+    public const float buttonOffset = 176f;
 
     public GameObject player_manager;
     public Canvas FurnaceMenu;
@@ -35,10 +37,15 @@ public class FurnaceGame : MonoBehaviour
     private string cur_task;
 
     Animator hammerAnimator;
-    public GameObject ingotPrefab;
+    public GameObject orePrefab;
     public GameObject furnace;
 
-    private static int currentIngot;
+    public GameObject oreButtonPrefab;  // The prefab for a dynamic menu button
+    public List<GameObject> buttons = new List<GameObject>();
+
+    public float resultQuality;
+
+    private static int currentOre;
     //private readonly Color RED = new Color(1f, 0f, 0f, 1f);
 
     private Player_Inventory playerInventory;
@@ -50,10 +57,43 @@ public class FurnaceGame : MonoBehaviour
         playerInventory = player_manager.GetComponent<Player_Inventory>();
         originalFlameMagnitude = flameEffect.transform.localScale.magnitude;
         flameScale = flameEffect.transform.localScale;
-        currentIngot = -1;
-        blowerPressCoefficient = 0f;
         maxFlameMagnitude = Vector3.Magnitude(new Vector3(1.57f, 1.5f, 1.75f));
         minFlameMagnitude = flameScale.magnitude;
+
+        currentOre = -1;
+        blowerPressCoefficient = 0f;
+        resultQuality = 0f;
+
+        for (int c = 0; c < Player_Inventory.numMaterials; c++)
+        {
+            string name = Player_Inventory.materialNames[c];
+            GameObject templateButton = Instantiate(oreButtonPrefab, Vector3.zero, Quaternion.identity);
+            templateButton.transform.SetParent(FurnaceMenu.gameObject.transform.GetChild(0));
+            templateButton.transform.localScale = new Vector3(1, 1, 1);
+            templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (c % 10), MENU_TLC.y - buttonOffset * (c / 10), MENU_TLC.z);
+            templateButton.transform.localRotation = Quaternion.identity;
+
+            int localIndex = c;
+            (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnOre(localIndex); });
+
+            var icon = Resources.Load<Texture2D>(name + "OreIcon");
+            (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
+            templateButton.transform.GetChild(0).localScale = new Vector3(0.9f, 0.9f, 0.9f);
+
+            var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+            title.text = name;
+
+            var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+            currentAmount.gameObject.tag = "materialQuantity";
+            currentAmount.gameObject.name = "materialQuantity" + c;
+            currentAmount.text = (c + 2) + "";//playerInventory.ores[c].getQuantity() + "";
+
+            buttons.Add(templateButton);
+            //Material ingotMat = Resources.Load(ingotName) as Material;
+            //templateIngot.GetComponent<Renderer>().material = ingotMat;
+            //templateIngot.tag = "instancedPrefab";
+        }
+
     }
 
     // Update is called once per frame
@@ -84,43 +124,40 @@ public class FurnaceGame : MonoBehaviour
         setTempSlider();
     }
 
-    public void SpawnIngot(int ingotType)
+    public void SpawnOre(int oreType)
     {
-        print("FURN");
-        // Tried with both uppercase and lowercase ingot types. I just don't know how we're getting the input,
-        // It doesn't appear that the inventory field is updating, even though I think it logically should?
         ClearPrefabs();
-        if (ingotType < Player_Inventory.materialNames.Length)
+        if (oreType < Player_Inventory.materialNames.Length)
         {
-            currentIngot = ingotType;
-            var mat = playerInventory.getIngot(ingotType);
+            currentOre = oreType;
+            var mat = playerInventory.getOre(oreType);
             if (mat == null || mat.getQuantity() <= 0)
             {
                 print("Not enough of that Material!");
                 return;
             }
-            string ingotName = mat.getName();
-            GameObject templateIngot = Instantiate(ingotPrefab, FURNACE_TOP, Quaternion.identity);
-            templateIngot.transform.localScale = new Vector3(INGOT_SCALE, INGOT_SCALE, INGOT_SCALE);
-            Material ingotMat = Resources.Load(ingotName) as Material;
-            templateIngot.GetComponent<Renderer>().material = ingotMat;
-            templateIngot.tag = "instancedPrefab";
+            string orename = mat.getName();
+            GameObject templateOre = Instantiate(orePrefab, FURNACE_TOP, Quaternion.Euler(0, 135, 0));
+            templateOre.transform.localScale = new Vector3(ORE_SCALE, ORE_SCALE, ORE_SCALE);
+            Material oreMat = Resources.Load(orename) as Material;
+            templateOre.GetComponent<Renderer>().material = oreMat;
+            templateOre.tag = "instancedPrefab";
         }
     }
 
     public void ConfirmMaterial()
     {
-        if (currentIngot < 0)
+        if (currentOre < 0)
             return;
-        if (playerInventory.getIngot(currentIngot).getQuantity() <= 0)
+        if (playerInventory.getIngot(currentOre).getQuantity() <= 0)
         {
             ClearPrefabs();
             print("Not enough of that Material!");
             return;
         }
-        var mat = playerInventory.getIngot(currentIngot);
+        var mat = playerInventory.getIngot(currentOre);
         print(mat.spend() + " " + mat.getName() + " ingots left");
-        setCount(currentIngot);
+        setCount(currentOre);
         print("why");
         FurnaceMenu.enabled = false;
     }
@@ -144,7 +181,7 @@ public class FurnaceGame : MonoBehaviour
     bool pressable = false;//Makes sure that the player can only press the blow 1 time per click regardless of how far they push it down
     public void Blow()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         if (Input.GetKey(KeyCode.Mouse0) && blowerPressCoefficient != 100f && pressable)
         {
             flameScale += new Vector3(0.003f, 0.003f, 0.003f);
@@ -196,7 +233,7 @@ public class FurnaceGame : MonoBehaviour
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == (matName + " Quant"))
             {
-                textComp.text = (playerInventory.getIngot(currentIngot).getQuantity() + "");
+                textComp.text = (playerInventory.getIngot(currentOre).getQuantity() + "");
             }
         }
         //return materials[matIndex].getQuantity();
