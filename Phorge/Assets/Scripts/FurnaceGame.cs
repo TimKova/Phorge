@@ -17,12 +17,30 @@ public class FurnaceGame : MonoBehaviour
     public readonly Vector3 BELLOWS_END_POSITION = new Vector3(0.799f, 0.855f, 1.992f);
     public readonly Quaternion BELLOWS_END_ROTATION = new Quaternion(0.0241820589f, -0.960221767f, -0.00242961245f, 0.278178722f);
     public readonly Vector3 MENU_TLC = new Vector3(-800f, 320f, 9f);
+    const int SIZE = 0;
+    const int HEIGHT = 1;
+    const int DURATION = 2;
+    const float FURNACE_PROGRESS_STRENGTH = 0.0005f;
+    const float BLOWER_SUCK_POWER = 0.5f; //2f;
+    public readonly string[] READY_PHRASES = { "Ready", "Set", "Phorge!" };     // Countdown phrases for minigame
+
+    // X position of the range = (+/-80 - rangeHeight). - is high, + is low
+    // % occupied bounds = (160 - range height))/160 +- range height/2;
+    const float sliderHeight = 160f;
+    const float maxSliderOffset = sliderHeight / 2;
+    const float sliderWidth = 10f;
+
     public const float buttonOffset = 176f;
 
     public GameObject player_manager;
     public Canvas FurnaceMenu;
+    public Canvas Countdown;
 
     public Slider TemperatureSlider;
+    public Slider ProgressSlider;
+    public Slider TimeSlider;
+    public GameObject TemperatureRangePrefab;
+
     public GameObject Blower;
     public GameObject WholeBlower;
     public GameObject flameEffect;
@@ -43,7 +61,13 @@ public class FurnaceGame : MonoBehaviour
     public GameObject oreButtonPrefab;  // The prefab for a dynamic menu button
     public List<GameObject> buttons = new List<GameObject>();
 
+    bool gameStarted;
     public float resultQuality;
+    public float[] gameParams;
+    GameObject currentRange;
+    readonly Color RANGE_OPAQUE = new Color(0f, 1f, 0f, 0.6f);
+    readonly Color RANGE_TRANSPARENT = new Color(0f, 1f, 0f, 0.2f);
+
 
     private static int currentOre;
     //private readonly Color RED = new Color(1f, 0f, 0f, 1f);
@@ -63,6 +87,12 @@ public class FurnaceGame : MonoBehaviour
         currentOre = -1;
         blowerPressCoefficient = 0f;
         resultQuality = 0f;
+
+        gameStarted = false;
+        TemperatureSlider.gameObject.SetActive(false);
+        ProgressSlider.gameObject.SetActive(false);
+        TimeSlider.gameObject.SetActive(false);
+        Countdown.gameObject.SetActive(false);
 
         for (int c = 0; c < Player_Inventory.numMaterials; c++)
         {
@@ -108,16 +138,30 @@ public class FurnaceGame : MonoBehaviour
             {
                 WholeBlower.transform.localPosition = BELLOWS_END_POSITION;
                 WholeBlower.transform.localRotation = BELLOWS_END_ROTATION;
-                TemperatureSlider.gameObject.SetActive(true);
                 Blow();
+                if (gameStarted && sliderIsInBounds())
+                {
+                    if (currentRange != null)
+                    {
+                        (currentRange.GetComponentAtIndex(2) as Image).color = RANGE_TRANSPARENT;
+                        ProgressSlider.value += FURNACE_PROGRESS_STRENGTH;
+                    }
+                }
+                else
+                {
+                    if (currentRange != null)
+                        (currentRange.GetComponentAtIndex(2) as Image).color = RANGE_OPAQUE;
+                }
             }
         }
         if (cur_state == "free_move")
         {
+            gameStarted = false;
             ClearPrefabs();
             WholeBlower.transform.localPosition = BELLOWS_START_POSITION;
             WholeBlower.transform.localRotation = BELLOWS_START_ROTATION;
             TemperatureSlider.gameObject.SetActive(false);
+            stopGame();
         }
         Blower.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, blowerPressCoefficient);
         flameEffect.transform.localScale = flameScale;
@@ -149,17 +193,22 @@ public class FurnaceGame : MonoBehaviour
     {
         if (currentOre < 0)
             return;
-        if (playerInventory.getIngot(currentOre).getQuantity() <= 0)
+        if (playerInventory.getOre(currentOre).getQuantity() <= 0)
         {
             ClearPrefabs();
             print("Not enough of that Material!");
             return;
         }
-        var mat = playerInventory.getIngot(currentOre);
-        print(mat.spend() + " " + mat.getName() + " ingots left");
+        var mat = playerInventory.getOre(currentOre);
+        print(mat.spend() + " " + mat.getName() + " ore nodes left");
         setCount(currentOre);
-        print("why");
+        gameParams = mat.getFurnaceParameters();
         FurnaceMenu.enabled = false;
+        TemperatureSlider.gameObject.SetActive(true);
+        ProgressSlider.gameObject.SetActive(true);
+        TimeSlider.gameObject.SetActive(true);
+        ProgressSlider.value = 0f;
+        StartCoroutine(RunMinigame(gameParams[SIZE], gameParams[HEIGHT], gameParams[DURATION]));
     }
 
     public void ClearPrefabs()
@@ -182,7 +231,7 @@ public class FurnaceGame : MonoBehaviour
     public void Blow()
     {
         //Cursor.lockState = CursorLockMode.Locked;
-        if (Input.GetKey(KeyCode.Mouse0) && blowerPressCoefficient != 100f && pressable)
+        if (Input.GetKey(KeyCode.Mouse0) && blowerPressCoefficient != 100f && pressable && gameStarted)
         {
             flameScale += new Vector3(0.003f, 0.003f, 0.003f);
             blowerPressCoefficient += 1f;
@@ -195,7 +244,7 @@ public class FurnaceGame : MonoBehaviour
         {
             pressable = false;
             flameScale -= new Vector3(0.0006f, 0.0006f, 0.0006f);
-            blowerPressCoefficient -= 0.5f;
+            blowerPressCoefficient -= BLOWER_SUCK_POWER;
             if (blowerPressCoefficient <= 0f)
             {
                 pressable = true;
@@ -212,7 +261,7 @@ public class FurnaceGame : MonoBehaviour
         float heatAsPercentage = 0f;
         float range = maxFlameMagnitude - minFlameMagnitude;
         float curFlameMagnitude = flameScale.magnitude;
-        heatAsPercentage = (curFlameMagnitude - minFlameMagnitude) / range;
+        heatAsPercentage = (maxFlameMagnitude - curFlameMagnitude) / range;
 
         TemperatureSlider.value = heatAsPercentage;
     }
@@ -237,6 +286,65 @@ public class FurnaceGame : MonoBehaviour
             }
         }
         //return materials[matIndex].getQuantity();
+    }
+
+    IEnumerator RunMinigame(float size, float height, float duration)
+    {
+        var county = Countdown.gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
+        Countdown.gameObject.SetActive(true);
+        for (int c = 0; c < 3; c++)
+        {
+            county.text = READY_PHRASES[c];
+            yield return new WaitForSeconds(1);
+        }
+        Countdown.gameObject.SetActive(false);
+
+        gameStarted = true;
+        print($"Size: {size}, Height: {height}, Duration: {duration}sec");
+        currentRange = Instantiate(TemperatureRangePrefab, Vector3.zero, Quaternion.identity, TemperatureSlider.gameObject.transform);
+        currentRange.transform.localScale = new Vector3(1, size, 1);
+        currentRange.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+        (currentRange.transform as RectTransform).anchoredPosition3D = new Vector3((80f - 160f * height), 0f, 0f);
+        currentRange.tag = "instancedPrefab";
+        print(TemperatureSlider.value);
+        print($"Lower = {(gameParams[HEIGHT] - gameParams[SIZE] / 2)}, Higher = {(gameParams[HEIGHT] + gameParams[SIZE] / 2)}");
+        //if (TemperatureSlider.value >=  && TemperatureSlider.value <= )
+        //    print("GOOOD");
+        for (float t = 0f; t < duration; t += Time.deltaTime)
+        {
+            if (ProgressSlider.value >= 1)
+                break;
+            TimeSlider.value = 1 - t / duration;
+            yield return 0;
+        }
+        if (ProgressSlider.value < 0.5)
+            county.text = "YOU FAILED TO PHORGE THE INGOT";
+        else
+            county.text = $"ALL GOOD! Result quality is {Mathf.Round(ProgressSlider.value*100)}%!";
+        //StartCoroutine(startTimer(duration));
+        stopGame();
+        Countdown.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        // Close menus and destroy hit icon prefabs
+        Countdown.gameObject.SetActive(false);
+    }
+
+    bool sliderIsInBounds()
+    {
+        float currentBarHeight = gameParams[HEIGHT];
+        float currentBarSize = gameParams[SIZE];
+        return (1 - TemperatureSlider.value >= (currentBarHeight - currentBarSize / 2) && 1 - TemperatureSlider.value <= (currentBarHeight + currentBarSize / 2));
+    }
+
+    public void stopGame()
+    {
+        ClearPrefabs();
+        gameStarted = false;
+        currentOre = -1;
+        FurnaceMenu.enabled = false;
+        TemperatureSlider.gameObject.SetActive(false);
+        ProgressSlider.gameObject.SetActive(false);
+        TimeSlider.gameObject.SetActive(false);
     }
 
     public void demoMe()

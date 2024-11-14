@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Inventory_Item :  IDataPersistence
+public class Inventory_Item : IDataPersistence
 {
     private string name;
     private int quantity;
@@ -179,37 +179,62 @@ public class OreMaterial : Inventory_Item
     // Zone height determines how high the bar is from the bottom
     // Melting Time determines how long the player must keep the ore in the zone
 
-    private float meltingPoint;//should be between 0-1 to match the scale of the furnace game
+    private float barSize;
+    float barHeight;
+    float barDuration;
+    //should be between 0-1 to match the scale of the furnace game
 
     //Constructors----------------------------------------------------------------------------------------
     public OreMaterial()
     {
-        this.meltingPoint = 0.5f;
+        this.barSize = 0.25f;
+        this.barHeight = 0.5f;
+        this.barDuration = 4;
     }
-    public OreMaterial(float meltingPoint)
+    public OreMaterial(float barSize, float barHeight, float barDuration)
     {
-        this.meltingPoint = meltingPoint;
+        this.barSize = barSize;
+        this.barHeight = barHeight;
+        this.barDuration = barDuration;
     }
-    public OreMaterial(string name, float meltingPoint) : base(name)
+    public OreMaterial(float barSize, float barHeight, float barDuration, string name) : base(name)
     {
-        this.meltingPoint = meltingPoint;
+        this.barSize = barSize;
+        this.barHeight = barHeight;
+        this.barDuration = barDuration;
     }
-    public OreMaterial(string name, int quantity, float meltingPoint) : base(name, quantity)
+    public OreMaterial(float barSize, float barHeight, float barDuration, string name, int quantity) : base(name, quantity)
     {
-        this.meltingPoint = meltingPoint;
+        this.barSize = barSize;
+        this.barHeight = barHeight;
+        this.barDuration = barDuration;
     }
-    public OreMaterial(string name, int quantity, float price, float meltingPoint) : base(name, quantity, price)
+    public OreMaterial(float barSize, float barHeight, float barDuration, string name, int quantity, float price) : base(name, quantity, price)
     {
-        this.meltingPoint = meltingPoint;
+        this.barSize = barSize;
+        this.barHeight = barHeight;
+        this.barDuration = barDuration;
     }
-    public OreMaterial(string name, int quantity, float price, bool unlocked, float meltingPoint) : base(name, quantity, price, unlocked)
+    public OreMaterial(float barSize, float barHeight, float barDuration, string name, int quantity, float price, bool unlocked) : base(name, quantity, price, unlocked)
     {
-        this.meltingPoint = meltingPoint;
+        this.barSize = barSize;
+        this.barHeight = barHeight;
+        this.barDuration = barDuration;
     }
     //Getters--------------------------------------------------------------------------------------------
-    public float getMeltingPoint() { return this.meltingPoint; }
+    public float[] getFurnaceParameters()
+    {
+        
+        return new float[] { this.barSize, this.barHeight, this.barDuration };
+    }
     //Setters--------------------------------------------------------------------------------------------
-    public float setMeltingPoint(float meltingPoint) { this.meltingPoint = meltingPoint; return getMeltingPoint(); }
+    public float[] setFurnaceParameters(float barSize, float barHeight, float barDuration)
+    {
+        this.barSize = barSize;
+        this.barHeight = barHeight;
+        this.barDuration = barDuration;
+        return getFurnaceParameters();
+    }
 }
 
 public class Weapon : Inventory_Item

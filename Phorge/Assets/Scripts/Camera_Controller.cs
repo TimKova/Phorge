@@ -109,8 +109,15 @@ public class Camera_Controller : MonoBehaviour
         {
             playerCam.enabled = false;
             furnaceCam.enabled = true;
-            FurnaceMenu.enabled = true;
-            
+            if (!hasRelevantMenuOpened)
+            {
+                //furnaceGame.refreshQuantities();
+                //added this here so that anytime you open the menu the cursor appears, but once the game starts the cursor goes away
+                //It's kinda scuffed rn but we can make it better if/when we refactor the code
+                Cursor.lockState = CursorLockMode.Confined;
+                FurnaceMenu.enabled = true;
+                hasRelevantMenuOpened = true;
+            }          
         }
     }
 
@@ -140,7 +147,7 @@ public class Camera_Controller : MonoBehaviour
             //}
         }
 
-    }
+    }   
 
     public void SnapToPlayer()
     {

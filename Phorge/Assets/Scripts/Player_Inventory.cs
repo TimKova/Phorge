@@ -39,7 +39,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
 
         for (int c = 0; c < materialNames.Length; c++)
         {
-            OreMaterial orrey = new OreMaterial(materialNames[c]+" Ore", c + 2, materialBasePrices[c], UNLOCKED, 0.5f);
+            OreMaterial orrey = new OreMaterial(0.17f/numMaterials*(numMaterials-c+0.5f), 0.5f+ 1f/numMaterials*c/2f, 15f, materialNames[c]+" Ore", 7-c, materialBasePrices[c], UNLOCKED);
             ores.Add(orrey);
             IngotMaterial mat = new IngotMaterial(materialNames[c], c + 2, materialBasePrices[c], materialsUnlocked[c]);
             // Save me ig?
