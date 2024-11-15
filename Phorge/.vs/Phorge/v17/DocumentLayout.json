@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FurnaceGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FurnaceGame.cs",
               "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FurnaceGame.cs",
               "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
               "RelativeToolTip": "Assets\\Scripts\\FurnaceGame.cs",
-              "ViewState": "AgIAABgBAAAAAAAAAAAjwCwBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACABAAAAAAAAAAAjwDgBAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T07:52:29.477Z",
               "IsPinned": true,
@@ -72,13 +72,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AnvilGame.cs",
               "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AnvilGame.cs",
               "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
               "RelativeToolTip": "Assets\\Scripts\\AnvilGame.cs",
-              "ViewState": "AgIAAFkBAAAAAAAAAAAAAIYBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAFYBAAAAAAAAAIBJwIYBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T00:17:57.578Z",
               "EditorCaption": ""
@@ -93,8 +93,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Camera_Controller.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:00:36.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:00:36.804Z"
             },
             {
               "$type": "Document",
@@ -106,8 +105,7 @@
               "RelativeToolTip": "Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T08:04:15.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T08:04:15.046Z"
             },
             {
               "$type": "Document",
@@ -131,8 +129,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Inventory_Items.cs",
               "ViewState": "AgIAAKcAAAAAAAAAAAAjwOMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T05:55:03.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T05:55:03.775Z"
             },
             {
               "$type": "Document",
@@ -144,8 +141,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player_Inventory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T05:54:37.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T05:54:37.914Z"
             },
             {
               "$type": "Document",
@@ -157,8 +153,7 @@
               "RelativeToolTip": "Assets\\Scripts\\FadeMenu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:21:22.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T18:21:22.219Z"
             },
             {
               "$type": "Document",
@@ -182,8 +177,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MMCamSway.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:21:58.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T17:21:58.977Z"
             }
           ]
         }
