@@ -808,6 +808,7 @@ MonoBehaviour:
   TemperatureSlider: {fileID: 984591244}
   ProgressSlider: {fileID: 465372574}
   TimeSlider: {fileID: 1510020721}
+  SliderCanvas: {fileID: 1757971665}
   TemperatureRangePrefab: {fileID: 7118214036894904940, guid: 1512f9e081d9f8c468577f209efa0c3a, type: 3}
   Blower: {fileID: 181797010}
   WholeBlower: {fileID: 991024686}

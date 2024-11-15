@@ -39,6 +39,7 @@ public class FurnaceGame : MonoBehaviour
     public Slider TemperatureSlider;
     public Slider ProgressSlider;
     public Slider TimeSlider;
+    public Canvas SliderCanvas;
     public GameObject TemperatureRangePrefab;
 
     public GameObject Blower;
@@ -89,9 +90,7 @@ public class FurnaceGame : MonoBehaviour
         resultQuality = 0f;
 
         gameStarted = false;
-        TemperatureSlider.gameObject.SetActive(false);
-        ProgressSlider.gameObject.SetActive(false);
-        TimeSlider.gameObject.SetActive(false);
+        SliderCanvas.enabled = false;
         Countdown.gameObject.SetActive(false);
 
         for (int c = 0; c < Player_Inventory.numMaterials; c++)
@@ -160,7 +159,7 @@ public class FurnaceGame : MonoBehaviour
             ClearPrefabs();
             WholeBlower.transform.localPosition = BELLOWS_START_POSITION;
             WholeBlower.transform.localRotation = BELLOWS_START_ROTATION;
-            TemperatureSlider.gameObject.SetActive(false);
+            SliderCanvas.enabled = false;
             stopGame();
         }
         Blower.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, blowerPressCoefficient);
@@ -204,9 +203,7 @@ public class FurnaceGame : MonoBehaviour
         setCount(currentOre);
         gameParams = mat.getFurnaceParameters();
         FurnaceMenu.enabled = false;
-        TemperatureSlider.gameObject.SetActive(true);
-        ProgressSlider.gameObject.SetActive(true);
-        TimeSlider.gameObject.SetActive(true);
+        SliderCanvas.enabled = true;
         ProgressSlider.value = 0f;
         StartCoroutine(RunMinigame(gameParams[SIZE], gameParams[HEIGHT], gameParams[DURATION]));
     }
@@ -342,9 +339,7 @@ public class FurnaceGame : MonoBehaviour
         gameStarted = false;
         currentOre = -1;
         FurnaceMenu.enabled = false;
-        TemperatureSlider.gameObject.SetActive(false);
-        ProgressSlider.gameObject.SetActive(false);
-        TimeSlider.gameObject.SetActive(false);
+        SliderCanvas.enabled = false;
     }
 
     public void demoMe()
