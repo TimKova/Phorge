@@ -31,7 +31,7 @@ public class TrafficManager : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         new WaitForSeconds(2);
-        print("Exited");
+        //print("Exited");
         if (other.gameObject.tag == "NPC")
         {
             isOccupied = false;

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System.Runtime.InteropServices;
 
 public class State_Manager : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class State_Manager : MonoBehaviour
     public Canvas npcCanvas;
     public Canvas npcCanvas2;
     public string npcName;
+    public string timeOfDay;
+    public Time_Manager tm;
+    public TMP_Text clockDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +28,8 @@ public class State_Manager : MonoBehaviour
         npc = false;
         state_to_be = "free_move";
         taskName = null;
+        timeOfDay = "morning";
+        //StartCoroutine(daytimeroutine());
     }
 
     // Update is called once per frame
@@ -105,6 +112,10 @@ public class State_Manager : MonoBehaviour
     public void endNpcInt()
     {
         //print("Interaction Terminated");
+        if (npcName == "MrItemMan")
+        {
+            
+        }
         npc = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -182,6 +193,27 @@ public class State_Manager : MonoBehaviour
             //print("Love is an open door");
             other.gameObject.transform.Rotate(0f, 90f, 0f, Space.Self);
         }//end if-else
+    }
 
+    // This function is DANGEROUS. May he who embarks upon its path beware
+    private IEnumerator daytimeroutine()
+    {
+        while(true)
+        {
+            print("Definitely inside the coroutine");
+           if (timeOfDay == "morning")
+           {
+                print("We here");
+                clockDisplay.SetText("");
+           }
+           if (timeOfDay == "workday")
+           {
+
+           }
+           if (timeOfDay == "evening")
+           {
+
+           }
+        }
     }
 }

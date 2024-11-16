@@ -89,9 +89,9 @@ public class NavScript : MonoBehaviour
     {
         while (true)
         {
-            print("Heyoooo");
+            //print("Heyoooo");
             yield return new WaitForSeconds(10);
-            print("Hi");
+            //print("Hi");
             //if (npc.isStopped == true)
             //{
             //    print("So true bestie");
@@ -99,7 +99,7 @@ public class NavScript : MonoBehaviour
             int randomTarget = Random.Range(0, waypoints.Count);
             if (npc.isStopped == true && randomTarget != prevTarget)
             {
-                print("We in");
+                //print("We in");
                 npc.destination = waypoints[randomTarget].position;
                 npc.isStopped = false;
             }

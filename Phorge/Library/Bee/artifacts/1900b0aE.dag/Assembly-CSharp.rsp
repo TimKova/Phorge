@@ -109,7 +109,6 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -368,6 +367,7 @@
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
 "Assets/NavScript.cs"
+"Assets/NewClockScript.cs"
 "Assets/PickUpObject.cs"
 "Assets/Polygonal Foliage Asset Package - Aligned Games/Scripts/Behaviour/FlyCameraBehaviour.cs"
 "Assets/QuestMarkScript.cs"
@@ -390,6 +390,7 @@
 "Assets/Scripts/Player_Manager.cs"
 "Assets/Scripts/Player_Movement.cs"
 "Assets/Scripts/State_Manager.cs"
+"Assets/Scripts/Time_Manager.cs"
 "Assets/Scripts/TrafficManager.cs"
 -langversion:9.0
 /deterministic
