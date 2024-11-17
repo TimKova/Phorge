@@ -11,12 +11,14 @@ public class Camera_Controller : MonoBehaviour
     public GameObject player_manager;
     public GameObject anvil_task;
     public GameObject furnace_task;
+    public GameObject finish_task;
     public Camera playerCam;
     public Camera npcCam;
     public Camera npcCam2;
     public Camera anvilCam;
     public Camera furnaceCam;
     public Camera finishCam;
+    public Camera applyCam;
     //public GameObject merchant;
     //[SerializeField] public List<GameObject> questGivers;
     string taskName;
@@ -118,6 +120,11 @@ public class Camera_Controller : MonoBehaviour
                 FurnaceMenu.enabled = true;
                 hasRelevantMenuOpened = true;
             }          
+        }
+        else if (taskName == "Finishing")
+        {
+            playerCam.enabled = false;
+            finishCam.enabled = true;
         }
     }
 

@@ -12,24 +12,91 @@ public class NewClockScript : MonoBehaviour
     Time_Manager tm;
     public TMP_Text display;
     public bool _24Hour = false;
+
+    const int MINUTES_PER_HOUR = 60;
+    const float DAY_SPEED_SCALE = 3f;
+    const int DAY_DURATION = 48;
+    const bool DO_DAY_CYCLE = true;
+
+    public Light MainLight;
+
+    public Material MorningSky;
+    public Material DaySky;
+    public Material AfternoonSky;
+    public Material EveningSky;
+    public Material NightSky;
+
     // Start is called before the first frame update
-    
+
     void Start()
     {
         tm = FindObjectOfType<Time_Manager>();
         display = GetComponent<TMP_Text>();
+        if (DO_DAY_CYCLE)
+            StartCoroutine(DayTimer(DAY_DURATION));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_24Hour)
+        //if (_24Hour)
+        //{
+        //    display.SetText(tm.Clock24Hour());
+        //}
+        //else
+        //{
+        //    display.SetText(tm.Clock12Hour());
+        //}
+    }
+
+    IEnumerator DayTimer(int hourDuration)
+    {
+        for (int i = 0; i < hourDuration * 60; i++)
         {
-            display.SetText(tm.Clock24Hour());
-        }
-        else
-        {
-            display.SetText(tm.Clock12Hour());
+            yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
+            int minutes = i % MINUTES_PER_HOUR;
+            int hours = i / MINUTES_PER_HOUR % 24;
+            display.SetText($"{GetNormalHour(hours).ToString("D2")}:{minutes.ToString("D2")}");
+            switch (hours)
+            {
+                case 0:
+                    RenderSettings.skybox = NightSky;
+                    DynamicGI.UpdateEnvironment();
+                    MainLight.intensity = 0.2f;
+                    break;
+                case 5:
+                    RenderSettings.skybox = MorningSky;
+                    DynamicGI.UpdateEnvironment();
+                    MainLight.intensity = 0.55f;
+                    break;
+                case 9:
+                    RenderSettings.skybox = DaySky;
+                    DynamicGI.UpdateEnvironment();
+                    MainLight.intensity = 1f;
+                    break;
+                case 14:
+                    RenderSettings.skybox = AfternoonSky;
+                    DynamicGI.UpdateEnvironment();
+                    MainLight.intensity = 0.8f;
+                    break;
+                case 18:
+                    RenderSettings.skybox = EveningSky;
+                    DynamicGI.UpdateEnvironment();
+                    MainLight.intensity = 0.65f;
+                    break;
+                case 21:
+                    RenderSettings.skybox = NightSky;
+                    DynamicGI.UpdateEnvironment();
+                    MainLight.intensity = 0.2f;
+                    break;
+            }
+
         }
     }
+
+    int GetNormalHour(int militaryHour)
+    {
+        return ((militaryHour + 11) % 12 + 1);
+    }
 }
+
