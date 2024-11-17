@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour, IDataPersistence
+public class Movement : MonoBehaviour
 {
     [Header("Player Manager")]
     public GameObject player_manager;
@@ -72,14 +72,6 @@ public class Movement : MonoBehaviour, IDataPersistence
         }//end if-else
     }
 
-    public void LoadData(GameData data)
-    {
-        transform.position = data.playerPosition;
-    }
-    public void SaveData(ref GameData data)
-    {
-        data.playerPosition = transform.position;
-    }
     private void TaskMove()
     {
         taskName = player_manager.GetComponent<Player_Manager>().get_cur_task();
