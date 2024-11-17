@@ -2354,21 +2354,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_manager: {fileID: 0}
   FurnaceMenu: {fileID: 0}
-  Countdown: {fileID: 0}
   TemperatureSlider: {fileID: 0}
-  ProgressSlider: {fileID: 0}
-  TimeSlider: {fileID: 0}
-  SliderCanvas: {fileID: 0}
-  TemperatureRangePrefab: {fileID: 0}
   Blower: {fileID: 1634001443}
   WholeBlower: {fileID: 211812611}
   flameEffect: {fileID: 1850337510}
-  orePrefab: {fileID: 0}
+  ingotPrefab: {fileID: 0}
   furnace: {fileID: 1087060996}
-  oreButtonPrefab: {fileID: 0}
-  buttons: []
-  resultQuality: 0
-  gameParams: []
 --- !u!4 &229009822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1676609100239073865, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
@@ -3154,8 +3145,8 @@ RectTransform:
   m_GameObject: {fileID: 369984418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 67442454}
   - {fileID: 1921742697}
