@@ -7,16 +7,14 @@ using UnityEngine;
 public class GameData
 {
     public float money;
-    public List<IngotMaterial> ingots;
-    public List<OreMaterial> ores;
-    public List<Weapon> weapons;
+    public Vector3 playerPosition;
+    public Dictionary<string, Inventory_Item> unlockedItems;
 
     public GameData()
     {
-        this.money = 500;
-        this.ingots = new List<IngotMaterial>();
-        this.ores = new List<OreMaterial>();
-        this.weapons = new List<Weapon>();
+        this.money = 0;
+        playerPosition = new Vector3(-12, 3, 10);
+        unlockedItems = new Dictionary<string, Inventory_Item>();
     }
 
 }

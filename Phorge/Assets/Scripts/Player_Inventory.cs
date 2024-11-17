@@ -71,17 +71,10 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         money = data.money;
-        ores = data.ores;
-        ingots = data.ingots;
-        weapons = data.weapons;
-
     }
     public void SaveData(ref GameData data)
     {
         data.money = money;
-        data.ores = ores;
-        data.ingots = ingots;
-        data.weapons = weapons;
     }
 
     public IngotMaterial getIngot(int matIndex)
