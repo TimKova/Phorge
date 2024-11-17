@@ -25,6 +25,8 @@ public class NewClockScript : MonoBehaviour
     public Material AfternoonSky;
     public Material EveningSky;
     public Material NightSky;
+    public int internalMinutes;
+    public int internalHours;
 
     // Start is called before the first frame update
 
@@ -51,13 +53,14 @@ public class NewClockScript : MonoBehaviour
 
     IEnumerator DayTimer(int hourDuration)
     {
-        for (int i = 0; i < hourDuration * 60; i++)
+        for (internalMinutes = 480; internalMinutes < hourDuration * 60; internalMinutes++)
         {
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
-            int minutes = i % MINUTES_PER_HOUR;
-            int hours = i / MINUTES_PER_HOUR % 24;
-            display.SetText($"{GetNormalHour(hours).ToString("D2")}:{minutes.ToString("D2")}");
-            switch (hours)
+            int displayMinutes = internalMinutes % MINUTES_PER_HOUR;
+            int displayHours = internalMinutes / MINUTES_PER_HOUR % 24;
+            internalHours = internalHours;
+            display.SetText($"{GetNormalHour(displayHours).ToString("D2")}:{displayMinutes.ToString("D2")}");
+            switch (displayHours)
             {
                 case 0:
                     RenderSettings.skybox = NightSky;

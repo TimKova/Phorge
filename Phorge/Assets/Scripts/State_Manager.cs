@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System.Runtime.InteropServices;
 
 public class State_Manager : MonoBehaviour
@@ -17,9 +18,12 @@ public class State_Manager : MonoBehaviour
     public Canvas npcCanvas;
     public Canvas npcCanvas2;
     public string npcName;
-    public string timeOfDay;
+    public string stage;
     public Time_Manager tm;
-    public TMP_Text clockDisplay;
+    public NewClockScript clock;
+    public GameObject clockDisplay;
+    public GameObject NewDay;
+    public Button NewDayButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +32,15 @@ public class State_Manager : MonoBehaviour
         npc = false;
         state_to_be = "free_move";
         taskName = null;
-        timeOfDay = "morning";
+        stage = "morning";
+        stageSwitch();
         //StartCoroutine(daytimeroutine());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        NewDayButton.onClick.AddListener(ButtonStage);
         if (doingTask)
         {
             state_to_be = "task_int";
@@ -53,15 +58,29 @@ public class State_Manager : MonoBehaviour
             state_to_be = "free_move";
         }
 
+        if (clock.internalMinutes > 1200)
+        {
+            stage = "evening";
+            stageSwitch();
+        }
+
         npcInteraction();
         taskInteraction();
         hammerInteraction();
         pauseState();
+        eveningButton();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
         player_manager.GetComponent<Player_Manager>().set_cur_npc(npcName);
         //print("Our NPC's name is " + npcName);
         //print(state_to_be);
+    }
+
+    void ButtonStage()
+    {
+        clock.internalMinutes = 480;
+        stage = "morning";
+        stageSwitch();
     }
 
     void taskInteraction()
@@ -114,7 +133,8 @@ public class State_Manager : MonoBehaviour
         //print("Interaction Terminated");
         if (npcName == "MrItemMan")
         {
-            
+            stage = "workday";
+            stageSwitch();
         }
         npc = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -132,6 +152,34 @@ public class State_Manager : MonoBehaviour
         }
 
     }//end pauseState
+    
+    private void stageSwitch()
+    {
+        if (stage == "morning")
+        {
+            print("Hello john");
+            clockDisplay.SetActive(false);
+            NewDay.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (stage == "workday")
+        {
+            clockDisplay.SetActive(true);
+        }
+        else if (stage == "evening")
+        {
+            clockDisplay.SetActive(false);
+            NewDay.SetActive(true);
+        }
+    }
+
+    private void eveningButton()
+    {
+        if (stage == "evening" && Input.GetKeyDown(KeyCode.T))
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+    }
 
     void hammerInteraction()
     {
@@ -201,16 +249,16 @@ public class State_Manager : MonoBehaviour
         while(true)
         {
             print("Definitely inside the coroutine");
-           if (timeOfDay == "morning")
+           if (stage == "morning")
            {
                 print("We here");
-                clockDisplay.SetText("");
+                //clockDisplay.SetText("");
            }
-           if (timeOfDay == "workday")
+           if (stage == "workday")
            {
 
            }
-           if (timeOfDay == "evening")
+           if (stage == "evening")
            {
 
            }
