@@ -1,46 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\",
+  "WorkspaceRootPath": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FurnaceGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\WalkAnimScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AnvilGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Inventory_Items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FadeMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MMCamSway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Camera_Controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\NavScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\NavScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Main_Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,129 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FurnaceGame.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FurnaceGame.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FurnaceGame.cs",
-              "ViewState": "AgIAACABAAAAAAAAAAAjwDgBAAAWAAAAAAAAAA==",
+              "Title": "WalkAnimScript.cs",
+              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WalkAnimScript.cs",
+              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WalkAnimScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T07:52:29.477Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-11-18T00:15:08.407Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AnvilGame.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AnvilGame.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AnvilGame.cs",
-              "ViewState": "AgIAAFYBAAAAAAAAAIBJwIYBAAAgAAAAAAAAAA==",
+              "Title": "Player_Movement.cs",
+              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movement.cs",
+              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player_Movement.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:17:57.578Z",
+              "WhenOpened": "2024-11-17T23:44:31.025Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Camera_Controller.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Camera_Controller.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Camera_Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:00:36.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FlyCameraBehaviour.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
-              "RelativeDocumentMoniker": "Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
-              "RelativeToolTip": "Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T08:04:15.046Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NavScript.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\NavScript.cs",
-              "RelativeDocumentMoniker": "Assets\\NavScript.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\NavScript.cs",
-              "RelativeToolTip": "Assets\\NavScript.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAjwGUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T08:04:01.417Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Inventory_Items.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory_Items.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Inventory_Items.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAjwOMAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T05:55:03.775Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player_Inventory.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Inventory.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player_Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAB4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T05:54:37.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FadeMenu.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FadeMenu.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FadeMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:21:22.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Main_Menu.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Main_Menu.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Main_Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:17:13.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MMCamSway.cs",
-              "DocumentMoniker": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MMCamSway.cs",
-              "ToolTip": "C:\\Users\\charl\\proj\\UnityBullshit\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MMCamSway.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:21:58.977Z"
             }
           ]
         }
