@@ -30,8 +30,8 @@ public class DialogueScript : MonoBehaviour
     {
         if (sm.npcName == "QuestGiver1" && sm.npc == true)
         {
-            print("We did get in, but nothing happened");
-            print(dialogueOptions[0]);
+            //print("We did get in, but nothing happened");
+            //print(dialogueOptions[0]);
             display.SetText(dialogueOptions[0]);
             displayCanvas.SetActive(true);
         }
