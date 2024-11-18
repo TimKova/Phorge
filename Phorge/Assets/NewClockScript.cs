@@ -41,20 +41,17 @@ public class NewClockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (_24Hour)
-        //{
-        //    display.SetText(tm.Clock24Hour());
-        //}
-        //else
-        //{
-        //    display.SetText(tm.Clock12Hour());
-        //}
+        if (internalMinutes == 479)
+        {
+            StartCoroutine(DayTimer(DAY_DURATION));
+        }
     }
 
     IEnumerator DayTimer(int hourDuration)
     {
         for (internalMinutes = 480; internalMinutes < hourDuration * 60; internalMinutes++)
         {
+            print(internalMinutes);
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
             int displayMinutes = internalMinutes % MINUTES_PER_HOUR;
             int displayHours = internalMinutes / MINUTES_PER_HOUR % 24;

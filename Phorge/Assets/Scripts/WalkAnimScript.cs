@@ -28,13 +28,13 @@ public class WalkAnimScript : MonoBehaviour
     {
             if(npc.velocity.magnitude > 0)
         {
-                print("Moving True");
+                //print("Moving True");
                 animator.SetInteger("Moving", 1);
                 state = walkState.walk;
         } 
             if(npc.velocity.magnitude == 0)
             {
-                print("Moving False");
+                //print("Moving False");
                 animator.SetInteger("Moving", 0);
                 state = walkState.idle;
         }

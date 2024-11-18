@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\WalkAnimScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\walkanimscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\walkanimscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\navscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\navscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\chees\\desktop\\godotfps\\phorge\\phorge\\assets\\scripts\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NavScript.cs",
+              "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\NavScript.cs",
+              "RelativeDocumentMoniker": "Assets\\NavScript.cs",
+              "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\NavScript.cs",
+              "RelativeToolTip": "Assets\\NavScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T00:59:24.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WalkAnimScript.cs",
+              "Title": "Assets\\Scripts\\WalkAnimScript.cs",
               "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WalkAnimScript.cs",
               "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\WalkAnimScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T00:15:08.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player_Movement.cs",
               "DocumentMoniker": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movement.cs",
               "ToolTip": "C:\\Users\\chees\\Desktop\\godotfps\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Movement.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAqwHcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T23:44:31.025Z",
               "EditorCaption": ""

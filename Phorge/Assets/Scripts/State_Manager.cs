@@ -11,7 +11,7 @@ public class State_Manager : MonoBehaviour
     public GameObject player_manager;
     string state_to_be;
     public bool doingTask, inHammerRange, pause;
-    bool npc;
+    public bool npc;
     public bool inTaskRange;
     bool inNpcRange;
     string taskName;
@@ -24,6 +24,7 @@ public class State_Manager : MonoBehaviour
     public GameObject clockDisplay;
     public GameObject NewDay;
     public Button NewDayButton;
+    public GameObject questDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class State_Manager : MonoBehaviour
         taskName = null;
         stage = "morning";
         stageSwitch();
+        questDisplay.SetActive(false);
         //StartCoroutine(daytimeroutine());
     }
 
@@ -78,7 +80,7 @@ public class State_Manager : MonoBehaviour
 
     void ButtonStage()
     {
-        clock.internalMinutes = 480;
+        clock.internalMinutes = 479;
         stage = "morning";
         stageSwitch();
     }
@@ -121,6 +123,10 @@ public class State_Manager : MonoBehaviour
         {
             npcCanvas.enabled = false;
         }
+        else if (npcName == "QuestGiver1")
+        {
+            questDisplay.SetActive(true);
+        }
         else
         {
             npcCanvas2.enabled = false;
@@ -135,6 +141,10 @@ public class State_Manager : MonoBehaviour
         {
             stage = "workday";
             stageSwitch();
+        }
+        if (npcName == "QuestGiver1")
+        {
+            questDisplay.SetActive(false);
         }
         npc = false;
         Cursor.lockState = CursorLockMode.Locked;
