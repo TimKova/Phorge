@@ -200,38 +200,51 @@ public class State_Manager : MonoBehaviour
         if (stage == "morning")
         {
             // Right idea, uncommenting this does some funky stuff, but not dangerous. Take a look and try to improve on it, Carlos.
-            //for(int i = 0; i < NPCs.Count; i++)
-            //{
-            //    int randomInt = Random.Range(0, 3);
-            //    if (randomInt == 0)
-            //    {
-            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(true);
-            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-            //    }
-            //    else if (randomInt == 1)
-            //    {
-            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(true);
-            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-            //    }
-            //    else if (randomInt == 2)
-            //    {
-            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
-            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-            //    }
-            //    else if (randomInt == 3)
-            //    {
-            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
-            //    }
-            //}
+            // you got it boss - carlos
+            for(int i = 0; i < NPCs.Count; i++)
+            {
+                Vector3 AdjustedPos = NPCs[i].transform.position;
+                // NPC mesh's origin are at their feet, while the NPC capsules themselves seem to have the origin at the center of their body. so i moved them down a little
+                AdjustedPos.y -= 1.005f; 
+                int randomInt = Random.Range(0, 3);
+                // if you don't transform the position to align with the npc the moment they are set active, they seem to reinstantiate right where
+                // the npc was first created, but they still would follow the npc so they get swung around lmao
+
+                // do NOT remove the filler objects under each ambience NPC, this will cause a buffer overflow in the GetChild functions!
+                // do NOT create game objects that are above the 6 children, the following 4 if statements will disable them!
+                if (randomInt == 0)
+                {
+                    NPCs[i].transform.GetChild(3).gameObject.SetActive(true);
+                    NPCs[i].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
+                    NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+                }
+                else if (randomInt == 1)
+                {
+                    NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(4).gameObject.SetActive(true);
+                    NPCs[i].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
+                    NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+                }
+                else if (randomInt == 2)
+                {
+                    NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
+                    NPCs[i].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
+                    NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+                }
+                else if (randomInt == 3)
+                {
+                    NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                    NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
+                    NPCs[i].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
+                }
+            }
         
             
             forgeMusic.GetComponent<AudioSource>().Stop();
