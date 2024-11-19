@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Runtime.InteropServices;
+using Random = UnityEngine.Random;
 
 public class State_Manager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class State_Manager : MonoBehaviour
     string taskName;
     public Canvas npcCanvas;
     public Canvas npcCanvas2;
+    public Canvas npcCanvas3;
     public string npcName;
     public string npcTag;
     public string stage;
@@ -26,6 +28,8 @@ public class State_Manager : MonoBehaviour
     public GameObject NewDay;
     public Button NewDayButton;
     public GameObject questDisplay;
+    public GameObject questDisplay2;
+    [SerializeField] public List<GameObject> NPCs;
     public GameObject forgeMusic;
     public GameObject shopMusic;
     public int thiefRep;
@@ -137,12 +141,19 @@ public class State_Manager : MonoBehaviour
             npcCanvas.enabled = false;
         }
         else if (npcName == "QuestGiver1")
-        { 
+        {
+            npcCanvas2.enabled = false;
             questDisplay.SetActive(true);
+        }
+        else if (npcName == "QuestGiver2")
+        {
+            npcCanvas3.enabled = false;
+            questDisplay2.SetActive(true);
         }
         else
         {
-            npcCanvas2.enabled = false;
+            //npcCanvas2.enabled = false;
+            //npcCanvas3.enabled = false;
         }
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -158,6 +169,14 @@ public class State_Manager : MonoBehaviour
         if (npcName == "QuestGiver1")
         {
             questDisplay.SetActive(false);
+        }
+        else if (npcName == "QuestGiver2")
+        {
+            questDisplay2.SetActive(false);
+        }
+        else
+        {
+            //npcCanvas2.enabled = false;
         }
         npc = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -180,9 +199,44 @@ public class State_Manager : MonoBehaviour
     {
         if (stage == "morning")
         {
+            // Right idea, uncommenting this does some funky stuff, but not dangerous. Take a look and try to improve on it, Carlos.
+            //for(int i = 0; i < NPCs.Count; i++)
+            //{
+            //    int randomInt = Random.Range(0, 3);
+            //    if (randomInt == 0)
+            //    {
+            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(true);
+            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+            //    }
+            //    else if (randomInt == 1)
+            //    {
+            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(true);
+            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+            //    }
+            //    else if (randomInt == 2)
+            //    {
+            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
+            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+            //    }
+            //    else if (randomInt == 3)
+            //    {
+            //        NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+            //        NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
+            //    }
+            //}
+        
+            
             forgeMusic.GetComponent<AudioSource>().Stop();
             shopMusic.GetComponent<AudioSource>().Play();
-            print("Hello john");
+            //print("Hello john");
             clockDisplay.SetActive(false);
             NewDay.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;

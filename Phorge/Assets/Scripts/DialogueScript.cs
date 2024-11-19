@@ -28,7 +28,7 @@ public class DialogueScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sm.npcName == "QuestGiver1" && sm.npc == true)
+        if ((sm.npcName == "QuestGiver1" || sm.npcName == "QuestGiver2") && sm.npc == true);
         {
             //print("We did get in, but nothing happened");
             //print(dialogueOptions[0]);

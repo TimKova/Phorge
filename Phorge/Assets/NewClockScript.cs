@@ -49,7 +49,7 @@ public class NewClockScript : MonoBehaviour
 
     IEnumerator DayTimer(int hourDuration)
     {
-        for (internalMinutes = 480; internalMinutes < hourDuration * 60; internalMinutes++)
+        for (internalMinutes = 1100; internalMinutes < hourDuration * 60; internalMinutes++)
         {
             //print(internalMinutes);
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);

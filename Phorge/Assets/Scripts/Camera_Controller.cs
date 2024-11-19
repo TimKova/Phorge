@@ -145,6 +145,17 @@ public class Camera_Controller : MonoBehaviour
         else if (npcName == "QuestGiver1")
         {
             playerCam.enabled = false;
+            npcCam.enabled = true;
+            //MerchantMenu.enabled = true;
+            //if (!hasRelevantMenuOpened)
+            //{
+            //    merchantManager.refreshQuantities();
+            //    hasRelevantMenuOpened = true;
+            //}
+        }
+        else if (npcName == "QuestGiver2")
+        {
+            playerCam.enabled = false;
             npcCam2.enabled = true;
             //MerchantMenu.enabled = true;
             //if (!hasRelevantMenuOpened)

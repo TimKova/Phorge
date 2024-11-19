@@ -10,25 +10,37 @@ public class NavScript : MonoBehaviour
 {
     public Transform counter1;
     public Transform counter2;
+    public Transform MerchantRest;
+    public Transform QuestRest1;
+    public Transform QuestRest2;
+    public Transform AmbiRest1;
+    public Transform AmbiRest2;
     private TrafficManager counter1Script;
     private TrafficManager counter2Script;
     private NavMeshAgent npc;
     [SerializeField] private List<Transform> waypoints;
     private int prevTarget;
+    public State_Manager sm;
     // Start is called before the first frame update
     void Start()
     {
+        sm = FindObjectOfType<State_Manager>();
         counter1Script = counter1.GetComponent<TrafficManager>();
         counter2Script = counter2.GetComponent<TrafficManager>();
         npc = GetComponent<NavMeshAgent>();
-        // Controls Ambience NPC initial movement
         if (this.gameObject.tag == "AmbienceNPC")
+        {
+            npc.isStopped = true;
+        }
+        // Controls Ambience NPC initial movement
+        if (this.gameObject.tag == "AmbienceNPC" && sm.stage == "workday")
         {
             int randomTarget = Random.Range(0, waypoints.Count);
             npc.destination = waypoints[randomTarget].position;
             prevTarget = randomTarget;
             StartCoroutine(AmbienceCoroutine());
         }
+        StartCoroutine(AmbienceCoroutine());
     }
 
     // Update is called once per frame
@@ -50,28 +62,69 @@ public class NavScript : MonoBehaviour
 
         if (this.gameObject.tag != "AmbienceNPC")
         {
-            occupancyChecker();
+            destinationSender();
         }
     }
+    // Depreciated for old implementation
+    //private void occupancyChecker()
+    //{
+    //    if (counter1Script == null)
+    //        return;
+    //    if (!counter1Script.isOccupied)
+    //    {
+    //        npc.destination = counter1.position;
+    //        if (npc.transform.position == counter1.position)
+    //        {
+    //            return;
+    //        }
+    //    }
+    //    else if (!counter2Script.isOccupied)
+    //    {
+    //        npc.destination = counter2.position;
+    //        if (npc.transform.position == counter2.position)
+    //        {
+    //            return;
+    //        }
+    //    }
+    //}
 
-    private void occupancyChecker()
+    private void destinationSender()
     {
-        if (counter1Script == null)
-            return;
-        if (!counter1Script.isOccupied)
+        if (sm.stage == "morning")
         {
-            npc.destination = counter1.position;
-            if (npc.transform.position == counter1.position)
+            if (this.gameObject.name == "MrItemMan")
             {
-                return;
+                npc.destination = counter1.position;
             }
         }
-        else if (!counter2Script.isOccupied)
+        if (sm.stage == "workday")
         {
-            npc.destination = counter2.position;
-            if (npc.transform.position == counter2.position)
+            if (this.gameObject.name == "MrItemMan")
             {
-                return;
+                npc.isStopped = false;
+                npc.destination = MerchantRest.position;
+            }
+            else if (this.gameObject.name == "QuestGiver1")
+            {
+                npc.destination = counter1.position;
+            }
+            else if (this.gameObject.name == "QuestGiver2")
+            {
+                npc.destination = counter2.position;
+            }
+        }
+        if (sm.stage == "evening")
+        {
+            if (this.gameObject.name == "QuestGiver1")
+            {
+                //print("Sup");
+                npc.isStopped = false;
+                npc.destination = QuestRest1.position;
+            }
+            else if (this.gameObject.name == "QuestGiver2")
+            {
+                npc.isStopped = false;
+                npc.destination = QuestRest2.position;
             }
         }
     }
@@ -89,21 +142,61 @@ public class NavScript : MonoBehaviour
     {
         while (true)
         {
-            //print("Heyoooo");
             yield return new WaitForSeconds(10);
-            //print("Hi");
-            //if (npc.isStopped == true)
-            //{
-            //    print("So true bestie");
-            //}
-            int randomTarget = Random.Range(0, waypoints.Count);
-            if (npc.isStopped == true && randomTarget != prevTarget)
+            if (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2")
             {
-                //print("We in");
-                npc.destination = waypoints[randomTarget].position;
-                npc.isStopped = false;
+                if (sm.stage == "workday")
+                {
+                    //print("Heyoooo");
+                    //print("Hi");
+                    //if (npc.isStopped == true)
+                    //{
+                    //    print("So true bestie");
+                    //}
+                    int randomTarget = Random.Range(0, waypoints.Count);
+                    if (npc.isStopped == true && randomTarget != prevTarget)
+                    {
+                        //print("We in");
+                        npc.destination = waypoints[randomTarget].position;
+                        npc.isStopped = false;
+                    }
+                    prevTarget = randomTarget;
+                }
+                ////print("Heyoooo");
+                //yield return new WaitForSeconds(10);
+                ////print("Hi");
+                ////if (npc.isStopped == true)
+                ////{
+                ////    print("So true bestie");
+                ////}
+                //int randomTarget = Random.Range(0, waypoints.Count);
+                //if (npc.isStopped == true && randomTarget != prevTarget)
+                //{
+                //    //print("We in");
+                //    npc.destination = waypoints[randomTarget].position;
+                //    npc.isStopped = false;
+                //}
+                //prevTarget = randomTarget;
+                else if (sm.stage == "evening")
+                {
+                    //print("Suh suh");
+                    if (this.gameObject.name == "Ambience1")
+                    {
+                        npc.isStopped = false;
+                        npc.destination = AmbiRest1.position;
+                    }
+                    else if (this.gameObject.name == "Ambience2")
+                    {
+                        npc.isStopped = false;
+                        npc.destination = AmbiRest2.position;
+                    }
+                }
+                else if (sm.stage == "morning")
+                {
+                    //print("No wayooooo");
+                    yield return new WaitForSeconds(10);
+                }
             }
-            prevTarget = randomTarget;
         }
     }
 }
