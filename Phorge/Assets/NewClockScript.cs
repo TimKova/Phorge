@@ -51,7 +51,7 @@ public class NewClockScript : MonoBehaviour
     {
         for (internalMinutes = 480; internalMinutes < hourDuration * 60; internalMinutes++)
         {
-            print(internalMinutes);
+            //print(internalMinutes);
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
             int displayMinutes = internalMinutes % MINUTES_PER_HOUR;
             int displayHours = internalMinutes / MINUTES_PER_HOUR % 24;

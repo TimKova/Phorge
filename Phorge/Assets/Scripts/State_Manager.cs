@@ -18,6 +18,7 @@ public class State_Manager : MonoBehaviour
     public Canvas npcCanvas;
     public Canvas npcCanvas2;
     public string npcName;
+    public string npcTag;
     public string stage;
     public Time_Manager tm;
     public NewClockScript clock;
@@ -25,9 +26,21 @@ public class State_Manager : MonoBehaviour
     public GameObject NewDay;
     public Button NewDayButton;
     public GameObject questDisplay;
+    public GameObject forgeMusic;
+    public GameObject shopMusic;
+    public int thiefRep;
+    public int knightRep;
+    public int beastRep;
+    public int elfRep;
+    public string activeFaction;
+
     // Start is called before the first frame update
     void Start()
     {
+        thiefRep = 0;
+        knightRep = 0;
+        beastRep = 0;
+        elfRep = 0;
         pause = false;
         doingTask = false;
         npc = false;
@@ -124,7 +137,7 @@ public class State_Manager : MonoBehaviour
             npcCanvas.enabled = false;
         }
         else if (npcName == "QuestGiver1")
-        {
+        { 
             questDisplay.SetActive(true);
         }
         else
@@ -167,6 +180,8 @@ public class State_Manager : MonoBehaviour
     {
         if (stage == "morning")
         {
+            forgeMusic.GetComponent<AudioSource>().Stop();
+            shopMusic.GetComponent<AudioSource>().Play();
             print("Hello john");
             clockDisplay.SetActive(false);
             NewDay.SetActive(false);
@@ -174,10 +189,14 @@ public class State_Manager : MonoBehaviour
         }
         else if (stage == "workday")
         {
+            shopMusic.GetComponent<AudioSource>().Stop();
+            forgeMusic.GetComponent<AudioSource>().Play();
             clockDisplay.SetActive(true);
         }
         else if (stage == "evening")
         {
+            forgeMusic.GetComponent<AudioSource>().Stop();
+            shopMusic.GetComponent<AudioSource>().Play();
             clockDisplay.SetActive(false);
             NewDay.SetActive(true);
         }
@@ -227,6 +246,7 @@ public class State_Manager : MonoBehaviour
         {
             //print("In range of NPC");
             npcName = other.name;
+            npcTag = other.tag;
 
             inNpcRange = true;
         }//end if-else
