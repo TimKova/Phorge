@@ -21,7 +21,8 @@ public class DialogueScript : MonoBehaviour
         itemName = "sword";
         itemMetal = "uranium";
         itemFinish = "oil";
-        dialogueOptions.Add("I would like to purchase a " + itemName + " made of " + itemMetal + " finished using the " + itemFinish);
+        dialogueOptions.Add("I would like to purchase a " + itemName + " made of " + itemMetal + ".");
+        display.SetText(dialogueOptions[0]);
         displayCanvas.SetActive(false);
     }
 

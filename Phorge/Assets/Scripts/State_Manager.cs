@@ -30,6 +30,7 @@ public class State_Manager : MonoBehaviour
     public GameObject questDisplay;
     public GameObject questDisplay2;
     [SerializeField] public List<GameObject> NPCs;
+    [SerializeField] public List<GameObject> sliders;
     public GameObject forgeMusic;
     public GameObject shopMusic;
     public int thiefRep;
@@ -54,6 +55,7 @@ public class State_Manager : MonoBehaviour
         taskName = null;
         stage = "morning";
         stageSwitch();
+        //hideSliders();
         questDisplay.SetActive(false);
         //StartCoroutine(daytimeroutine());
     }
@@ -108,6 +110,22 @@ public class State_Manager : MonoBehaviour
         stageSwitch();
     }
 
+    void hideSliders()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            sliders[i].SetActive(false);
+        }
+    }
+    
+    void showSliders()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            sliders[i].SetActive(true);
+        }
+    }
+
     void taskInteraction()
     {
         if (inTaskRange && Input.GetKeyDown(KeyCode.E) && !doingTask)
@@ -125,6 +143,7 @@ public class State_Manager : MonoBehaviour
         //print("Task Initiated)");
         doingTask = true;
         Cursor.lockState = CursorLockMode.Confined;
+        hideSliders();
     }
 
     public void endTask()
@@ -134,6 +153,7 @@ public class State_Manager : MonoBehaviour
         if(inInventory)
             inInventory = false;
         Cursor.lockState = CursorLockMode.Locked;
+        showSliders();
         //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
     }
 
@@ -146,6 +166,7 @@ public class State_Manager : MonoBehaviour
     }
     public void startNpcInt()
     {
+        hideSliders();
         //print("Interaction Engaged");
         npc = true;
         if (npcName == "MrItemMan")
@@ -172,6 +193,7 @@ public class State_Manager : MonoBehaviour
 
     public void endNpcInt()
     {
+        showSliders();
         //print("Interaction Terminated");
         if (npcName == "MrItemMan")
         {
@@ -312,7 +334,7 @@ public class State_Manager : MonoBehaviour
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
         //print("Trigger Enter");
-        if (other.gameObject.tag == "Task") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "Task" && stage == "workday") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             inTaskRange = true;
             taskName = other.name;
