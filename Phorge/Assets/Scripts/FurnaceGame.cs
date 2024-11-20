@@ -20,8 +20,8 @@ public class FurnaceGame : MonoBehaviour
     const int SIZE = 0;
     const int HEIGHT = 1;
     const int DURATION = 2;
-    const float FURNACE_PROGRESS_STRENGTH = 0.0005f;
-    const float BLOWER_SUCK_POWER = 0.5f; //2f;
+    const float FURNACE_PROGRESS_STRENGTH = 0.0015f;
+    const float BLOWER_SUCK_POWER = 2f;
     public readonly string[] READY_PHRASES = { "Ready", "Set", "Phorge!" };     // Countdown phrases for minigame
 
     // X position of the range = (+/-80 - rangeHeight). - is high, + is low
@@ -325,6 +325,7 @@ public class FurnaceGame : MonoBehaviour
         {
             print($"Result qual: {ProgressSlider.value}");
             county.text = $"Succesfully Phorged a {Inventory_Item.getQualityModifier(ProgressSlider.value)} {Player_Inventory.materialNames[currentOre]} Ingot!";
+            playerInventory.purchaseIngot(currentOre);
         }
         //StartCoroutine(startTimer(duration));
         stopGame();

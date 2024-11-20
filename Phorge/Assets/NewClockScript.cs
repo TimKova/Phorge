@@ -14,7 +14,7 @@ public class NewClockScript : MonoBehaviour
     public bool _24Hour = false;
 
     const int MINUTES_PER_HOUR = 60;
-    const float DAY_SPEED_SCALE = 2f;
+    const float DAY_SPEED_SCALE = 3f;
     const int DAY_DURATION = 48;
     const bool DO_DAY_CYCLE = true;
 

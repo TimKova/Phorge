@@ -39,7 +39,7 @@ public class AnvilGame : MonoBehaviour
 
     // An array representing delays in seconds between HIT targets for minigame
     // # of targets increases automatically for each delay added
-    private float[] offsets = { 1.5f };//, 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f };
+    private float[] offsets = { 1.5f , 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f, 3f, 3f, 1f, 1f};
 
 
     // Names
