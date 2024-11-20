@@ -55,7 +55,7 @@ public class State_Manager : MonoBehaviour
         taskName = null;
         stage = "morning";
         stageSwitch();
-        //hideSliders();
+        hideSliders();
         questDisplay.SetActive(false);
         //StartCoroutine(daytimeroutine());
     }
@@ -143,7 +143,7 @@ public class State_Manager : MonoBehaviour
         //print("Task Initiated)");
         doingTask = true;
         Cursor.lockState = CursorLockMode.Confined;
-        hideSliders();
+        //hideSliders();
     }
 
     public void endTask()
@@ -153,7 +153,7 @@ public class State_Manager : MonoBehaviour
         if(inInventory)
             inInventory = false;
         Cursor.lockState = CursorLockMode.Locked;
-        showSliders();
+        //showSliders();
         //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
     }
 
@@ -166,7 +166,7 @@ public class State_Manager : MonoBehaviour
     }
     public void startNpcInt()
     {
-        hideSliders();
+        //hideSliders();
         //print("Interaction Engaged");
         npc = true;
         if (npcName == "MrItemMan")
@@ -193,7 +193,7 @@ public class State_Manager : MonoBehaviour
 
     public void endNpcInt()
     {
-        showSliders();
+        //showSliders();
         //print("Interaction Terminated");
         if (npcName == "MrItemMan")
         {
