@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 [System.Serializable]
@@ -120,6 +121,30 @@ public class Inventory_Item : IDataPersistence
     public void setUnlocked(bool unlocked) { this.unlocked = unlocked; }
 
     //Methods----------------------------------------------------------------------
+    public float genListPrice(List<Inventory_Item> items)
+    {
+        float listPrice = 0;
+        int stock = 0;
+
+        foreach (Inventory_Item item in items)
+        {
+            if (item.name.Equals(name))
+                stock += 1;
+        }//counts how many of that object are in the inventory
+
+        if(stock > 1)//only adjust the price if there's more than 1 of the object. The more you make, the less they are worth.
+        {
+            float priceReduct = 0.2f;
+
+            listPrice = price * (stock * priceReduct);
+        }
+        else
+        {
+            listPrice = price;
+        }
+
+        return listPrice;
+    }
     public int spend() { this.quantity--; return getQuantity(); }
     public int spend(int amount) { this.quantity -= amount; return getQuantity(); }
 
