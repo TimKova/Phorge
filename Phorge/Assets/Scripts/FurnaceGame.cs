@@ -11,7 +11,7 @@ public class FurnaceGame : MonoBehaviour
 {
     const float ORE_SCALE = 5f;
     private readonly Vector3 FURNACE_TOP = new Vector3(-12.22f, 0.91f, -13.95f);
-    public const string MATERIAL_QUANTITY_TAG = "materialQuantity";
+    public const string MATERIAL_QUANTITY_TAG = "oreQuantity";
     public readonly Vector3 BELLOWS_START_POSITION = new Vector3(-1.383f, 0.178f, 0.627f);
     public readonly Quaternion BELLOWS_START_ROTATION = new Quaternion(0.424148679f, -0.636672974f, -0.357055634f, -0.535963356f);
     public readonly Vector3 BELLOWS_END_POSITION = new Vector3(0.799f, 0.855f, 1.992f);
@@ -113,9 +113,10 @@ public class FurnaceGame : MonoBehaviour
             title.text = name;
 
             var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            currentAmount.gameObject.tag = "materialQuantity";
-            currentAmount.gameObject.name = "materialQuantity" + c;
-            currentAmount.text = (c + 2) + "";//playerInventory.ores[c].getQuantity() + "";
+            currentAmount.gameObject.tag = "oreQuantity";
+            currentAmount.gameObject.name = name + " Quant";
+            //print(playerInventory.ores.Count + "OLOLOL");
+            currentAmount.text = "0";// playerInventory.ores[c].getQuantity() + "";
 
             buttons.Add(templateButton);
             //Material ingotMat = Resources.Load(ingotName) as Material;
@@ -135,6 +136,7 @@ public class FurnaceGame : MonoBehaviour
             cur_task = player_manager.GetComponent<Player_Manager>().get_cur_task();
             if (cur_task == "Furnace")
             {
+                refreshQuantities();
                 WholeBlower.transform.localPosition = BELLOWS_END_POSITION;
                 WholeBlower.transform.localRotation = BELLOWS_END_ROTATION;
                 Blow();
@@ -170,7 +172,7 @@ public class FurnaceGame : MonoBehaviour
     public void SpawnOre(int oreType)
     {
         ClearPrefabs();
-        if (oreType < Player_Inventory.materialNames.Length)
+        if (oreType < Player_Inventory.materialNames.Length && oreType > 0)
         {
             currentOre = oreType;
             var mat = playerInventory.getOre(oreType);
@@ -273,13 +275,15 @@ public class FurnaceGame : MonoBehaviour
 
     public void setCount(int matIndex)
     {
+
         var matName = Player_Inventory.materialNames[matIndex];
-        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
+        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("oreQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == (matName + " Quant"))
             {
-                textComp.text = (playerInventory.getIngot(currentOre).getQuantity() + "");
+                textComp.text = (playerInventory.getOre(matIndex).getQuantity() + "");
+                break;
             }
         }
         //return materials[matIndex].getQuantity();
@@ -317,7 +321,7 @@ public class FurnaceGame : MonoBehaviour
         if (ProgressSlider.value < 0.5)
             county.text = "YOU FAILED TO PHORGE THE INGOT";
         else
-            county.text = $"ALL GOOD! Result quality is {Mathf.Round(ProgressSlider.value*100)}%!";
+            county.text = $"ALL GOOD! Result quality is {Mathf.Round(ProgressSlider.value * 100)}%!";
         //StartCoroutine(startTimer(duration));
         stopGame();
         Countdown.gameObject.SetActive(true);

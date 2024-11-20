@@ -24,7 +24,7 @@ public class Merchant : MonoBehaviour
         playerInventory = player_manager.GetComponent<Player_Inventory>();
         for (int c = 0; c < Player_Inventory.numMaterials; c++)
         {
-            string name = Player_Inventory.materialNames[c];
+            string name = Player_Inventory.materialNames[c]+"Ore";
 
             GameObject templateButton = Instantiate(buttonPrefab, Vector3.zero, Quaternion.identity);
             templateButton.transform.SetParent(this.gameObject.transform.GetChild(0));
@@ -44,7 +44,7 @@ public class Merchant : MonoBehaviour
             var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
             currentAmount.gameObject.tag = "materialQuantity";
             currentAmount.gameObject.name = "materialQuantity" + c;
-            currentAmount.text = playerInventory.ingots[c].getQuantity()+"";
+            currentAmount.text = playerInventory.ores[c].getQuantity()+"";
             
             buttons.Add(templateButton);
             //Material ingotMat = Resources.Load(ingotName) as Material;
@@ -62,12 +62,12 @@ public class Merchant : MonoBehaviour
     public void buyUp(int index)
     {
         print(index);
-        float price = playerInventory.ingots[index].getPrice();
-        print("Buying " + playerInventory.ingots[index].getName() + " for " + price);
+        float price = playerInventory.ores[index].getPrice();
+        print("Buying " + playerInventory.ores[index].getName() + " for " + price);
         Player_Inventory.money -= price;
         print("you now have $" + Player_Inventory.money);
         //return price;
-        playerInventory.purchaseIngot(index);
+        playerInventory.purchaseOre(index);
         setCount(index);
     }
 
@@ -88,7 +88,7 @@ public class Merchant : MonoBehaviour
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == ("materialQuantity"+matIndex))
             {
-                textComp.text = (playerInventory.getIngot(matIndex).getQuantity() + "");
+                textComp.text = (playerInventory.getOre(matIndex).getQuantity() + "");
             }
         }
         //return materials[matIndex].getQuantity();

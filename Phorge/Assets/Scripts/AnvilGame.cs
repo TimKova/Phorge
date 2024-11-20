@@ -43,7 +43,7 @@ public class AnvilGame : MonoBehaviour
 
 
     // Names
-    public const string MATERIAL_QUANTITY_TAG = "materialQuantity";             // Tagname of the number fields on the menu buttons
+    public const string INGOT_QUANTITY_TAG = "ingotQuantity";             // Tagname of the number fields on the menu buttons
     public readonly string[] READY_PHRASES = { "Ready", "Set", "Phorge!" };     // Countdown phrases for minigame
 
     //---------------------------------------------------------------------------------------------
@@ -140,8 +140,8 @@ public class AnvilGame : MonoBehaviour
             title.text = name;
 
             var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            currentAmount.gameObject.tag = "materialQuantity";
-            currentAmount.gameObject.name = "materialQuantity" + c;
+            currentAmount.gameObject.tag = "ingotQuantity";
+            currentAmount.gameObject.name = name + " Quant";
             currentAmount.text = playerInventory.ingots[c].getQuantity() + "";
 
             buttons.Add(templateButton);
@@ -171,8 +171,8 @@ public class AnvilGame : MonoBehaviour
             title.text = Player_Inventory.weaponNames[c];
 
             //var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            //currentAmount.gameObject.tag = "materialQuantity";
-            //currentAmount.gameObject.name = "materialQuantity" + c;
+            //currentAmount.gameObject.tag = "ingotQuantity";
+            //currentAmount.gameObject.name = "ingotQuantity" + c;
             //currentAmount.text = "";
 
             buttons.Add(templateButton);
@@ -188,6 +188,7 @@ public class AnvilGame : MonoBehaviour
         cur_state = player_manager.GetComponent<Player_Manager>().get_cur_state();
         if (cur_state == "task_int")
         {
+            refreshQuantities();
             // If the actual minigame is playing, then update hammer. Don't bother if not
             cur_task = player_manager.GetComponent<Player_Manager>().get_cur_task();
             if (anvilStarted)
@@ -205,7 +206,7 @@ public class AnvilGame : MonoBehaviour
         }
     }
 
-    GameObject templateIngot;
+    public GameObject templateIngot;
     // Takes in index of ingot, passed in onclick from inventory buttons
     public void SpawnIngot(int ingotType)
     {
@@ -250,7 +251,10 @@ public class AnvilGame : MonoBehaviour
     public void ConfirmMaterial()
     {
         if (currentIngot < 0 || currentWeapon < 0)
+        {
+            print("somethin' be wrong with yer code");
             return;
+        }
         if (playerInventory.getIngot(currentIngot).getQuantity() <= 0)
         {
             ClearPrefabs();
@@ -259,8 +263,9 @@ public class AnvilGame : MonoBehaviour
         }
         // Decrements one of the chosen material and updates on the UI
         var mat = playerInventory.getIngot(currentIngot);
-        print(mat.spend() + " " + mat.getName() + " ingots left");
-        setCount();
+        mat.spend();
+        print(mat.getQuantity() + " " + mat.getName() + " ingots left");
+        setCount(currentIngot);
         // Hides the anvil inventory and starts the game with the offsets[] array
         AnvilMenu.enabled = false;
         StartCoroutine(RunMinigame(offsets));
@@ -473,26 +478,26 @@ public class AnvilGame : MonoBehaviour
         }
     }
 
-    // Dirtily updates currently selected ingot count + on UI
-    public void setCount()
-    {
-        var matName = Player_Inventory.materialNames[currentIngot];
-        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
-        {
-            var textComp = quant.GetComponent<TextMeshProUGUI>();
-            if (textComp.name == (matName + " Quant"))
-            {
-                textComp.text = (playerInventory.getIngot(currentIngot).getQuantity() + "");
-            }
-        }
-        //return materials[matIndex].getQuantity();
-    }
+    //// Dirtily updates currently selected ingot count + on UI
+    //public void setCount()
+    //{
+    //    var matName = Player_Inventory.materialNames[currentIngot];
+    //    foreach (GameObject quant in GameObject.FindGameObjectsWithTag("ingotQuantity"))
+    //    {
+    //        var textComp = quant.GetComponent<TextMeshProUGUI>();
+    //        if (textComp.name == (matName + " Quant"))
+    //        {
+    //            textComp.text = (playerInventory.getIngot(currentIngot).getQuantity() + "");
+    //        }
+    //    }
+    //    //return materials[matIndex].getQuantity();
+    //}
 
     // Dirtiliy updates specific ingot count + on UI
     public void setCount(int matIndex)
     {
         var matName = Player_Inventory.materialNames[matIndex];
-        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
+        foreach (GameObject quant in GameObject.FindGameObjectsWithTag("ingotQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == (matName + " Quant"))

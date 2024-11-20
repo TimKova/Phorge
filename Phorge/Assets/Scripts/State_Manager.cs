@@ -37,6 +37,7 @@ public class State_Manager : MonoBehaviour
     public int beastRep;
     public int elfRep;
     public string activeFaction;
+    public bool inInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class State_Manager : MonoBehaviour
         elfRep = 0;
         pause = false;
         doingTask = false;
+        inInventory = false;
         npc = false;
         state_to_be = "free_move";
         taskName = null;
@@ -71,6 +73,10 @@ public class State_Manager : MonoBehaviour
         else if (pause)
         {
             Time.timeScale = 0;
+        }
+        else if (inInventory)
+        {
+            state_to_be = "inventory";
         }
         else
         {
@@ -106,7 +112,11 @@ public class State_Manager : MonoBehaviour
     {
         if (inTaskRange && Input.GetKeyDown(KeyCode.E) && !doingTask)
             startTask();
-        if (doingTask && Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.I) && !doingTask)
+        {
+            inInventory = !inInventory;
+        }
+        if ((doingTask || inInventory) && Input.GetKeyDown(KeyCode.Q))
             endTask();
     }
 
@@ -121,6 +131,8 @@ public class State_Manager : MonoBehaviour
     {
         //print("Task Terminated");
         doingTask = false;
+        if(inInventory)
+            inInventory = false;
         Cursor.lockState = CursorLockMode.Locked;
         //Camera.main.GetComponent<Camera_Controller>().SnapToPlayer();
     }
@@ -184,28 +196,30 @@ public class State_Manager : MonoBehaviour
 
     private void pauseState()
     {
-        if (!pause && Input.GetKeyDown(KeyCode.Escape)){
+        if (!pause && Input.GetKeyDown(KeyCode.Escape))
+        {
             state_to_be = "pause";
             pause = true;
-        }else if(pause && Input.GetKeyDown(KeyCode.Escape))
+        }
+        else if (pause && Input.GetKeyDown(KeyCode.Escape))
         {
             pause = false;
             Time.timeScale = 1;
         }
 
     }//end pauseState
-    
+
     private void stageSwitch()
     {
         if (stage == "morning")
         {
             // Right idea, uncommenting this does some funky stuff, but not dangerous. Take a look and try to improve on it, Carlos.
             // you got it boss - carlos
-            for(int i = 0; i < NPCs.Count; i++)
+            for (int i = 0; i < NPCs.Count; i++)
             {
                 Vector3 AdjustedPos = NPCs[i].transform.position;
                 // NPC mesh's origin are at their feet, while the NPC capsules themselves seem to have the origin at the center of their body. so i moved them down a little
-                AdjustedPos.y -= 1.005f; 
+                AdjustedPos.y -= 1.005f;
                 int randomInt = Random.Range(0, 3);
                 // if you don't transform the position to align with the npc the moment they are set active, they seem to reinstantiate right where
                 // the npc was first created, but they still would follow the npc so they get swung around lmao
@@ -245,8 +259,8 @@ public class State_Manager : MonoBehaviour
                     NPCs[i].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
                 }
             }
-        
-            
+
+
             forgeMusic.GetComponent<AudioSource>().Stop();
             shopMusic.GetComponent<AudioSource>().Play();
             //print("Hello john");
@@ -343,22 +357,22 @@ public class State_Manager : MonoBehaviour
     // This function is DANGEROUS. May he who embarks upon its path beware
     private IEnumerator daytimeroutine()
     {
-        while(true)
+        while (true)
         {
             print("Definitely inside the coroutine");
-           if (stage == "morning")
-           {
+            if (stage == "morning")
+            {
                 print("We here");
                 //clockDisplay.SetText("");
-           }
-           if (stage == "workday")
-           {
+            }
+            if (stage == "workday")
+            {
 
-           }
-           if (stage == "evening")
-           {
+            }
+            if (stage == "evening")
+            {
 
-           }
+            }
         }
     }
 }

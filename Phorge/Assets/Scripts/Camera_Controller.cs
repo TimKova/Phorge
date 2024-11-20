@@ -30,6 +30,7 @@ public class Camera_Controller : MonoBehaviour
     public Canvas AnvilMenu;
     public Canvas FurnaceMenu;
     public Canvas MerchantMenu;
+    public Canvas InventoryMenu;
     private AnvilGame anvilGame;
     private Merchant merchantManager;
 
@@ -50,6 +51,7 @@ public class Camera_Controller : MonoBehaviour
         hasRelevantMenuOpened = false;
         anvilGame = anvil_task.GetComponent<AnvilGame>();
         merchantManager = MerchantMenu.GetComponent<Merchant>();
+        CloseMenus();
     }
 
     // Update is called once per frame
@@ -69,6 +71,9 @@ public class Camera_Controller : MonoBehaviour
         else if (cur_state == "npc_int")
         {
             NPCMove();
+        }
+        else if (cur_state == "inventory") {
+            InventoryMove();
         }//end if-else
     }
 
@@ -128,6 +133,13 @@ public class Camera_Controller : MonoBehaviour
         }
     }
 
+    void InventoryMove()
+    {
+                Cursor.lockState = CursorLockMode.Confined;
+                InventoryMenu.enabled = true;
+                hasRelevantMenuOpened = true;
+    }
+
     void NPCMove()
     {
         //print(npcName);
@@ -183,6 +195,7 @@ public class Camera_Controller : MonoBehaviour
         AnvilMenu.enabled = false;
         FurnaceMenu.enabled = false;
         MerchantMenu.enabled = false;
+        InventoryMenu.enabled = false;
     }
 
 }

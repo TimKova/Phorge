@@ -9,6 +9,7 @@ public class Inventory_Item : IDataPersistence
 {
     private string name;
     private int quantity;
+    private float quality;
     private float price;
     private bool unlocked;
     private Sprite icon;
@@ -20,6 +21,7 @@ public class Inventory_Item : IDataPersistence
         this.name = "";
         this.quantity = 0;
         this.price = 0f;
+        this.quality = 0f;
         this.unlocked = false;
     }
     public Inventory_Item(string name)
@@ -27,6 +29,7 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = 0;
         this.price = 0f;
+        this.quality = 0f;
         this.unlocked = false;
     }
     public Inventory_Item(string name, int quantity)
@@ -34,6 +37,7 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = quantity;
         this.price = 0f;
+        this.quality = 0f;
         this.unlocked = false;
     }
     public Inventory_Item(string name, int quantity, float price)
@@ -41,6 +45,7 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.quality = 0f;
         this.unlocked = false;
     }
     public Inventory_Item(string name, int quantity, float price, bool unlocked)
@@ -48,44 +53,24 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.quality = 0f;
         this.unlocked = unlocked;
     }
 
-    //public void Init()
-    //{
-    //    this.name = "";
-    //    this.quantity = 0;
-    //    this.price = 0f;
-    //    this.unlocked = false;
-    //}
-    //public void Init(string name)
-    //{
-    //    this.name = name;
-    //    this.quantity = 0;
-    //    this.price = 0f;
-    //    this.unlocked = false;
-    //}
-    //public void Init(string name, int quantity)
-    //{
-    //    this.name = name;
-    //    this.quantity = quantity;
-    //    this.price = 0f;
-    //    this.unlocked = false;
-    //}
-    //public void Init(string name, int quantity, float price)
-    //{
-    //    this.name = name;
-    //    this.quantity = quantity;
-    //    this.price = price;
-    //    this.unlocked = false;
-    //}
-    //public void Init(string name, int quantity, float price, bool unlocked)
-    //{
-    //    this.name = name;
-    //    this.quantity = quantity;
-    //    this.price = price;
-    //    this.unlocked = unlocked;
-    //}
+    public string getQualityModifier()
+    {
+        if (this.quality > 1f)
+            return "Supernatural";
+        if (this.quality >= 0.9f)
+            return "Flawless";
+        if (this.quality >= 0.8f)
+            return "Fine";
+        if (this.quality >= 0.7f)
+            return "Good";
+        if (this.quality >= 0.6f)
+            return "Basic";
+        return "Poor";
+    }
 
     //Data Persistence------------------------------------------------------------
 
@@ -112,12 +97,14 @@ public class Inventory_Item : IDataPersistence
     public string getName() { return this.name; }
     public int getQuantity() { return this.quantity; }
     public float getPrice() { return this.price; }
+    public float getQuality() { return this.quality; }
     public bool isUnlocked() { return this.unlocked; }
 
     //Setters----------------------------------------------------------------------
     public void setName(string name) { this.name = name; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
     public void setPrice(float price) { this.price = price; }
+    public void setQuality(float quality) { this.quality = quality; }
     public void setUnlocked(bool unlocked) { this.unlocked = unlocked; }
 
     //Methods----------------------------------------------------------------------
@@ -132,7 +119,7 @@ public class Inventory_Item : IDataPersistence
                 stock += 1;
         }//counts how many of that object are in the inventory
 
-        if(stock > 1)//only adjust the price if there's more than 1 of the object. The more you make, the less they are worth.
+        if (stock > 1)//only adjust the price if there's more than 1 of the object. The more you make, the less they are worth.
         {
             float priceReduct = 0.2f;
 
@@ -151,7 +138,8 @@ public class Inventory_Item : IDataPersistence
     public int gain() { this.quantity += 1; return getQuantity(); }
     public int gain(int amount) { this.quantity += amount; return getQuantity(); }
 
-    public override string ToString() { return this.name + ": " + this.quantity; }
+    public override string ToString() { return $"{this.getQualityModifier()} {this.name}"; }
+    public string HowMany() { return $"{this.getQualityModifier()} {this.name}: {this.quantity}"; }
 
 }
 
@@ -249,7 +237,7 @@ public class OreMaterial : Inventory_Item
     //Getters--------------------------------------------------------------------------------------------
     public float[] getFurnaceParameters()
     {
-        
+
         return new float[] { this.barSize, this.barHeight, this.barDuration };
     }
     //Setters--------------------------------------------------------------------------------------------
