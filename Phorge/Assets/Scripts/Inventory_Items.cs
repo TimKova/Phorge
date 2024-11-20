@@ -32,6 +32,14 @@ public class Inventory_Item : IDataPersistence
         this.quality = 0f;
         this.unlocked = false;
     }
+    public Inventory_Item(string name, float quality)
+    {
+        this.quality = quality;
+        this.name = $"{this.getQualityModifier()} {name}";
+        this.quantity = 1;
+        this.price = 0f;
+        this.unlocked = false;
+    }
     public Inventory_Item(string name, int quantity)
     {
         this.name = name;
@@ -68,6 +76,21 @@ public class Inventory_Item : IDataPersistence
         if (this.quality >= 0.7f)
             return "Good";
         if (this.quality >= 0.6f)
+            return "Basic";
+        return "Poor";
+    }
+
+    public static string getQualityModifier(float quality)
+    {
+        if (quality > 1f)
+            return "Supernatural";
+        if (quality >= 0.9f)
+            return "Flawless";
+        if (quality >= 0.8f)
+            return "Fine";
+        if (quality >= 0.7f)
+            return "Good";
+        if (quality >= 0.6f)
             return "Basic";
         return "Poor";
     }

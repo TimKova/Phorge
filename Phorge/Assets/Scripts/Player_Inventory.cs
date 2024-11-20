@@ -20,9 +20,9 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     public List<Inventory_Item> ingots = new List<Inventory_Item>();
     public List<Inventory_Item> weapons = new List<Inventory_Item>();
 
-
     public static readonly string[] materialNames = { "Copper", "Bronze", "Iron", "Silver", "Gold", "Uranium" };
     public float[] materialBasePrices = { 1f, 2f, 3f, 4f, 5f, 6f };
+
     public bool[] materialsUnlocked = { UNLOCKED, LOCKED, LOCKED, LOCKED, UNLOCKED, UNLOCKED };
     public static readonly int numMaterials = materialNames.Length;
 
@@ -48,6 +48,8 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     private List<GameObject> InventoryScreens;
     private List<GameObject> InventoryTabs;
 
+    public List<GameObject> buttons = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +58,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         {
             OreMaterial orrey = new OreMaterial(0.17f / numMaterials * (numMaterials - c + 0.5f), 0.5f + 1f / numMaterials * c / 2f, 15f, materialNames[c] + " Ore", 0, materialBasePrices[c], UNLOCKED);
             ores.Add(orrey);
-            IngotMaterial mat = new IngotMaterial(materialNames[c], 2, materialBasePrices[c], UNLOCKED);
+            IngotMaterial mat = new IngotMaterial(materialNames[c], 0, materialBasePrices[c], UNLOCKED);
             // Save me ig?
             ingots.Add(mat);
             //merchantGoods[c] = mat.isUnlocked();

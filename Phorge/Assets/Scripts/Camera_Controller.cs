@@ -129,7 +129,7 @@ public class Camera_Controller : MonoBehaviour
         else if (taskName == "Finishing")
         {
             playerCam.enabled = false;
-            finishCam.enabled = true;
+            applyCam.enabled = true;
         }
     }
 
@@ -184,6 +184,8 @@ public class Camera_Controller : MonoBehaviour
         playerCam.enabled = true;
         anvilCam.enabled = false;
         furnaceCam.enabled = false;
+        finishCam.enabled = false;
+        applyCam.enabled = false;
         npcCam.enabled = false;
         npcCam2.enabled = false; 
         hasRelevantMenuOpened = false;

@@ -73,6 +73,7 @@ public class FurnaceGame : MonoBehaviour
     private static int currentOre;
     //private readonly Color RED = new Color(1f, 0f, 0f, 1f);
 
+    //private Inventory_Item Inventory_Item;
     private Player_Inventory playerInventory;
 
     // Start is called before the first frame update
@@ -172,7 +173,7 @@ public class FurnaceGame : MonoBehaviour
     public void SpawnOre(int oreType)
     {
         ClearPrefabs();
-        if (oreType < Player_Inventory.materialNames.Length && oreType > 0)
+        if (oreType < Player_Inventory.materialNames.Length && oreType >= 0)
         {
             currentOre = oreType;
             var mat = playerInventory.getOre(oreType);
@@ -321,7 +322,10 @@ public class FurnaceGame : MonoBehaviour
         if (ProgressSlider.value < 0.5)
             county.text = "YOU FAILED TO PHORGE THE INGOT";
         else
-            county.text = $"ALL GOOD! Result quality is {Mathf.Round(ProgressSlider.value * 100)}%!";
+        {
+            print($"Result qual: {ProgressSlider.value}");
+            county.text = $"Succesfully Phorged a {Inventory_Item.getQualityModifier(ProgressSlider.value)} {Player_Inventory.materialNames[currentOre]} Ingot!";
+        }
         //StartCoroutine(startTimer(duration));
         stopGame();
         Countdown.gameObject.SetActive(true);
