@@ -494,7 +494,7 @@ Transform:
   m_GameObject: {fileID: 17296012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0.21, z: -32.3}
+  m_LocalPosition: {x: 9, y: 0.21, z: -25.31}
   m_LocalScale: {x: 0.25, y: 0.1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1563,7 +1563,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 66702971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 121035956}
+        m_TargetAssemblyTypeName: State_Manager, Assembly-CSharp
+        m_MethodName: ButtonStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &66702971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4299,6 +4311,7 @@ MonoBehaviour:
   - {fileID: 967565471}
   - {fileID: 1067345977}
   sm: {fileID: 121035956}
+  qs: {fileID: 1493931810}
 --- !u!195 &177277857
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5527,6 +5540,7 @@ MonoBehaviour:
   - {fileID: 476085702}
   - {fileID: 881143405}
   sm: {fileID: 121035956}
+  qs: {fileID: 1493931810}
 --- !u!195 &261045847
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9548,6 +9562,7 @@ MonoBehaviour:
   AmbiRest2: {fileID: 1965753192}
   waypoints: []
   sm: {fileID: 121035956}
+  qs: {fileID: 1493931810}
 --- !u!195 &453293573
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17721,6 +17736,7 @@ MonoBehaviour:
   AmbiRest2: {fileID: 1965753192}
   waypoints: []
   sm: {fileID: 121035956}
+  qs: {fileID: 1493931810}
 --- !u!195 &911461041
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18374,6 +18390,7 @@ MonoBehaviour:
   AmbiRest2: {fileID: 1965753192}
   waypoints: []
   sm: {fileID: 121035956}
+  qs: {fileID: 1493931810}
 --- !u!195 &927283821
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -27173,6 +27190,7 @@ GameObject:
   - component: {fileID: 1493931808}
   - component: {fileID: 1493931807}
   - component: {fileID: 1493931806}
+  - component: {fileID: 1493931810}
   m_Layer: 5
   m_Name: Quest Menu
   m_TagString: Untagged
@@ -27265,6 +27283,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1493931810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493931805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4382429033e1c46ad1ed260dd21af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pi: {fileID: 121407113}
+  ds: {fileID: 516984905}
+  readyToLeave: 0
 --- !u!1001 &1504592933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27940,7 +27973,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1533554322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1493931810}
+        m_TargetAssemblyTypeName: QuestScript, Assembly-CSharp
+        m_MethodName: updateVars
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1533554322
 MonoBehaviour:
   m_ObjectHideFlags: 0

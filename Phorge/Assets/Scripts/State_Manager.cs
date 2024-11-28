@@ -63,7 +63,7 @@ public class State_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NewDayButton.onClick.AddListener(ButtonStage);
+        //NewDayButton.onClick.AddListener(ButtonStage());
         if (doingTask)
         {
             state_to_be = "task_int";
@@ -103,7 +103,7 @@ public class State_Manager : MonoBehaviour
         //print(state_to_be);
     }
 
-    void ButtonStage()
+    public void ButtonStage()
     {
         clock.internalMinutes = 479;
         stage = "morning";
@@ -235,10 +235,15 @@ public class State_Manager : MonoBehaviour
     {
         if (stage == "morning")
         {
+            npcCanvas.enabled = true;
+            npcCanvas2.enabled = true;
+            npcCanvas3.enabled = true;
+            //print("We entered the if statement");
             // Right idea, uncommenting this does some funky stuff, but not dangerous. Take a look and try to improve on it, Carlos.
             // you got it boss - carlos
             for (int i = 0; i < NPCs.Count; i++)
             {
+                //print("We do be in the for loop");
                 Vector3 AdjustedPos = NPCs[i].transform.position;
                 // NPC mesh's origin are at their feet, while the NPC capsules themselves seem to have the origin at the center of their body. so i moved them down a little
                 AdjustedPos.y -= 1.005f;
@@ -248,8 +253,14 @@ public class State_Manager : MonoBehaviour
 
                 // do NOT remove the filler objects under each ambience NPC, this will cause a buffer overflow in the GetChild functions!
                 // do NOT create game objects that are above the 6 children, the following 4 if statements will disable them!
+                NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+
                 if (randomInt == 0)
                 {
+                    //print("Suh");
                     NPCs[i].transform.GetChild(3).gameObject.SetActive(true);
                     NPCs[i].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
                     NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
@@ -258,6 +269,7 @@ public class State_Manager : MonoBehaviour
                 }
                 else if (randomInt == 1)
                 {
+                    //print("Suh2");
                     NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
                     NPCs[i].transform.GetChild(4).gameObject.SetActive(true);
                     NPCs[i].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
@@ -266,6 +278,7 @@ public class State_Manager : MonoBehaviour
                 }
                 else if (randomInt == 2)
                 {
+                    //print("Suh3");
                     NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
                     NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
                     NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
@@ -274,6 +287,7 @@ public class State_Manager : MonoBehaviour
                 }
                 else if (randomInt == 3)
                 {
+                    //print("Suh4");
                     NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
                     NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
                     NPCs[i].transform.GetChild(5).gameObject.SetActive(false);

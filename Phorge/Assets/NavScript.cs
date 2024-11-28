@@ -20,7 +20,10 @@ public class NavScript : MonoBehaviour
     private NavMeshAgent npc;
     [SerializeField] private List<Transform> waypoints;
     private int prevTarget;
+    private int q1trigger;
+    private int q2trigger;
     public State_Manager sm;
+    public QuestScript qs;
     // Start is called before the first frame update
     void Start()
     {
@@ -106,11 +109,27 @@ public class NavScript : MonoBehaviour
             }
             else if (this.gameObject.name == "QuestGiver1")
             {
-                npc.destination = counter1.position;
+                if (q1trigger == 1)
+                {
+                    npc.destination = counter1.position;
+                }
+                if (qs.readyToLeave == 1)
+                {
+                    q1trigger = 0;
+                    npc.destination = QuestRest1.position;
+                }
             }
             else if (this.gameObject.name == "QuestGiver2")
             {
-                npc.destination = counter2.position;
+                if (q2trigger == 1)
+                {
+                    npc.destination = counter2.position;
+                }
+                if (qs.readyToLeave == 1)
+                {
+                    q2trigger = 0;
+                    npc.destination = QuestRest2.position;
+                }
             }
         }
         if (sm.stage == "evening")
@@ -142,6 +161,10 @@ public class NavScript : MonoBehaviour
     {
         while (true)
         {
+            q1trigger = Random.Range(0, 2);
+            q2trigger = Random.Range(0, 2);
+            print(q1trigger);
+            print(q2trigger);
             yield return new WaitForSeconds(10);
             if (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2")
             {
