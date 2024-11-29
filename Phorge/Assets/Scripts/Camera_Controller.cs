@@ -39,6 +39,9 @@ public class Camera_Controller : MonoBehaviour
 
     float xRotation;
     float yRotation;
+    float xRotHelper;
+    float yRotHelper;
+    float rotVel = 0.0f;
 
     string cur_state;
     private string npcName;
@@ -52,6 +55,8 @@ public class Camera_Controller : MonoBehaviour
         anvilGame = anvil_task.GetComponent<AnvilGame>();
         merchantManager = MerchantMenu.GetComponent<Merchant>();
         CloseMenus();
+        xRotHelper = transform.position.x;
+        yRotHelper = transform.position.y;
     }
 
     // Update is called once per frame
@@ -62,6 +67,7 @@ public class Camera_Controller : MonoBehaviour
         npcName = player_manager.GetComponent<Player_Manager>().get_cur_npc();
         if (cur_state == "free_move")
         {
+
             FreeMove();
         }
         else if (cur_state == "task_int")
@@ -88,6 +94,12 @@ public class Camera_Controller : MonoBehaviour
         yRotation += mouseX;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        //float newXRot = Mathf.SmoothDampAngle(xRotHelper, xRotation, ref rotVel, 0.1f);
+        //float newYRot = Mathf.SmoothDampAngle(yRotHelper, yRotation, ref rotVel, 0.1f);
+
+        //xRotHelper = newXRot;
+        //yRotHelper = newYRot;
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);

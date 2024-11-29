@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour, IDataPersistence
     public GameObject player_manager;
     public string cur_state;
     public string taskName;
+    public GameObject HeadPosition;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -108,6 +109,7 @@ public class Movement : MonoBehaviour, IDataPersistence
         Vector3 horizontalMovement = orientation.right * horizontalInput;
         Vector3 verticalMovement = orientation.forward * verticalInput;
         rb.AddForce(moveDirection * moveSpeed * 10f, ForceMode.Force);
+        Camera.main.transform.position = HeadPosition.transform.position;
 
         //Jumping
         if (grounded)
