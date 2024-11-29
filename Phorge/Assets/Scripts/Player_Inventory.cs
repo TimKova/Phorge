@@ -50,6 +50,9 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
 
     public List<GameObject> buttons = new List<GameObject>();
 
+    private int tempy = 0;
+    private float qually = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,15 +63,15 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             ores.Add(orrey);
             IngotMaterial mat = new IngotMaterial(materialNames[c], 0, materialBasePrices[c], UNLOCKED);
             // Save me ig?
-            ingots.Add(mat);
+            //ingots.Add(mat);
             //merchantGoods[c] = mat.isUnlocked();
             print(materialNames[c]);
         }
-        foreach (Inventory_Item ore in ores)
-            print(ore);
+        //foreach (Inventory_Item ore in ores)
+        //    print(ore);
 
-        foreach (Inventory_Item ingot in ingots)
-            print(ingot);
+        //foreach (Inventory_Item ingot in ingots)
+        //    print(ingot);
 
         money = 500;
         for (int w = 0; w < numSchematics; w++)
@@ -119,8 +122,31 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             print("booyah");
             totalRefresh();
         }
+        if (Input.GetKeyDown("p"))
+        {
+            var newGuy = new IngotMaterial("Uranium", 1, 90, UNLOCKED);
+            newGuy.setQuality(qually);
+            print("fuckmetal");
+            print($"Length of ingots = {ingots.Count}");
+            if (ingots.Contains(newGuy))
+            {
+                print("Already there bb");
+                print($"Newguy quality = {newGuy.getQuality()}, modifier = {newGuy.getQualityName()}");
+                ingots[tempy - 1].gain();
+                totalRefresh();
+                qually += 0.05f;
+            }
+            else
+            {
+                print("NEWBALL");
+                ingots.Add(newGuy);
+                makeButton(InventoryScreens[1], ingots[tempy], tempy++);
+            }
+        }
 
     }
+
+    //void DrawInventory()
 
     //GameData Methods------------------------------------------
     public void LoadData(GameData data)
@@ -147,12 +173,34 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         return ingots[matIndex].spend(quant);
     }
 
-    public int purchaseIngot(int matIndex)
+    public int gainIngot(IngotMaterial ingot, float quality)
     {
-        return ingots[matIndex].gain();
+        ingot.setQuality(quality);
+        if (ingots.Contains(ingot))
+        {
+            //print("Already there bb");
+            //print($"Newguy quality = {newGuy.getQuality()}, modifier = {newGuy.getQualityName()}");
+            ingots[ingots.IndexOf(ingot)].gain();
+            totalRefresh();
+        }
+        else
+        {
+            print("NEWBALL");
+            ingots.Add(ingot);
+            makeButton(InventoryScreens[1], ingot, ingots.Count - 1);
+        }
+        return 0;
     }
 
-    public int purchaseIngot(int matIndex, int quant)
+    public int gainIngot(int matIndex)
+    {
+        if (ingots.Contains(getIngot(matIndex)))
+            return 0;
+        else
+            return ingots[matIndex].gain();
+    }
+
+    public int gainIngot(int matIndex, int quant)
     {
         return ingots[matIndex].gain(quant);
     }
@@ -210,7 +258,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
 
     public int setCount(List<Inventory_Item> arr, int matIndex)
     {
-        var matName = arr[matIndex].getName();
+        var matName = arr[matIndex].ToString();
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("materialQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();
@@ -224,14 +272,14 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
 
     public void totalRefresh()
     {
-        foreach(List<Inventory_Item> arr in megaInventory)
+        foreach (List<Inventory_Item> arr in megaInventory)
         {
-            for(int c = 0;c < arr.Count;c++)
+            for (int c = 0; c < arr.Count; c++)
                 setCount(arr, c);
         }
     }
 
-    public void makeButton(GameObject parentMenu, Inventory_Item self,int id)
+    public void makeButton(GameObject parentMenu, Inventory_Item self, int id)
     {
         string name = self.getName();
 
@@ -247,7 +295,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
 
         var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-        title.text = name;
+        title.text = self.ToString();
 
         if (!self.isUnlocked())
         {
@@ -258,7 +306,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
 
         var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
         currentAmount.gameObject.tag = "materialQuantity";
-        currentAmount.gameObject.name = name + " Quant";
+        currentAmount.gameObject.name = self.ToString() + " Quant";
         currentAmount.text = self.getQuantity() + "";
 
         //buttons.Add(templateButton);

@@ -325,7 +325,8 @@ public class FurnaceGame : MonoBehaviour
         {
             print($"Result qual: {ProgressSlider.value}");
             county.text = $"Succesfully Phorged a {Inventory_Item.getQualityModifier(ProgressSlider.value)} {Player_Inventory.materialNames[currentOre]} Ingot!";
-            playerInventory.purchaseIngot(currentOre);
+            var tempResult = new IngotMaterial(Player_Inventory.materialNames[currentOre], 1, 90, true);
+            playerInventory.gainIngot(tempResult, ProgressSlider.value);
         }
         //StartCoroutine(startTimer(duration));
         stopGame();

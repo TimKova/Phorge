@@ -10,6 +10,7 @@ public class Inventory_Item : IDataPersistence
     private string name;
     private int quantity;
     private float quality;
+    private string qualityName;
     private float price;
     private bool unlocked;
     private Sprite icon;
@@ -21,7 +22,8 @@ public class Inventory_Item : IDataPersistence
         this.name = "";
         this.quantity = 0;
         this.price = 0f;
-        this.quality = 0f;
+        this.quality = 0.6f;
+        this.qualityName = getQualityModifier(this.quality);
         this.unlocked = false;
     }
     public Inventory_Item(string name)
@@ -29,7 +31,8 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = 0;
         this.price = 0f;
-        this.quality = 0f;
+        this.quality = 0.6f;
+        this.qualityName = getQualityModifier(this.quality);
         this.unlocked = false;
     }
     public Inventory_Item(string name, float quality)
@@ -37,7 +40,8 @@ public class Inventory_Item : IDataPersistence
         this.quality = quality;
         this.name = $"{this.getQualityModifier()} {name}";
         this.quantity = 1;
-        this.price = 0f;
+        this.quality = 0.6f;
+        this.qualityName = getQualityModifier(this.quality);
         this.unlocked = false;
     }
     public Inventory_Item(string name, int quantity)
@@ -45,7 +49,8 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = quantity;
         this.price = 0f;
-        this.quality = 0f;
+        this.quality = 0.6f;
+        this.qualityName = getQualityModifier(this.quality);
         this.unlocked = false;
     }
     public Inventory_Item(string name, int quantity, float price)
@@ -53,7 +58,8 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-        this.quality = 0f;
+        this.quality = 0.6f;
+        this.qualityName = getQualityModifier(this.quality);
         this.unlocked = false;
     }
     public Inventory_Item(string name, int quantity, float price, bool unlocked)
@@ -61,7 +67,8 @@ public class Inventory_Item : IDataPersistence
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-        this.quality = 0f;
+        this.quality = 0.6f;
+        this.qualityName = getQualityModifier(this.quality);
         this.unlocked = unlocked;
     }
 
@@ -95,6 +102,31 @@ public class Inventory_Item : IDataPersistence
         return "Poor";
     }
 
+    public override bool Equals(object obj)
+    {
+        if (obj is Inventory_Item other)
+        {
+            return this.name == other.name && this.qualityName == other.qualityName;
+        }
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(this.name, this.qualityName);
+    }
+
+    public int CompareTo(Inventory_Item other)
+    {
+        if (other == null) return 1;
+
+        int nameComp = this.name.CompareTo(other.name);
+        if (nameComp != 0)
+            return nameComp;
+
+        return string.Compare(this.qualityName, other.qualityName, StringComparison.Ordinal);
+    }
+
     //Data Persistence------------------------------------------------------------
 
     public void LoadData(GameData data)
@@ -121,13 +153,15 @@ public class Inventory_Item : IDataPersistence
     public int getQuantity() { return this.quantity; }
     public float getPrice() { return this.price; }
     public float getQuality() { return this.quality; }
+    public string getQualityName() { return this.qualityName; }
     public bool isUnlocked() { return this.unlocked; }
 
     //Setters----------------------------------------------------------------------
     public void setName(string name) { this.name = name; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
     public void setPrice(float price) { this.price = price; }
-    public void setQuality(float quality) { this.quality = quality; }
+    public void setQuality(float quality) { this.quality = quality; this.qualityName = getQualityModifier(); }
+    public void setQualityName(string qualityName) { this.qualityName = qualityName; }
     public void setUnlocked(bool unlocked) { this.unlocked = unlocked; }
 
     //Methods----------------------------------------------------------------------
@@ -161,9 +195,8 @@ public class Inventory_Item : IDataPersistence
     public int gain() { this.quantity += 1; return getQuantity(); }
     public int gain(int amount) { this.quantity += amount; return getQuantity(); }
 
-    public override string ToString() { return $"{this.getQualityModifier()} {this.name}"; }
     public string HowMany() { return $"{this.getQualityModifier()} {this.name}: {this.quantity}"; }
-
+    public override string ToString() { return $"{this.name}"; }
 }
 
 public class IngotMaterial : Inventory_Item
@@ -206,6 +239,8 @@ public class IngotMaterial : Inventory_Item
     public float getDurability() { return this.durability; }
     //Setters--------------------------------------------------------------------------------
     public float setDurability(float durability) { this.durability = durability; return getDurability(); }
+    public override string ToString() { return $"{this.getQualityName()} {this.getName()} Ingot"; }
+
 }
 
 public class OreMaterial : Inventory_Item

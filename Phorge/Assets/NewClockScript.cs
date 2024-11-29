@@ -14,8 +14,8 @@ public class NewClockScript : MonoBehaviour
     public bool _24Hour = false;
 
     const int MINUTES_PER_HOUR = 60;
-    const float DAY_SPEED_SCALE = 3f;
-    const int DAY_DURATION = 48;
+    const float DAY_SPEED_SCALE = 6f;
+    const int DAY_DURATION = 24;
     const bool DO_DAY_CYCLE = true;
 
     public Light MainLight;
@@ -49,7 +49,7 @@ public class NewClockScript : MonoBehaviour
 
     IEnumerator DayTimer(int hourDuration)
     {
-        for (internalMinutes = (19*MINUTES_PER_HOUR); internalMinutes < hourDuration * 60; internalMinutes++)
+        for (internalMinutes = (4*MINUTES_PER_HOUR)+50; internalMinutes < hourDuration * 60; internalMinutes++)
         {
             //print(internalMinutes);
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
