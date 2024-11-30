@@ -24,7 +24,7 @@ public class Inventory_Item : IDataPersistence
         this.price = 0f;
         this.quality = 0.6f;
         this.qualityName = getQualityModifier(this.quality);
-        this.unlocked = false;
+        this.unlocked = true;
     }
     public Inventory_Item(string name)
     {
@@ -33,7 +33,7 @@ public class Inventory_Item : IDataPersistence
         this.price = 0f;
         this.quality = 0.6f;
         this.qualityName = getQualityModifier(this.quality);
-        this.unlocked = false;
+        this.unlocked = true;
     }
     public Inventory_Item(string name, float quality)
     {
@@ -42,7 +42,7 @@ public class Inventory_Item : IDataPersistence
         this.quantity = 1;
         this.quality = 0.6f;
         this.qualityName = getQualityModifier(this.quality);
-        this.unlocked = false;
+        this.unlocked = true;
     }
     public Inventory_Item(string name, int quantity)
     {
@@ -51,7 +51,7 @@ public class Inventory_Item : IDataPersistence
         this.price = 0f;
         this.quality = 0.6f;
         this.qualityName = getQualityModifier(this.quality);
-        this.unlocked = false;
+        this.unlocked = true;
     }
     public Inventory_Item(string name, int quantity, float price)
     {
@@ -60,7 +60,7 @@ public class Inventory_Item : IDataPersistence
         this.price = price;
         this.quality = 0.6f;
         this.qualityName = getQualityModifier(this.quality);
-        this.unlocked = false;
+        this.unlocked = true;
     }
     public Inventory_Item(string name, int quantity, float price, bool unlocked)
     {
@@ -310,36 +310,43 @@ public class OreMaterial : Inventory_Item
 
 public class Weapon : Inventory_Item
 {
-    private float quality;//quality is based on the anvil and sharpening games and helps determine the selling price of the weapon
+    //private float quality;//quality is based on the anvil and sharpening games and helps determine the selling price of the weapon
     private string material;
 
     //Constructors---------------------------------------------------------------------------------------------
     public Weapon()
     {
-        this.quality = 0;
+        //this.quality = 0;
     }
-    public Weapon(float quality)
+    public Weapon(float quality, string material)
     {
-        this.quality = quality;
+        this.setQuality(quality);
+        this.material = material;
     }
-    public Weapon(string name, float quality) : base(name)
+    public Weapon(float quality, string material, string name) : base(name)
     {
-        this.quality = quality;
+        this.setQuality(quality);
+        this.material = material;
     }
-    public Weapon(string name, int quantity, float quality) : base(name, quantity)
+    public Weapon(float quality, string material, string name, int quantity) : base(name, quantity)
     {
-        this.quality = quality;
+        this.setQuality(quality);
+        this.material = material;
     }
-    public Weapon(string name, int quantity, float price, float quality) : base(name, quantity, price)
+    public Weapon(float quality, string material, string name, int quantity, float price) : base(name, quantity, price)
     {
-        this.quality = quality;
+        this.setQuality(quality);
+        this.material = material;
     }
-    public Weapon(string name, int quantity, float price, bool unlocked, float quality) : base(name, quantity, price, unlocked)
+    public Weapon(float quality, string material, string name, int quantity, float price, bool unlocked) : base(name, quantity, price, unlocked)
     {
-        this.quality = quality;
+        this.setQuality(quality);
+        this.material = material;
     }
-    //Getters-----------------------------------------------------------------------------------------------
-    public float GetQuality() { return this.quality; }
     //Setters-----------------------------------------------------------------------------------------------
-    public float SetQuality(float quality) { this.quality = quality; return GetQuality(); }
+    public override string ToString() { return $"{this.getQualityName()} {this.getMaterial()} {this.getName()}"; }
+    public string setMaterial(string material) { this.material = material; return this.material; }
+
+    public string getMaterial() { return this.material; }
+
 }

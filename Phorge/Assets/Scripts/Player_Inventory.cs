@@ -61,9 +61,9 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         {
             OreMaterial orrey = new OreMaterial(0.17f / numMaterials * (numMaterials - c + 0.5f), 0.5f + 1f / numMaterials * c / 2f, 15f, materialNames[c] + " Ore", 0, materialBasePrices[c], UNLOCKED);
             ores.Add(orrey);
-            IngotMaterial mat = new IngotMaterial(materialNames[c], 0, materialBasePrices[c], UNLOCKED);
+            IngotMaterial mat = new IngotMaterial(materialNames[c], 1, materialBasePrices[c], UNLOCKED);
             // Save me ig?
-            //ingots.Add(mat);
+            ingots.Add(mat);
             //merchantGoods[c] = mat.isUnlocked();
             print(materialNames[c]);
         }
@@ -76,8 +76,8 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         money = 500;
         for (int w = 0; w < numSchematics; w++)
         {
-            Weapon wep = new Weapon(weaponNames[w], 1f);
-            weapons.Add(wep);
+            Weapon wep = new Weapon(1f, "Plain", weaponNames[w]);
+            //weapons.Add(wep);
         }
         foreach (Weapon weppy in weapons)
         {
@@ -122,27 +122,28 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             print("booyah");
             totalRefresh();
         }
-        if (Input.GetKeyDown("p"))
-        {
-            var newGuy = new IngotMaterial("Uranium", 1, 90, UNLOCKED);
-            newGuy.setQuality(qually);
-            print("fuckmetal");
-            print($"Length of ingots = {ingots.Count}");
-            if (ingots.Contains(newGuy))
-            {
-                print("Already there bb");
-                print($"Newguy quality = {newGuy.getQuality()}, modifier = {newGuy.getQualityName()}");
-                ingots[tempy - 1].gain();
-                totalRefresh();
-                qually += 0.05f;
-            }
-            else
-            {
-                print("NEWBALL");
-                ingots.Add(newGuy);
-                makeButton(InventoryScreens[1], ingots[tempy], tempy++);
-            }
-        }
+        //if (Input.GetKeyDown("p"))
+        //{
+        //    var newGuy = new Weapon(0.7f, "Iron", "Sword", 1, 1f, true);
+        //    //newGuy.setQuality(qually);
+        //    gainWeapon(newGuy, qually);
+        //    //print("fuckmetal");
+        //    //print($"Length of weapons = {weapons.Count}");
+        //    //if (weapons.Contains(newGuy))
+        //    //{
+        //    //    print("Already there bb");
+        //    //    print($"Newguy quality = {newGuy.getQuality()}, modifier = {newGuy.getQualityName()}");
+        //    //    weapons[tempy - 1].gain();
+        //    //    totalRefresh();
+        //    qually += 0.05f;
+        //    //}
+        //    //else
+        //    //{
+        //    //    print("NEWBALL");
+        //    //    weapons.Add(newGuy);
+        //    //    makeButton(InventoryScreens[3], weapons[tempy], tempy++);
+        //    //}
+        //}
 
     }
 
@@ -188,6 +189,23 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             print("NEWBALL");
             ingots.Add(ingot);
             makeButton(InventoryScreens[1], ingot, ingots.Count - 1);
+        }
+        return 0;
+    }
+
+    public int gainWeapon(Weapon weapon)
+    {
+        if (weapons.Contains(weapon))
+        {
+            //print("Already there bb");
+            //print($"Newguy quality = {newGuy.getQuality()}, modifier = {newGuy.getQualityName()}");
+            weapons[weapons.IndexOf(weapon)].gain();
+            totalRefresh();
+        }
+        else
+        {
+            weapons.Add(weapon);
+            makeButton(InventoryScreens[3], weapon, weapons.Count - 1);
         }
         return 0;
     }
@@ -297,18 +315,18 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
         title.text = self.ToString();
 
-        if (!self.isUnlocked())
-        {
-            (templateButton.GetComponentAtIndex(3) as Button).interactable = false;
-            (templateButton.GetComponentAtIndex(2) as Image).sprite = whitebox;
-            return;
-        }
-
         var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
         currentAmount.gameObject.tag = "materialQuantity";
         currentAmount.gameObject.name = self.ToString() + " Quant";
         currentAmount.text = self.getQuantity() + "";
 
+        if (!self.isUnlocked())
+        {
+            (templateButton.GetComponentAtIndex(3) as Button).interactable = false;
+            (templateButton.GetComponentAtIndex(2) as Image).sprite = whitebox;
+            currentAmount.text = "";
+            return;
+        }
         //buttons.Add(templateButton);
 
         //return templateButton;

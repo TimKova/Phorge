@@ -39,7 +39,7 @@ public class AnvilGame : MonoBehaviour
 
     // An array representing delays in seconds between HIT targets for minigame
     // # of targets increases automatically for each delay added
-    private float[] offsets = { 1.5f , 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f, 3f, 3f, 1f, 1f};
+    private float[] offsets = { 1.5f, 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f, 3f, 3f, 1f, 1f };
 
 
     // Names
@@ -85,7 +85,7 @@ public class AnvilGame : MonoBehaviour
     float damage;                             // The damage the bar takes. Should scale with misses;
     float squish;                             // The amount the bar gets mushed. Should scale with successful hits.
     private List<GameObject> hitIcons;        // The list of all HIT! icons for minigame
-    private static int currentIngot;          // The index of the ingot most recently selected from the menu for the minigame
+    private static IngotMaterial currentIngot;          // The index of the ingot most recently selected from the menu for the minigame
     private static int currentWeapon;
     private Player_Inventory playerInventory; // The Player_Inventory class from playerInventory.cs
     public List<GameObject> buttons = new List<GameObject>();
@@ -109,7 +109,7 @@ public class AnvilGame : MonoBehaviour
         hasScored = false;
 
         // Set initial scalars
-        currentIngot = -1;
+        currentIngot = null;
         currentWeapon = -1;
         resultQuality = 0;
 
@@ -119,36 +119,68 @@ public class AnvilGame : MonoBehaviour
         timingIndicator = AnvilRhythmGUI.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as Image;
         NowText = AnvilRhythmGUI.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI;
         NowText.enabled = false;
-
-        for (int c = 0; c < Player_Inventory.numMaterials; c++)
+        var id = 0;
+        foreach (var ingot in playerInventory.ingots)
         {
-            string name = Player_Inventory.materialNames[c];
+            string name = ingot.getName();
 
             GameObject templateButton = Instantiate(ingotButtonPrefab, Vector3.zero, Quaternion.identity);
             templateButton.transform.SetParent(AnvilMenu.gameObject.transform.GetChild(0));
             templateButton.transform.localScale = new Vector3(1, 1, 1);
-            templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (c % 10), MENU_TLC.y - buttonOffset * (c / 10), MENU_TLC.z);
+            templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (id % 10), MENU_TLC.y - buttonOffset * (id / 10), MENU_TLC.z);
             templateButton.transform.localRotation = Quaternion.identity;
 
-            int localIndex = c;
-            (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnIngot(localIndex); });
+            (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnIngot(ingot as IngotMaterial); });
 
             var icon = Resources.Load<Texture2D>(name + "Icon");
             (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
 
             var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            title.text = name;
+            title.text = ingot.ToString();
 
             var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
             currentAmount.gameObject.tag = "ingotQuantity";
             currentAmount.gameObject.name = name + " Quant";
-            currentAmount.text = playerInventory.ingots[c].getQuantity() + "";
+            if (playerInventory.ingots.Count > id)
+                currentAmount.text = ingot.getQuantity() + "";
 
             buttons.Add(templateButton);
+            id++;
             //Material ingotMat = Resources.Load(ingotName) as Material;
             //templateIngot.GetComponent<Renderer>().material = ingotMat;
             //templateIngot.tag = "instancedPrefab";
         }
+
+        //for (int c = 0; c < Player_Inventory.numMaterials; c++)
+        //{
+        //    string name = Player_Inventory.materialNames[c];
+
+        //    GameObject templateButton = Instantiate(ingotButtonPrefab, Vector3.zero, Quaternion.identity);
+        //    templateButton.transform.SetParent(AnvilMenu.gameObject.transform.GetChild(0));
+        //    templateButton.transform.localScale = new Vector3(1, 1, 1);
+        //    templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (c % 10), MENU_TLC.y - buttonOffset * (c / 10), MENU_TLC.z);
+        //    templateButton.transform.localRotation = Quaternion.identity;
+
+        //    int localIndex = c;
+        //    (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnIngot(localIndex); });
+
+        //    var icon = Resources.Load<Texture2D>(name + "Icon");
+        //    (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+        //    var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+        //    title.text = name;
+
+        //    var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+        //    currentAmount.gameObject.tag = "ingotQuantity";
+        //    currentAmount.gameObject.name = name + " Quant";
+        //    if(playerInventory.ingots.Count > c)
+        //    currentAmount.text = playerInventory.ingots[c].getQuantity() + "";
+
+        //    buttons.Add(templateButton);
+        //    //Material ingotMat = Resources.Load(ingotName) as Material;
+        //    //templateIngot.GetComponent<Renderer>().material = ingotMat;
+        //    //templateIngot.tag = "instancedPrefab";
+        //}
 
         for (int c = 0; c < Player_Inventory.numSchematics; c++)
         {
@@ -208,25 +240,52 @@ public class AnvilGame : MonoBehaviour
 
     public GameObject templateIngot;
     // Takes in index of ingot, passed in onclick from inventory buttons
-    public void SpawnIngot(int ingotType)
+    //public void SpawnIngot(int ingotType)
+    //{
+    //    // Clear all pre-existing ingots
+    //    ClearPrefabs();
+    //    // OoB check
+    //    if (ingotType < Player_Inventory.materialNames.Length)
+    //    {
+    //        currentIngot = ingotType;
+    //        // Gets corresponding Material object with index
+    //        var mat = playerInventory.getIngot(ingotType);
+    //        print(mat);
+    //        print("# of mat = " + mat.getQuantity());
+    //        if (mat.getQuantity() <= 0 || mat == null)
+    //        {
+    //            print("Not enough of that Material!");
+    //            return;
+    //        }
+    //        // Names, spawns, scales, tags, and adds a material to the newly-spawned ingot
+    //        string ingotName = mat.getName();
+    //        templateIngot = Instantiate(ingotPrefab, ANVIL_TOP, Quaternion.identity);
+    //        templateIngot.transform.localScale = new Vector3(INGOT_SCALE, INGOT_SCALE, INGOT_SCALE);
+    //        Material ingotMat = Resources.Load(ingotName) as Material;
+    //        templateIngot.GetComponent<Renderer>().material = ingotMat;
+    //        templateIngot.tag = "instancedPrefab";
+    //    }
+    //}
+
+    public void SpawnIngot(IngotMaterial ingot)
     {
         // Clear all pre-existing ingots
         ClearPrefabs();
         // OoB check
-        if (ingotType < Player_Inventory.materialNames.Length)
+        string ingotName = ingot.getName();
+        if (Array.IndexOf(Player_Inventory.materialNames, ingotName) > -1)
         {
-            currentIngot = ingotType;
+            currentIngot = ingot;
             // Gets corresponding Material object with index
-            var mat = playerInventory.getIngot(ingotType);
-            print(mat);
-            print("# of mat = " + mat.getQuantity());
-            if (mat.getQuantity() <= 0 || mat == null)
+            //var mat = playerInventory.getIngot(ingotName);
+            print(ingot);
+            print("# of mat = " + ingot.getQuantity());
+            if (ingot.getQuantity() <= 0 || ingot == null)
             {
                 print("Not enough of that Material!");
                 return;
             }
             // Names, spawns, scales, tags, and adds a material to the newly-spawned ingot
-            string ingotName = mat.getName();
             templateIngot = Instantiate(ingotPrefab, ANVIL_TOP, Quaternion.identity);
             templateIngot.transform.localScale = new Vector3(INGOT_SCALE, INGOT_SCALE, INGOT_SCALE);
             Material ingotMat = Resources.Load(ingotName) as Material;
@@ -250,21 +309,20 @@ public class AnvilGame : MonoBehaviour
     // Launches the minigame and confirms metal selection, officially subtracting from inventory
     public void ConfirmMaterial()
     {
-        if (currentIngot < 0 || currentWeapon < 0)
+        if (currentIngot == null || currentWeapon < 0)
         {
             print("somethin' be wrong with yer code");
             return;
         }
-        if (playerInventory.getIngot(currentIngot).getQuantity() <= 0)
+        if (currentIngot.getQuantity() <= 0)
         {
             ClearPrefabs();
             print("Not enough of that Material!");
             return;
         }
         // Decrements one of the chosen material and updates on the UI
-        var mat = playerInventory.getIngot(currentIngot);
-        mat.spend();
-        print(mat.getQuantity() + " " + mat.getName() + " ingots left");
+        currentIngot.spend();
+        print(currentIngot.getQuantity() + " " + currentIngot.getName() + " ingots left");
         setCount(currentIngot);
         // Hides the anvil inventory and starts the game with the offsets[] array
         AnvilMenu.enabled = false;
@@ -376,15 +434,16 @@ public class AnvilGame : MonoBehaviour
         }
         else
         {
-            county.text = ($"You made a {Player_Inventory.materialNames[currentIngot]} {Player_Inventory.weaponNames[currentWeapon]} With: {(int)(resultQuality * 100)}% Quality!");
+            county.text = ($"You made a {currentIngot.getName()} {Player_Inventory.weaponNames[currentWeapon]} With: {(int)(resultQuality * 100)}% Quality!");
             if (currentWeapon < 3)
             {
                 var weaponPrefab = Resources.Load<GameObject>("Empty" + Player_Inventory.weaponNames[currentWeapon]);
                 ClearPrefabs();
                 var emptyWeapon = Instantiate(weaponPrefab, ANVIL_RESULT, Quaternion.Euler(90f, 0f, 0f));
-                Material weaponMat = Resources.Load(Player_Inventory.materialNames[currentIngot]) as Material;
+                Material weaponMat = Resources.Load(currentIngot.getName()) as Material;
                 emptyWeapon.GetComponent<MeshRenderer>().material = weaponMat;
                 emptyWeapon.tag = "instancedPrefab";
+                playerInventory.gainWeapon(new Weapon(resultQuality, currentIngot.getName(), Player_Inventory.weaponNames[currentWeapon], 1, 10f));
             }
         }
         resultQuality = 0;
@@ -472,9 +531,9 @@ public class AnvilGame : MonoBehaviour
     // Updates all Anvil Menu quantities using setCount(int)
     public void refreshQuantities()
     {
-        for (int i = 0; i < Player_Inventory.numMaterials; i++)
+        foreach (IngotMaterial ingot in playerInventory.ingots)
         {
-            setCount(i);
+            setCount(ingot);
         }
     }
 
@@ -494,15 +553,15 @@ public class AnvilGame : MonoBehaviour
     //}
 
     // Dirtiliy updates specific ingot count + on UI
-    public void setCount(int matIndex)
+    public void setCount(IngotMaterial ingot)
     {
-        var matName = Player_Inventory.materialNames[matIndex];
+        var matName = ingot.getName();
         foreach (GameObject quant in GameObject.FindGameObjectsWithTag("ingotQuantity"))
         {
             var textComp = quant.GetComponent<TextMeshProUGUI>();
             if (textComp.name == (matName + " Quant"))
             {
-                textComp.text = (playerInventory.getIngot(matIndex).getQuantity() + "");
+                textComp.text = (ingot.getQuantity() + "");
             }
         }
         //return materials[matIndex].getQuantity();
@@ -515,7 +574,7 @@ public class AnvilGame : MonoBehaviour
         canStillScore = false;
         hasMissed = false;
         hasScored = false;
-        currentIngot = -1;
+        currentIngot = null;
         currentWeapon = -1;
         resultQuality = 0;
         AnvilRhythmGUI.enabled = false;
