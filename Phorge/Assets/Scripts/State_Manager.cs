@@ -37,12 +37,14 @@ public class State_Manager : MonoBehaviour
     public int knightRep;
     public int beastRep;
     public int elfRep;
-    public string activeFaction;
+    public string activeFaction1;
+    public string activeFaction2;
     public bool inInventory;
     public NavScript navScript1;
     public NavScript navScript2;
     public QuestScript qs1;
     public QuestScript qs2;
+    public Player_Inventory pi;
 
     // Start is called before the first frame update
     void Start()
@@ -118,7 +120,6 @@ public class State_Manager : MonoBehaviour
     {
         if (qs1.readyToLeave == 1)
         {
-            //print("we got in wtf");
             Cursor.lockState = CursorLockMode.Locked;
             npc = false;
             qs1.readyToLeave = 0;
@@ -258,63 +259,7 @@ public class State_Manager : MonoBehaviour
             npcCanvas.enabled = true;
             npcCanvas2.enabled = true;
             npcCanvas3.enabled = true;
-            //print("We entered the if statement");
-            // Right idea, uncommenting this does some funky stuff, but not dangerous. Take a look and try to improve on it, Carlos.
-            // you got it boss - carlos
-            for (int i = 0; i < NPCs.Count; i++)
-            {
-                //print("We do be in the for loop");
-                Vector3 AdjustedPos = NPCs[i].transform.position;
-                // NPC mesh's origin are at their feet, while the NPC capsules themselves seem to have the origin at the center of their body. so i moved them down a little
-                AdjustedPos.y -= 1.005f;
-                int randomInt = Random.Range(0, 3);
-                // if you don't transform the position to align with the npc the moment they are set active, they seem to reinstantiate right where
-                // the npc was first created, but they still would follow the npc so they get swung around lmao
-
-                // do NOT remove the filler objects under each ambience NPC, this will cause a buffer overflow in the GetChild functions!
-                // do NOT create game objects that are above the 6 children, the following 4 if statements will disable them!
-                NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-                NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-                NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-                NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-
-                if (randomInt == 0)
-                {
-                    //print("Suh");
-                    NPCs[i].transform.GetChild(3).gameObject.SetActive(true);
-                    NPCs[i].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
-                    NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-                }
-                else if (randomInt == 1)
-                {
-                    //print("Suh2");
-                    NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(4).gameObject.SetActive(true);
-                    NPCs[i].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
-                    NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-                }
-                else if (randomInt == 2)
-                {
-                    //print("Suh3");
-                    NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
-                    NPCs[i].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
-                    NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-                }
-                else if (randomInt == 3)
-                {
-                    //print("Suh4");
-                    NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
-                    NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
-                    NPCs[i].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
-                }
-            }
+            profileSwap();
 
 
             forgeMusic.GetComponent<AudioSource>().Stop();
@@ -336,6 +281,168 @@ public class State_Manager : MonoBehaviour
             shopMusic.GetComponent<AudioSource>().Play();
             clockDisplay.SetActive(false);
             NewDay.SetActive(true);
+        }
+    }
+
+    private void profileSwap()
+    {
+        for (int i = 0; i < NPCs.Count; i++)
+        {
+            //print("We do be in the for loop");
+            Vector3 AdjustedPos = NPCs[i].transform.position;
+            // NPC mesh's origin are at their feet, while the NPC capsules themselves seem to have the origin at the center of their body. so i moved them down a little
+            AdjustedPos.y -= 1.005f;
+            int randomInt = Random.Range(0, 3);
+            // if you don't transform the position to align with the npc the moment they are set active, they seem to reinstantiate right where
+            // the npc was first created, but they still would follow the npc so they get swung around lmao
+
+            // do NOT remove the filler objects under each ambience NPC, this will cause a buffer overflow in the GetChild functions!
+            // do NOT create game objects that are above the 6 children, the following 4 if statements will disable them!
+            NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+            NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+            NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+            NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+
+            if (randomInt == 0)
+            {
+                //print("Suh");
+                NPCs[i].transform.GetChild(3).gameObject.SetActive(true);
+                NPCs[i].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
+                NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+    
+            }
+            else if (randomInt == 1)
+            {
+                //print("Suh2");
+                NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(4).gameObject.SetActive(true);
+                NPCs[i].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
+                NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+     
+            }
+            else if (randomInt == 2)
+            {
+                //print("Suh3");
+                NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
+                NPCs[i].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
+                NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
+       
+            }
+            else if (randomInt == 3)
+            {
+                //print("Suh4");
+                NPCs[i].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
+                NPCs[i].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
+   
+            }
+        }
+    }
+
+    private void profileSwapTargeted(string name)
+    {
+        if (name == "QuestGiver1")
+        {
+            Vector3 AdjustedPos = NPCs[i].transform.position;
+            AdjustedPos.y -= 1.005f;
+            int randomInt = Random.Range(0, 3);
+            NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+            NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+            NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+            NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+            if (randomInt == 0)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction1 = "beast";
+            }
+            else if (randomInt == 1)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction1 = "elf";
+            }
+            else if (randomInt == 2)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction1 = "knight";
+            }
+            else if (randomInt == 3)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
+                activeFaction1 = "thief";
+            }
+        }
+        else if (name == "QuestGiver2")
+        {
+            Vector3 AdjustedPos = NPCs[i].transform.position;
+            AdjustedPos.y -= 1.005f;
+            int randomInt = Random.Range(0, 3);
+            NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+            NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+            NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+            NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+            if (randomInt == 0)
+            {
+                //print("Suh");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction2 = "beast";
+            }
+            else if (randomInt == 1)
+            {
+                //print("Suh2");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction2 = "elf";
+            }
+            else if (randomInt == 2)
+            {
+                //print("Suh3");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction2 = "knight";
+            }
+            else if (randomInt == 3)
+            {
+                //print("Suh4");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
+                activeFaction2 = "thief";
+            }
         }
     }
 

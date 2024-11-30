@@ -111,11 +111,14 @@ public class NavScript : MonoBehaviour
             {
                 npc.isStopped = false;
                 npc.destination = MerchantRest.position;
+                //print(npc.destination);
             }
             else if (this.gameObject.name == "QuestGiver1")
             {
                 if (q1trigger == 1)
                 {
+                    //print("We did get into the q1 script");
+                    //print(npc.destination);
                     npc.isStopped = false;
                     npc.destination = counter1.position;
                 }
@@ -125,7 +128,7 @@ public class NavScript : MonoBehaviour
                     QuestMenu.SetActive(false);
                     q1trigger = 0;
                     npc.destination = QuestRest1.position;
-                    //readyToLeaveLocal = 1;
+                    readyToLeaveLocal = 0;
                     //Cursor.lockState = CursorLockMode.Locked;
                 }
             }
@@ -133,16 +136,20 @@ public class NavScript : MonoBehaviour
             {
                 if (q2trigger == 1)
                 {
-                    npc.isStopped = false;
+                    //print("We did get into the q2 script");
+                    //print(npc.destination);
+                    //npc.isStopped = false;
                     npc.destination = counter2.position;
+                    npc.isStopped = false;
                 }
                 if (readyToLeaveLocal == 1)
                 {
-                    npc.isStopped = false;
+                    //npc.isStopped = false;
                     QuestMenu.SetActive(false);
                     q2trigger = 0;
                     npc.destination = QuestRest2.position;
-                    //readyToLeaveLocal = 1;
+                    npc.isStopped = false;
+                    readyToLeaveLocal = 0;
                     //Cursor.lockState = CursorLockMode.Locked;
                 }
             }
@@ -154,6 +161,7 @@ public class NavScript : MonoBehaviour
                 //print("Sup");
                 npc.isStopped = false;
                 npc.destination = QuestRest1.position;
+                //print(npc.destination);
             }
             else if (this.gameObject.name == "QuestGiver2")
             {
@@ -166,7 +174,7 @@ public class NavScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         new WaitForSeconds(2);
-        if (other.gameObject.tag == "Waypoint")
+        if (other.gameObject.tag == "Waypoint" && (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2"))
         {
             //print("Trigger Enter");
             npc.isStopped = true;
@@ -178,9 +186,9 @@ public class NavScript : MonoBehaviour
         {
             q1trigger = Random.Range(0, 2);
             q2trigger = Random.Range(0, 2);
-            print(this.gameObject.name + " " + "Q1: " + q1trigger);
-            print(this.gameObject.name + " " + "Q2: " + q2trigger);
-            print(this.gameObject.name + " " + "RTL: " + qs.readyToLeave);
+            //print(this.gameObject.name + " " + "Q1: " + q1trigger);
+            //print(this.gameObject.name + " " + "Q2: " + q2trigger);
+            //print(this.gameObject.name + " " + "RTL: " + qs.readyToLeave);
             yield return new WaitForSeconds(10);
             if (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2")
             {
