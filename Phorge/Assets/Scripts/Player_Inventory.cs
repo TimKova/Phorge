@@ -26,7 +26,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     public bool[] materialsUnlocked = { UNLOCKED, LOCKED, LOCKED, LOCKED, UNLOCKED, UNLOCKED };
     public static readonly int numMaterials = materialNames.Length;
 
-    public static readonly string[] weaponNames = { "Sword", "Shield", "Bow", "Arrow", "Dagger", "Hatchet", "Hammer", "Pitchfork" };
+    public static readonly string[] weaponNames = { "Sword", "Shield", "Crossbow", "Dagger", "Axe", "Hammer" };
     public bool[] schematicsUnlocked = { UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED, UNLOCKED };
     public static readonly int numSchematics = weaponNames.Length;
 

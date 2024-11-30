@@ -3,7 +3,22 @@ guid: 2f5d3c00a6ee4a34e858df303d085c84
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrossMetal.002
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrossString
+    second: {fileID: 2100000, guid: 54ce2d7ea6a94c24d8df26a3e1b59ae4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrossWood
+    second: {fileID: 2100000, guid: cc9506ea4d916df468633e47e2959489, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

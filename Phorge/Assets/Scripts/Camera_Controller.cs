@@ -78,7 +78,8 @@ public class Camera_Controller : MonoBehaviour
         {
             NPCMove();
         }
-        else if (cur_state == "inventory") {
+        else if (cur_state == "inventory")
+        {
             InventoryMove();
         }//end if-else
     }
@@ -115,6 +116,7 @@ public class Camera_Controller : MonoBehaviour
             anvilCam.enabled = true;
             if (!hasRelevantMenuOpened)
             {
+                anvilGame.DrawAnvilMenu();
                 anvilGame.refreshQuantities();
                 //added this here so that anytime you open the menu the cursor appears, but once the game starts the cursor goes away
                 //It's kinda scuffed rn but we can make it better if/when we refactor the code
@@ -136,7 +138,7 @@ public class Camera_Controller : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
                 FurnaceMenu.enabled = true;
                 hasRelevantMenuOpened = true;
-            }          
+            }
         }
         else if (taskName == "Finishing")
         {
@@ -147,9 +149,9 @@ public class Camera_Controller : MonoBehaviour
 
     void InventoryMove()
     {
-                Cursor.lockState = CursorLockMode.Confined;
-                InventoryMenu.enabled = true;
-                hasRelevantMenuOpened = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        InventoryMenu.enabled = true;
+        hasRelevantMenuOpened = true;
     }
 
     void NPCMove()
@@ -189,7 +191,7 @@ public class Camera_Controller : MonoBehaviour
             //}
         }
 
-    }   
+    }
 
     public void SnapToPlayer()
     {
@@ -199,9 +201,9 @@ public class Camera_Controller : MonoBehaviour
         finishCam.enabled = false;
         applyCam.enabled = false;
         npcCam.enabled = false;
-        npcCam2.enabled = false; 
+        npcCam2.enabled = false;
         hasRelevantMenuOpened = false;
-        
+
     }
 
     public void CloseMenus()

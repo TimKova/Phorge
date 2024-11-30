@@ -20,6 +20,23 @@ public class AnvilGame : MonoBehaviour
     public readonly Vector3 HIT_ICON_END_POS = new Vector3(1460f, -456f, 61f);      // Same as above, but for end
     public readonly Vector3 MENU_TLC = new Vector3(-800f, 320f, 9f);
     public readonly Vector3 MENU_SECOND_ROW = new Vector3(-800f, -100F, 9f);
+    public readonly Vector3[] WEAPON_POSITIONS ={
+        new Vector3(-15.321f, 1.604f, -11.732f),    // Sword
+        new Vector3(-15.321f, 1.604f, -11.360f),      // Shield
+        new Vector3(-15.321f, 1.604f, -11.394f),      // Crossbow
+        new Vector3(-15.321f, 1.604f, -11.650f),      // Dagger
+        new Vector3(-15.276f, 1.604f, -11.610f),      // Axe
+        new Vector3(-15.321f, 1.604f, -11.656f),      // Hammer
+
+    };
+    public readonly Vector3[] WEAPON_SCALES ={
+        new Vector3(1f,1f,1f),                      // Sword
+        new Vector3(1f,1f,1f),                      // Shield
+        new Vector3(1f,1f,1f),                      // Crossbow
+        new Vector3(2f,2f,2f),                      // Dagger
+        new Vector3(1.25f,1.25f,1.25f),             // Axe
+        new Vector3(1f,1f,1f),                      // Hammer
+    };
     public const float buttonOffset = 176f;
     //public const float HIT_ICON_CHECK_X = 0f;                                     // UNUSED
     //public const float HIT_ICON_DONE_X = 1460f;                                   // UNUSED
@@ -39,7 +56,7 @@ public class AnvilGame : MonoBehaviour
 
     // An array representing delays in seconds between HIT targets for minigame
     // # of targets increases automatically for each delay added
-    private float[] offsets = { 1.5f, 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f, 3f, 3f, 1f, 1f };
+    private float[] offsets = { 1.5f };//, 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f, 3f, 3f, 1f, 1f };
 
 
     // Names
@@ -94,6 +111,8 @@ public class AnvilGame : MonoBehaviour
     //private float hammerTimeStart;          // UNUSED
     //private readonly Color RED = new Color(1f, 0f, 0f, 1f);
 
+    int tempy = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,68 +138,8 @@ public class AnvilGame : MonoBehaviour
         timingIndicator = AnvilRhythmGUI.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as Image;
         NowText = AnvilRhythmGUI.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI;
         NowText.enabled = false;
-        var id = 0;
-        foreach (var ingot in playerInventory.ingots)
-        {
-            string name = ingot.getName();
 
-            GameObject templateButton = Instantiate(ingotButtonPrefab, Vector3.zero, Quaternion.identity);
-            templateButton.transform.SetParent(AnvilMenu.gameObject.transform.GetChild(0));
-            templateButton.transform.localScale = new Vector3(1, 1, 1);
-            templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (id % 10), MENU_TLC.y - buttonOffset * (id / 10), MENU_TLC.z);
-            templateButton.transform.localRotation = Quaternion.identity;
-
-            (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnIngot(ingot as IngotMaterial); });
-
-            var icon = Resources.Load<Texture2D>(name + "Icon");
-            (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
-
-            var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            title.text = ingot.ToString();
-
-            var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-            currentAmount.gameObject.tag = "ingotQuantity";
-            currentAmount.gameObject.name = name + " Quant";
-            if (playerInventory.ingots.Count > id)
-                currentAmount.text = ingot.getQuantity() + "";
-
-            buttons.Add(templateButton);
-            id++;
-            //Material ingotMat = Resources.Load(ingotName) as Material;
-            //templateIngot.GetComponent<Renderer>().material = ingotMat;
-            //templateIngot.tag = "instancedPrefab";
-        }
-
-        //for (int c = 0; c < Player_Inventory.numMaterials; c++)
-        //{
-        //    string name = Player_Inventory.materialNames[c];
-
-        //    GameObject templateButton = Instantiate(ingotButtonPrefab, Vector3.zero, Quaternion.identity);
-        //    templateButton.transform.SetParent(AnvilMenu.gameObject.transform.GetChild(0));
-        //    templateButton.transform.localScale = new Vector3(1, 1, 1);
-        //    templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (c % 10), MENU_TLC.y - buttonOffset * (c / 10), MENU_TLC.z);
-        //    templateButton.transform.localRotation = Quaternion.identity;
-
-        //    int localIndex = c;
-        //    (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnIngot(localIndex); });
-
-        //    var icon = Resources.Load<Texture2D>(name + "Icon");
-        //    (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
-
-        //    var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-        //    title.text = name;
-
-        //    var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
-        //    currentAmount.gameObject.tag = "ingotQuantity";
-        //    currentAmount.gameObject.name = name + " Quant";
-        //    if(playerInventory.ingots.Count > c)
-        //    currentAmount.text = playerInventory.ingots[c].getQuantity() + "";
-
-        //    buttons.Add(templateButton);
-        //    //Material ingotMat = Resources.Load(ingotName) as Material;
-        //    //templateIngot.GetComponent<Renderer>().material = ingotMat;
-        //    //templateIngot.tag = "instancedPrefab";
-        //}
+        DrawAnvilMenu();
 
         for (int c = 0; c < Player_Inventory.numSchematics; c++)
         {
@@ -235,6 +194,54 @@ public class AnvilGame : MonoBehaviour
             ClearPrefabs();
             hammer.SetActive(false);
             stopGame();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+
+            var weaponPrefab = Resources.Load<GameObject>("Empty" + Player_Inventory.weaponNames[tempy % Player_Inventory.weaponNames.Length]);
+            ClearPrefabs();
+            var emptyWeapon = Instantiate(weaponPrefab, WEAPON_POSITIONS[tempy], Quaternion.Euler(0f, 0f, 0f));
+            Material weaponMat = Resources.Load("Uranium") as Material;
+            emptyWeapon.GetComponent<MeshRenderer>().material = weaponMat;
+            emptyWeapon.transform.localScale = WEAPON_SCALES[tempy];
+
+            //emptyWeapon.tag = "instancedPrefab";
+            tempy++;
+        }
+    }
+
+    public void DrawAnvilMenu()
+    {
+        var id = 0;
+        foreach (var ingot in playerInventory.ingots)
+        {
+            string name = ingot.getName();
+
+            GameObject templateButton = Instantiate(ingotButtonPrefab, Vector3.zero, Quaternion.identity);
+            templateButton.transform.SetParent(AnvilMenu.gameObject.transform.GetChild(0));
+            templateButton.transform.localScale = new Vector3(1, 1, 1);
+            templateButton.transform.localPosition = new Vector3(MENU_TLC.x + buttonOffset * (id % 10), MENU_TLC.y - buttonOffset * (id / 10), MENU_TLC.z);
+            templateButton.transform.localRotation = Quaternion.identity;
+
+            (templateButton.GetComponentAtIndex(3) as Button).onClick.AddListener(delegate { SpawnIngot(ingot as IngotMaterial); });
+
+            var icon = Resources.Load<Texture2D>(name + "Icon");
+            (templateButton.transform.GetChild(0).gameObject.GetComponentAtIndex(2) as Image).sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+            var title = (templateButton.transform.GetChild(1).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+            title.text = ingot.ToString();
+
+            var currentAmount = (templateButton.transform.GetChild(2).gameObject.GetComponentAtIndex(2) as TextMeshProUGUI);
+            currentAmount.gameObject.tag = "ingotQuantity";
+            currentAmount.gameObject.name = name + " Quant";
+            if (playerInventory.ingots.Count > id)
+                currentAmount.text = ingot.getQuantity() + "";
+
+            buttons.Add(templateButton);
+            id++;
+            //Material ingotMat = Resources.Load(ingotName) as Material;
+            //templateIngot.GetComponent<Renderer>().material = ingotMat;
+            //templateIngot.tag = "instancedPrefab";
         }
     }
 
@@ -435,16 +442,17 @@ public class AnvilGame : MonoBehaviour
         else
         {
             county.text = ($"You made a {currentIngot.getName()} {Player_Inventory.weaponNames[currentWeapon]} With: {(int)(resultQuality * 100)}% Quality!");
-            if (currentWeapon < 3)
-            {
-                var weaponPrefab = Resources.Load<GameObject>("Empty" + Player_Inventory.weaponNames[currentWeapon]);
-                ClearPrefabs();
-                var emptyWeapon = Instantiate(weaponPrefab, ANVIL_RESULT, Quaternion.Euler(90f, 0f, 0f));
-                Material weaponMat = Resources.Load(currentIngot.getName()) as Material;
-                emptyWeapon.GetComponent<MeshRenderer>().material = weaponMat;
-                emptyWeapon.tag = "instancedPrefab";
-                playerInventory.gainWeapon(new Weapon(resultQuality, currentIngot.getName(), Player_Inventory.weaponNames[currentWeapon], 1, 10f));
-            }
+            //if (currentWeapon < 3)
+            //{
+            var weaponPrefab = Resources.Load<GameObject>("Empty" + Player_Inventory.weaponNames[currentWeapon]);
+            ClearPrefabs();
+            var emptyWeapon = Instantiate(weaponPrefab, WEAPON_POSITIONS[currentWeapon], Quaternion.Euler(0f, 0f, 0f));
+            Material weaponMat = Resources.Load(currentIngot.getName()) as Material;
+            emptyWeapon.GetComponent<MeshRenderer>().material = weaponMat;
+            emptyWeapon.transform.localScale = WEAPON_SCALES[currentWeapon];
+            emptyWeapon.tag = "instancedPrefab";
+            playerInventory.gainWeapon(new Weapon(resultQuality, currentIngot.getName(), Player_Inventory.weaponNames[currentWeapon], 1, 10f));
+            //}
         }
         resultQuality = 0;
         // Flash results

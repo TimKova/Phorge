@@ -3,10 +3,30 @@ guid: d33494049e78b124dba6385fb52f766d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AxeMetal
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AxeStick
+    second: {fileID: 2100000, guid: cc9506ea4d916df468633e47e2959489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AxeWraps
+    second: {fileID: 2100000, guid: 54ce2d7ea6a94c24d8df26a3e1b59ae4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AxeZhead
+    second: {fileID: 2100000, guid: 8390a6f489833474fb0c1d851634b8e1, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
+    materialName: 1
     materialSearch: 1
     materialLocation: 1
   animations:

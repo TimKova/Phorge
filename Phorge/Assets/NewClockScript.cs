@@ -41,15 +41,15 @@ public class NewClockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (internalMinutes == 479)
-        {
-            StartCoroutine(DayTimer(DAY_DURATION));
-        }
+        //if (internalMinutes == 479)
+        //{
+        //    StartCoroutine(DayTimer(DAY_DURATION));
+        //}
     }
 
     IEnumerator DayTimer(int hourDuration)
     {
-        for (internalMinutes = (15*MINUTES_PER_HOUR); internalMinutes < hourDuration * 60; internalMinutes++)
+        for (internalMinutes = (4*MINUTES_PER_HOUR)+59; internalMinutes < hourDuration * 60; internalMinutes++)
         {
             //print(internalMinutes);
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
