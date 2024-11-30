@@ -24,6 +24,8 @@ public class NavScript : MonoBehaviour
     private int q2trigger;
     public State_Manager sm;
     public QuestScript qs;
+    public GameObject QuestMenu;
+    public int readyToLeaveLocal;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,7 @@ public class NavScript : MonoBehaviour
             StartCoroutine(AmbienceCoroutine());
         }
         StartCoroutine(AmbienceCoroutine());
+        //StartCoroutine(waiter());
     }
 
     // Update is called once per frame
@@ -95,6 +98,8 @@ public class NavScript : MonoBehaviour
     {
         if (sm.stage == "morning")
         {
+            qs.readyToLeave = 0;
+            readyToLeaveLocal = 0;
             if (this.gameObject.name == "MrItemMan")
             {
                 npc.destination = counter1.position;
@@ -111,24 +116,34 @@ public class NavScript : MonoBehaviour
             {
                 if (q1trigger == 1)
                 {
+                    npc.isStopped = false;
                     npc.destination = counter1.position;
                 }
-                if (qs.readyToLeave == 1)
+                if (readyToLeaveLocal == 1)
                 {
+                    npc.isStopped = false;
+                    QuestMenu.SetActive(false);
                     q1trigger = 0;
                     npc.destination = QuestRest1.position;
+                    //readyToLeaveLocal = 1;
+                    //Cursor.lockState = CursorLockMode.Locked;
                 }
             }
             else if (this.gameObject.name == "QuestGiver2")
             {
                 if (q2trigger == 1)
                 {
+                    npc.isStopped = false;
                     npc.destination = counter2.position;
                 }
-                if (qs.readyToLeave == 1)
+                if (readyToLeaveLocal == 1)
                 {
+                    npc.isStopped = false;
+                    QuestMenu.SetActive(false);
                     q2trigger = 0;
                     npc.destination = QuestRest2.position;
+                    //readyToLeaveLocal = 1;
+                    //Cursor.lockState = CursorLockMode.Locked;
                 }
             }
         }
@@ -163,8 +178,9 @@ public class NavScript : MonoBehaviour
         {
             q1trigger = Random.Range(0, 2);
             q2trigger = Random.Range(0, 2);
-            print(q1trigger);
-            print(q2trigger);
+            print(this.gameObject.name + " " + "Q1: " + q1trigger);
+            print(this.gameObject.name + " " + "Q2: " + q2trigger);
+            print(this.gameObject.name + " " + "RTL: " + qs.readyToLeave);
             yield return new WaitForSeconds(10);
             if (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2")
             {
@@ -222,5 +238,13 @@ public class NavScript : MonoBehaviour
             }
         }
     }
+    //IEnumerator waiter()
+    //{
+    //    print("WHYYYYY");
+    //    yield return new WaitForSeconds(2);
+    //    qs.readyToLeave = 0;
+    //    readyToLeaveLocal = 0;
+    //    print("Hiya Man");
+    //}
 }
 

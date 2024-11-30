@@ -39,6 +39,10 @@ public class State_Manager : MonoBehaviour
     public int elfRep;
     public string activeFaction;
     public bool inInventory;
+    public NavScript navScript1;
+    public NavScript navScript2;
+    public QuestScript qs1;
+    public QuestScript qs2;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +100,7 @@ public class State_Manager : MonoBehaviour
         hammerInteraction();
         pauseState();
         eveningButton();
+        endNPCQuest();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
         player_manager.GetComponent<Player_Manager>().set_cur_npc(npcName);
@@ -109,7 +114,22 @@ public class State_Manager : MonoBehaviour
         stage = "morning";
         stageSwitch();
     }
-
+    public void endNPCQuest()
+    {
+        if (qs1.readyToLeave == 1)
+        {
+            //print("we got in wtf");
+            Cursor.lockState = CursorLockMode.Locked;
+            npc = false;
+            qs1.readyToLeave = 0;
+        }
+        if (qs2.readyToLeave == 1)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            npc = false;
+            qs2.readyToLeave = 0;
+        }
+    }
     void hideSliders()
     {
         for (int i = 0; i < 4; i++)

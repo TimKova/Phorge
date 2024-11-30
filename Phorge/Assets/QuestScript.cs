@@ -6,6 +6,7 @@ public class QuestScript : MonoBehaviour
 {
     public Player_Inventory pi;
     public DialogueScript ds;
+    public NavScript nav;
     public int readyToLeave;
     // Start is called before the first frame update
     void Start()
@@ -24,10 +25,13 @@ public class QuestScript : MonoBehaviour
 
         //    }
         //}
+
     }
     public void updateVars()
     {
+        nav.readyToLeaveLocal = 1;
         readyToLeave = 1;
         print("Bugtest");
     }
+
 }
