@@ -32,6 +32,8 @@ public class State_Manager : MonoBehaviour
     public Button NewDayButton;
     public GameObject questDisplay;
     public GameObject questDisplay2;
+    public DialogueScript ds1;
+    public DialogueScript ds2;
     [SerializeField] public List<GameObject> NPCs;
     //[SerializeField] public List<Slider> sliders;
     public GameObject forgeMusic;
@@ -55,10 +57,14 @@ public class State_Manager : MonoBehaviour
     public Slider ElvesSlider;
     public Slider BeastsSlider;
     private List<Slider> sliders = new List<Slider>();
+    public bool swapQ1toggle;
+    public bool swapQ2toggle;
 
     // Start is called before the first frame update
     void Start()
     {
+        swapQ1toggle = true; 
+        swapQ2toggle = true;
         thiefRep = 0;
         knightRep = 0;
         beastRep = 0;
@@ -78,6 +84,7 @@ public class State_Manager : MonoBehaviour
         sliders.Add(ThievesSlider);
         sliders.Add(ElvesSlider);
         sliders.Add(BeastsSlider);
+        StartCoroutine(profileSwapR());
 
         //StartCoroutine(daytimeroutine());
     }
@@ -140,7 +147,7 @@ public class State_Manager : MonoBehaviour
         pauseState();
         eveningButton();
         endNPCQuest();
-        profileSwapTargeted();
+        //profileSwapTargeted();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
         player_manager.GetComponent<Player_Manager>().set_cur_npc(npcName);
@@ -378,109 +385,113 @@ public class State_Manager : MonoBehaviour
         }
     }
 
-    //private void profileSwapTargeted()
-    //{
-    //    if (navScript1.q1trigger == 1)
-    //    {
-    //        print("Wir sind in die erste if");
-    //        //navScript1.q1trigger = 0;
-    //        Vector3 AdjustedPos = NPCs[1].transform.position;
-    //        AdjustedPos.y -= 1.005f;
-    //        int randomInt = Random.Range(0, 3);
-    //        NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
-    //        NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
-    //        NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
-    //        NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
-    //        if (randomInt == 0)
-    //        {
-    //            NPCs[1].transform.GetChild(3).gameObject.SetActive(true);
-    //            NPCs[1].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
-    //            NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
-    //            activeFaction1 = "beast";
-    //        }
-    //        else if (randomInt == 1)
-    //        {
-    //            NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(4).gameObject.SetActive(true);
-    //            NPCs[1].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
-    //            NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
-    //            activeFaction1 = "elf";
-    //        }
-    //        else if (randomInt == 2)
-    //        {
-    //            NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(5).gameObject.SetActive(true);
-    //            NPCs[1].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
-    //            NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
-    //            activeFaction1 = "knight";
-    //        }
-    //        else if (randomInt == 3)
-    //        {
-    //            NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
-    //            NPCs[1].transform.GetChild(6).gameObject.SetActive(true);
-    //            NPCs[1].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
-    //            activeFaction1 = "thief";
-    //        }
-    //    }
-    //    else if (navScript2.q2trigger == 1 )
-    //    {
-    //        print("Wir sind in die zweite if");
-    //        //navScript2.q2trigger = 0;
-    //        Vector3 AdjustedPos = NPCs[2].transform.position;
-    //        AdjustedPos.y -= 1.005f;
-    //        int randomInt = Random.Range(0, 3);
-    //        NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
-    //        NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
-    //        NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
-    //        NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
-    //        if (randomInt == 0)
-    //        {
-    //            //print("Suh");
-    //            NPCs[2].transform.GetChild(3).gameObject.SetActive(true);
-    //            NPCs[2].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
-    //            NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
-    //            activeFaction2 = "beast";
-    //        }
-    //        else if (randomInt == 1)
-    //        {
-    //            //print("Suh2");
-    //            NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(4).gameObject.SetActive(true);
-    //            NPCs[2].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
-    //            NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
-    //            activeFaction2 = "elf";
-    //        }
-    //        else if (randomInt == 2)
-    //        {
-    //            //print("Suh3");
-    //            NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(5).gameObject.SetActive(true);
-    //            NPCs[2].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
-    //            NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
-    //            activeFaction2 = "knight";
-    //        }
-    //        else if (randomInt == 3)
-    //        {
-    //            //print("Suh4");
-    //            NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
-    //            NPCs[2].transform.GetChild(6).gameObject.SetActive(true);
-    //            NPCs[2].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
-    //            activeFaction2 = "thief";
-    //        }
-    //    }
-    //}
+    private void profileSwapTargeted()
+    {
+        if (navScript1.q1trigger == 1 && swapQ1toggle == true)
+        {
+            ds1.hasRun1 = false;
+            print("Wir sind in die erste if");
+            swapQ1toggle = false;
+            //navScript1.q1trigger = 0;
+            Vector3 AdjustedPos = NPCs[1].transform.position;
+            AdjustedPos.y -= 1.005f;
+            int randomInt = Random.Range(0, 3);
+            NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+            NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+            NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+            NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+            if (randomInt == 0)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction1 = "beast";
+            }
+            else if (randomInt == 1)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction1 = "elf";
+            }
+            else if (randomInt == 2)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction1 = "knight";
+            }
+            else if (randomInt == 3)
+            {
+                NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[1].transform.GetChild(6).gameObject.SetActive(true);
+                NPCs[1].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
+                activeFaction1 = "thief";
+            }
+        }
+        if (navScript2.q2trigger == 1 && swapQ2toggle == true)
+        {
+            ds2.hasRun2 = false;
+            print("Wir sind in die zweite if");
+            swapQ2toggle = false;
+            //navScript2.q2trigger = 0;
+            Vector3 AdjustedPos = NPCs[2].transform.position;
+            AdjustedPos.y -= 1.005f;
+            int randomInt = Random.Range(0, 3);
+            NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+            NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+            NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+            NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+            if (randomInt == 0)
+            {
+                //print("Suh");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(3).gameObject.transform.position = AdjustedPos;
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction2 = "beast";
+            }
+            else if (randomInt == 1)
+            {
+                //print("Suh2");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction2 = "elf";
+            }
+            else if (randomInt == 2)
+            {
+                //print("Suh3");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(false);
+                activeFaction2 = "knight";
+            }
+            else if (randomInt == 3)
+            {
+                //print("Suh4");
+                NPCs[2].transform.GetChild(3).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(4).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(5).gameObject.SetActive(false);
+                NPCs[2].transform.GetChild(6).gameObject.SetActive(true);
+                NPCs[2].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
+                activeFaction2 = "thief";
+            }
+        }
+    }
 
     private void eveningButton()
     {
@@ -572,6 +583,14 @@ public class State_Manager : MonoBehaviour
             {
 
             }
+        }
+    }
+    private IEnumerator profileSwapR()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5);
+            profileSwapTargeted();
         }
     }
 }

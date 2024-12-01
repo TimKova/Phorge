@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class DialogueScript : MonoBehaviour
 {
@@ -13,9 +14,14 @@ public class DialogueScript : MonoBehaviour
     //TODO: Add lists containing all possible options for each category
     public TMP_Text display;
     public GameObject displayCanvas;
+    public bool hasRun1;
+    public bool hasRun2;
+    //public Player_Inventory pi;
     // Start is called before the first frame update
     void Start()
     {
+        hasRun1 = false;
+        hasRun2 = false;
         display = GetComponent<TMP_Text>();
         sm = FindObjectOfType<State_Manager>();
         itemName = "sword";
@@ -29,12 +35,31 @@ public class DialogueScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((sm.npcName == "QuestGiver1" || sm.npcName == "QuestGiver2") && sm.npc == true);
+        if (sm.npcName == "QuestGiver1" && sm.npc == true && (hasRun1 == false))
         {
-            //print("We did get in, but nothing happened");
+            print("hasRun1: " + hasRun1);
+            hasRun1 = true;
+            print("hasRun1: " + hasRun1);
             //print(dialogueOptions[0]);
-            display.SetText(dialogueOptions[0]);
+            itemName = Player_Inventory.weaponNames[Random.Range(0, Player_Inventory.weaponNames.Length)];
+            itemMetal = Player_Inventory.materialNames[Random.Range(0, Player_Inventory.materialNames.Length)];
+            print(itemName);
+            print(itemMetal);
+            display.SetText("I would like to purchase a " + itemName + " made of " + itemMetal + ".");
             displayCanvas.SetActive(true);
+            hasRun1 = true;
+        }
+        if ((sm.npcName == "QuestGiver2") && (sm.npc == true) && (hasRun2 == false))
+        {
+            print("hasRun2: " + hasRun2);
+            //print(dialogueOptions[0]);
+            itemName = Player_Inventory.weaponNames[Random.Range(0, Player_Inventory.weaponNames.Length)];
+            itemMetal = Player_Inventory.materialNames[Random.Range(0, Player_Inventory.materialNames.Length)];
+            print(itemName);
+            print(itemMetal);
+            display.SetText("I would like to purchase a " + itemName + " made of " + itemMetal + ".");
+            displayCanvas.SetActive(true);
+            hasRun2 = true;
         }
 
     }

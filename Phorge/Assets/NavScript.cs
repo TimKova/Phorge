@@ -184,8 +184,6 @@ public class NavScript : MonoBehaviour
     {
         while (true)
         {
-            q1trigger = Random.Range(0, 2);
-            q2trigger = Random.Range(0, 2);
             //print(this.gameObject.name + " " + "Q1: " + q1trigger);
             //print(this.gameObject.name + " " + "Q2: " + q2trigger);
             //print(this.gameObject.name + " " + "RTL: " + qs.readyToLeave);
@@ -244,6 +242,8 @@ public class NavScript : MonoBehaviour
                     yield return new WaitForSeconds(10);
                 }
             }
+            q1trigger = Random.Range(0, 2);
+            q2trigger = Random.Range(0, 2);
         }
     }
     //IEnumerator waiter()

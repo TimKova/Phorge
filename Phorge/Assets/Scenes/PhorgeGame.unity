@@ -2620,6 +2620,8 @@ MonoBehaviour:
   NewDayButton: {fileID: 66702970}
   questDisplay: {fileID: 1493931805}
   questDisplay2: {fileID: 591637525}
+  ds1: {fileID: 516984905}
+  ds2: {fileID: 614912699}
   NPCs:
   - {fileID: 911461038}
   - {fileID: 927283814}
@@ -2639,12 +2641,14 @@ MonoBehaviour:
   navScript2: {fileID: 453293572}
   qs1: {fileID: 1493931810}
   qs2: {fileID: 591637527}
-  pi: {fileID: 0}
+  pi: {fileID: 121407113}
   FactionCanvas: {fileID: 551465493}
   KnightsSlider: {fileID: 1781755202}
   ThievesSlider: {fileID: 508054130}
   ElvesSlider: {fileID: 1543878722}
   BeastsSlider: {fileID: 515832238}
+  swapQ1toggle: 0
+  swapQ2toggle: 0
 --- !u!1001 &121171204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4244,6 +4248,8 @@ MonoBehaviour:
   - {fileID: 632253186}
   - {fileID: 967565471}
   - {fileID: 1067345977}
+  q1trigger: 0
+  q2trigger: 0
   sm: {fileID: 121035956}
   qs: {fileID: 1493931810}
   QuestMenu: {fileID: 0}
@@ -5476,6 +5482,8 @@ MonoBehaviour:
   - {fileID: 1515945828}
   - {fileID: 476085702}
   - {fileID: 881143405}
+  q1trigger: 0
+  q2trigger: 0
   sm: {fileID: 121035956}
   qs: {fileID: 1493931810}
   QuestMenu: {fileID: 0}
@@ -9468,6 +9476,8 @@ MonoBehaviour:
   AmbiRest1: {fileID: 1563436926}
   AmbiRest2: {fileID: 1965753192}
   waypoints: []
+  q1trigger: 0
+  q2trigger: 0
   sm: {fileID: 121035956}
   qs: {fileID: 591637527}
   QuestMenu: {fileID: 591637525}
@@ -10754,6 +10764,8 @@ MonoBehaviour:
   sm: {fileID: 121035956}
   display: {fileID: 516984906}
   displayCanvas: {fileID: 1493931805}
+  hasRun1: 0
+  hasRun2: 0
 --- !u!114 &516984906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12439,6 +12451,7 @@ MonoBehaviour:
   ds: {fileID: 614912699}
   nav: {fileID: 453293572}
   readyToLeave: 0
+  sm: {fileID: 121035956}
 --- !u!114 &591637528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12873,6 +12886,8 @@ MonoBehaviour:
   sm: {fileID: 121035956}
   display: {fileID: 614912700}
   displayCanvas: {fileID: 591637525}
+  hasRun1: 0
+  hasRun2: 0
 --- !u!114 &614912700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18287,6 +18302,8 @@ MonoBehaviour:
   AmbiRest1: {fileID: 1563436926}
   AmbiRest2: {fileID: 1965753192}
   waypoints: []
+  q1trigger: 0
+  q2trigger: 0
   sm: {fileID: 121035956}
   qs: {fileID: 1493931810}
   QuestMenu: {fileID: 0}
@@ -18943,6 +18960,8 @@ MonoBehaviour:
   AmbiRest1: {fileID: 1563436926}
   AmbiRest2: {fileID: 1965753192}
   waypoints: []
+  q1trigger: 0
+  q2trigger: 0
   sm: {fileID: 121035956}
   qs: {fileID: 1493931810}
   QuestMenu: {fileID: 1493931805}
@@ -28007,6 +28026,7 @@ MonoBehaviour:
   ds: {fileID: 516984905}
   nav: {fileID: 927283820}
   readyToLeave: 0
+  sm: {fileID: 121035956}
 --- !u!1001 &1504592933
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,10 +8,10 @@ public class QuestScript : MonoBehaviour
     public DialogueScript ds;
     public NavScript nav;
     public int readyToLeave;
+    public State_Manager sm;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Waiter());
         readyToLeave = 0;
     }
 
@@ -31,15 +31,9 @@ public class QuestScript : MonoBehaviour
     public void updateVars()
     {
         nav.readyToLeaveLocal = 1;
+        sm.swapQ2toggle = true;
+        sm.swapQ1toggle = true;
         readyToLeave = 1;
         print("Bugtest");
     }
-
-    IEnumerator Waiter()
-    {
-        yield return new WaitForSeconds(7);
-        nav.readyToLeaveLocal = 0;
-        readyToLeave = 0;
-    }
-
 }
