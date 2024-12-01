@@ -9,6 +9,9 @@ using Random = UnityEngine.Random;
 
 public class State_Manager : MonoBehaviour
 {
+    private float BIG_FACTION_CHANGE = 0.1f;
+    private float SMALL_FACTION_CHANGE = 0.05f;
+
     public GameObject player_manager;
     string state_to_be;
     public bool doingTask, inHammerRange, pause;
@@ -30,7 +33,7 @@ public class State_Manager : MonoBehaviour
     public GameObject questDisplay;
     public GameObject questDisplay2;
     [SerializeField] public List<GameObject> NPCs;
-    [SerializeField] public List<GameObject> sliders;
+    //[SerializeField] public List<Slider> sliders;
     public GameObject forgeMusic;
     public GameObject shopMusic;
     public int thiefRep;
@@ -45,6 +48,13 @@ public class State_Manager : MonoBehaviour
     public QuestScript qs1;
     public QuestScript qs2;
     public Player_Inventory pi;
+
+    public Canvas FactionCanvas;
+    public Slider KnightsSlider;
+    public Slider ThievesSlider;
+    public Slider ElvesSlider;
+    public Slider BeastsSlider;
+    private List<Slider> sliders = new List<Slider>();
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +73,12 @@ public class State_Manager : MonoBehaviour
         stageSwitch();
         hideSliders();
         questDisplay.SetActive(false);
+        print(FactionCanvas.transform.childCount + " BWAAAAAAAAA");
+        sliders.Add(KnightsSlider);
+        sliders.Add(ThievesSlider);
+        sliders.Add(ElvesSlider);
+        sliders.Add(BeastsSlider);
+
         //StartCoroutine(daytimeroutine());
     }
 
@@ -96,7 +112,28 @@ public class State_Manager : MonoBehaviour
             stage = "evening";
             stageSwitch();
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            FactionCanvas.enabled = !FactionCanvas.enabled;
+            print("This many sliders: " + sliders.Count);
 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            sliders[0].value += SMALL_FACTION_CHANGE;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            sliders[1].value += BIG_FACTION_CHANGE;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            sliders[2].value += SMALL_FACTION_CHANGE;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            sliders[3].value += BIG_FACTION_CHANGE;
+        }
         npcInteraction();
         taskInteraction();
         hammerInteraction();
@@ -133,18 +170,12 @@ public class State_Manager : MonoBehaviour
     }
     void hideSliders()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            sliders[i].SetActive(false);
-        }
+        FactionCanvas.enabled = false;
     }
-    
+
     void showSliders()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            sliders[i].SetActive(true);
-        }
+        FactionCanvas.enabled = true;
     }
 
     void taskInteraction()
@@ -171,7 +202,7 @@ public class State_Manager : MonoBehaviour
     {
         //print("Task Terminated");
         doingTask = false;
-        if(inInventory)
+        if (inInventory)
             inInventory = false;
         Cursor.lockState = CursorLockMode.Locked;
         //showSliders();
@@ -311,7 +342,7 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-    
+
             }
             else if (randomInt == 1)
             {
@@ -321,7 +352,7 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-     
+
             }
             else if (randomInt == 2)
             {
@@ -331,7 +362,7 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
                 NPCs[i].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-       
+
             }
             else if (randomInt == 3)
             {
@@ -341,7 +372,7 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
                 NPCs[i].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
-   
+
             }
         }
     }
