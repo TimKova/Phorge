@@ -140,6 +140,7 @@ public class State_Manager : MonoBehaviour
         pauseState();
         eveningButton();
         endNPCQuest();
+        profileSwapTargeted();
         player_manager.GetComponent<Player_Manager>().set_cur_state(state_to_be);
         player_manager.GetComponent<Player_Manager>().set_cur_task(taskName);
         player_manager.GetComponent<Player_Manager>().set_cur_npc(npcName);
@@ -377,11 +378,13 @@ public class State_Manager : MonoBehaviour
         }
     }
 
-    //private void profileSwapTargeted(string name)
+    //private void profileSwapTargeted()
     //{
-    //    if (name == "QuestGiver1")
+    //    if (navScript1.q1trigger == 1)
     //    {
-    //        Vector3 AdjustedPos = NPCs[i].transform.position;
+    //        print("Wir sind in die erste if");
+    //        //navScript1.q1trigger = 0;
+    //        Vector3 AdjustedPos = NPCs[1].transform.position;
     //        AdjustedPos.y -= 1.005f;
     //        int randomInt = Random.Range(0, 3);
     //        NPCs[1].transform.GetChild(3).gameObject.SetActive(false);
@@ -425,9 +428,11 @@ public class State_Manager : MonoBehaviour
     //            activeFaction1 = "thief";
     //        }
     //    }
-    //    else if (name == "QuestGiver2")
+    //    else if (navScript2.q2trigger == 1 )
     //    {
-    //        Vector3 AdjustedPos = NPCs[i].transform.position;
+    //        print("Wir sind in die zweite if");
+    //        //navScript2.q2trigger = 0;
+    //        Vector3 AdjustedPos = NPCs[2].transform.position;
     //        AdjustedPos.y -= 1.005f;
     //        int randomInt = Random.Range(0, 3);
     //        NPCs[2].transform.GetChild(3).gameObject.SetActive(false);

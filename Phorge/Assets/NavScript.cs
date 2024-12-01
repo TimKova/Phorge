@@ -20,8 +20,8 @@ public class NavScript : MonoBehaviour
     private NavMeshAgent npc;
     [SerializeField] private List<Transform> waypoints;
     private int prevTarget;
-    private int q1trigger;
-    private int q2trigger;
+    public int q1trigger;
+    public int q2trigger;
     public State_Manager sm;
     public QuestScript qs;
     public GameObject QuestMenu;

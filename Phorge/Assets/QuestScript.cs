@@ -11,6 +11,7 @@ public class QuestScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(Waiter());
         readyToLeave = 0;
     }
 
@@ -32,6 +33,13 @@ public class QuestScript : MonoBehaviour
         nav.readyToLeaveLocal = 1;
         readyToLeave = 1;
         print("Bugtest");
+    }
+
+    IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(7);
+        nav.readyToLeaveLocal = 0;
+        readyToLeave = 0;
     }
 
 }
