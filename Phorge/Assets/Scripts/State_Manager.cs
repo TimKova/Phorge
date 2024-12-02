@@ -294,6 +294,7 @@ public class State_Manager : MonoBehaviour
         else if (pause && Input.GetKeyDown(KeyCode.Escape))
         {
             pause = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
 

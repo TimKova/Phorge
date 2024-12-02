@@ -19,15 +19,32 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+
+
+
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                Debug.Log("Clicked object: " + hit.collider.gameObject.name); // Print the name of the clicked object
+
+            }
+
+        }
         if (paused)
         {
-            pauseCanvas.GetComponent<CanvasGroup>().alpha = 1.0f;
-            Cursor.lockState = CursorLockMode.None;
+            pauseCanvas.enabled = true;
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
         else
         {
-            pauseCanvas.GetComponent<CanvasGroup>().alpha = 0.0f;
+            pauseCanvas.enabled =false;
         }
 
         paused = playerManager.GetComponentInChildren<State_Manager>().pause;
