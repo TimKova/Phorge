@@ -3,7 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\loadingscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loadingscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\scenefade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenefade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\scenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\fademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -29,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\questscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\questscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\fademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\dialoguescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -105,11 +117,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Player_Inventory.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Inventory.cs",
@@ -122,31 +134,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SendAwayScript.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SendAwayScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SendAwayScript.cs",
-              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SendAwayScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SendAwayScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "LoadingScreen.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\LoadingScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadingScreen.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\LoadingScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadingScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:15:42.219Z"
+              "WhenOpened": "2024-12-02T22:27:59.345Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Player_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Manager.cs",
-              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player_Manager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SceneController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SceneController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneController.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SceneController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T22:33:09.578Z"
+              "WhenOpened": "2024-12-02T22:11:02.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SceneFade.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SceneFade.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneFade.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SceneFade.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneFade.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T22:09:49.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Main_Menu.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Main_Menu.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Main_Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T17:17:13.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "State_Manager.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State_Manager.cs",
@@ -158,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "PauseMenu.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\PauseMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PauseMenu.cs",
@@ -166,24 +205,11 @@
               "RelativeToolTip": "Assets\\Scripts\\PauseMenu.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwDIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T22:22:25.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T22:22:25.307Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Main_Menu.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Main_Menu.cs",
-              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Main_Menu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Main_Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:17:13.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "QuestScript.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\QuestScript.cs",
               "RelativeDocumentMoniker": "Assets\\QuestScript.cs",
@@ -195,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "QuestMarkScript.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\QuestMarkScript.cs",
               "RelativeDocumentMoniker": "Assets\\QuestMarkScript.cs",
@@ -207,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "NavScript.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\NavScript.cs",
               "RelativeDocumentMoniker": "Assets\\NavScript.cs",
@@ -219,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "NewClockScript.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\NewClockScript.cs",
               "RelativeDocumentMoniker": "Assets\\NewClockScript.cs",
@@ -231,7 +257,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 4,
+              "Title": "FadeMenu.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FadeMenu.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FadeMenu.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T18:21:22.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Player_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Manager.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Manager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player_Manager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T22:33:09.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "Time_Manager.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Time_Manager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Time_Manager.cs",
@@ -244,18 +294,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "FadeMenu.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FadeMenu.cs",
-              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\FadeMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FadeMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Title": "SendAwayScript.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SendAwayScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SendAwayScript.cs",
+              "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\SendAwayScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SendAwayScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:21:22.219Z"
+              "WhenOpened": "2024-12-02T02:15:42.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Player_Movement.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Player_Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movement.cs",
@@ -267,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Interact.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Interact.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Interact.cs",
@@ -279,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Camera_Controller.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Camera_Controller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Camera_Controller.cs",
@@ -291,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "FurnaceGame.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\FurnaceGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FurnaceGame.cs",
@@ -303,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Inventory_Items.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\Inventory_Items.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory_Items.cs",
@@ -315,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "AnvilGame.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\AnvilGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AnvilGame.cs",
@@ -327,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "DialogueScript.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\DialogueScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DialogueScript.cs",
@@ -339,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ProfileScript.cs",
               "DocumentMoniker": "C:\\Users\\Timo\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\ProfileScript.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Timo\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\ProfileScript.cs",
@@ -350,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "AotPreBuilder.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Editor\\VisualScripting.Core\\Platforms\\AotPreBuilder.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Editor\\VisualScripting.Core\\Platforms\\AotPreBuilder.cs",
@@ -363,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "WalkAnimScript.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\WalkAnimScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WalkAnimScript.cs",
@@ -375,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "FlyCameraBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Polygonal Foliage Asset Package - Aligned Games\\Scripts\\Behaviour\\FlyCameraBehaviour.cs",
@@ -387,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "MMCamSway.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\MMCamSway.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MMCamSway.cs",

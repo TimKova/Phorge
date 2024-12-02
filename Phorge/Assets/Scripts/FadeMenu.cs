@@ -7,7 +7,7 @@ public class FadeMenu : MonoBehaviour
 {
     public GameObject fader;
 
-    public Material material;
+    public Color currentColor;
 
     private bool fading = false;
     private float alpha = 0;
@@ -17,7 +17,7 @@ public class FadeMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        alpha = 0;
+        currentColor = GetComponent<Renderer>().material.color;
     }
 
     private void Update()
@@ -25,8 +25,8 @@ public class FadeMenu : MonoBehaviour
         print("faded:" + faded);
         if (fading)
         {
-            alpha += 0.5f * Time.deltaTime;
-            material.color = new Color(0, 0, 0, alpha);
+            Debug.Log("fading");
+            currentColor.a += 0.5f * Time.unscaledDeltaTime;
             if (alpha > 1f)
             {
                 faded = true;
@@ -34,7 +34,7 @@ public class FadeMenu : MonoBehaviour
         }
         else
         {
-            material.color = new Color(0, 0, 0, 0);
+            currentColor.a = 0f;
         }
     }
 

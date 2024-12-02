@@ -5,20 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Main_Menu : MonoBehaviour
 {
-    public GameObject fader;
-    bool faded = false;
-    void Update()
-    {
-        faded = fader.GetComponent<FadeMenu>().faded;
 
-        if (faded)
-        {
-            PlayGame();
-        }
-    }
+    [SerializeField]
+    private SceneController sceneController;
+
     public void PlayGame()
     {
-        SceneManager.LoadScene("PhorgeGame");
+        sceneController.LoadScene("PhorgeGame");
     }
     public void QuitGame() 
     {
