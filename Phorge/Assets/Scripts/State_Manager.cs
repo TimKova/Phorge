@@ -221,8 +221,16 @@ public class State_Manager : MonoBehaviour
     {
         if (inNpcRange && Input.GetKeyDown(KeyCode.E))
             startNpcInt();
-        if (inNpcRange && Input.GetKeyDown(KeyCode.Q))
+        if (inNpcRange && (Input.GetKeyDown(KeyCode.Q)))
             endNpcInt();
+        if (inNpcRange && (npcName == "QuestGiver1" && swapQ1toggle == true))
+        {
+            endNpcInt();
+        }
+        if (inNpcRange && (npcName == "QuestGiver2" && swapQ2toggle == true))
+        {
+            endNpcInt();
+        }
     }
     public void startNpcInt()
     {
@@ -254,7 +262,7 @@ public class State_Manager : MonoBehaviour
     public void endNpcInt()
     {
         //showSliders();
-        //print("Interaction Terminated");
+        print("Interaction Terminated");
         if (npcName == "MrItemMan")
         {
             stage = "workday";
@@ -389,6 +397,7 @@ public class State_Manager : MonoBehaviour
     {
         if (navScript1.q1trigger == 1 && swapQ1toggle == true)
         {
+            npcCanvas2.enabled = true;
             ds1.hasRun1 = false;
             print("Wir sind in die erste if");
             swapQ1toggle = false;
@@ -439,6 +448,7 @@ public class State_Manager : MonoBehaviour
         }
         if (navScript2.q2trigger == 1 && swapQ2toggle == true)
         {
+            npcCanvas3.enabled = true;
             ds2.hasRun2 = false;
             print("Wir sind in die zweite if");
             swapQ2toggle = false;

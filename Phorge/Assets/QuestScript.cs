@@ -7,6 +7,7 @@ public class QuestScript : MonoBehaviour
     public Player_Inventory pi;
     public DialogueScript ds;
     public NavScript nav;
+
     public int readyToLeave;
     public State_Manager sm;
     // Start is called before the first frame update
@@ -31,9 +32,14 @@ public class QuestScript : MonoBehaviour
     public void updateVars()
     {
         nav.readyToLeaveLocal = 1;
-        sm.swapQ2toggle = true;
-        sm.swapQ1toggle = true;
-        readyToLeave = 1;
+        if (nav.gameObject.name == "QuestGiver1")
+        {
+            sm.swapQ1toggle = true;
+        }
+        if (nav.gameObject.name == "QuestGiver2")
+        {
+            sm.swapQ2toggle = true;
+        }
         print("Bugtest");
     }
 }

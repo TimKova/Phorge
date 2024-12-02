@@ -26,9 +26,13 @@ public class NavScript : MonoBehaviour
     public QuestScript qs;
     public GameObject QuestMenu;
     public int readyToLeaveLocal;
+    public bool atCounter1;
+    public bool atCounter2;
     // Start is called before the first frame update
     void Start()
     {
+        atCounter1 = false;
+        atCounter2 = false;
         sm = FindObjectOfType<State_Manager>();
         counter1Script = counter1.GetComponent<TrafficManager>();
         counter2Script = counter2.GetComponent<TrafficManager>();
@@ -125,6 +129,7 @@ public class NavScript : MonoBehaviour
                 if (readyToLeaveLocal == 1)
                 {
                     npc.isStopped = false;
+                    atCounter1= false;
                     QuestMenu.SetActive(false);
                     q1trigger = 0;
                     npc.destination = QuestRest1.position;
@@ -146,6 +151,7 @@ public class NavScript : MonoBehaviour
                 {
                     //npc.isStopped = false;
                     QuestMenu.SetActive(false);
+                    atCounter2 = false;
                     q2trigger = 0;
                     npc.destination = QuestRest2.position;
                     npc.isStopped = false;
@@ -174,10 +180,20 @@ public class NavScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         new WaitForSeconds(2);
-        if (other.gameObject.tag == "Waypoint" && (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2"))
+        if (other.gameObject.tag == "Waypoint" && (this.gameObject.name == "Ambience1" || this.gameObject.name == "Ambience2") && (other.gameObject.name != "CounterPoint" && other.gameObject.name != "CounterPoint2"))
         {
             //print("Trigger Enter");
             npc.isStopped = true;
+        }
+        if (other.gameObject.name == "CounterPoint" && this.gameObject.name == "QuestGiver1")
+        {
+            print("Contact Made 1");
+            atCounter1 = true;   
+        }
+        if (other.gameObject.name == "CounterPoint2" && this.gameObject.name == "QuestGiver2")
+        {
+            print("Contact Made 2");
+            atCounter2 = true;
         }
     }
     IEnumerator AmbienceCoroutine()
@@ -242,8 +258,14 @@ public class NavScript : MonoBehaviour
                     yield return new WaitForSeconds(10);
                 }
             }
-            q1trigger = Random.Range(0, 2);
-            q2trigger = Random.Range(0, 2);
+            if (!atCounter1)
+            {
+                q1trigger = Random.Range(0, 2);
+            }
+            if (!atCounter2)
+            {
+                q2trigger = Random.Range(0, 2);
+            }
         }
     }
     //IEnumerator waiter()
