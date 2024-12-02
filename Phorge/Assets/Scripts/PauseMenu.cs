@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     bool paused;
 
     public GameObject playerManager;
-    public GameObject pauseCanvas;
+    public Canvas pauseCanvas;
 
     private void Start()
     {
@@ -21,19 +21,23 @@ public class PauseMenu : MonoBehaviour
     {
         if (paused)
         {
-            pauseCanvas.SetActive(true);
+            pauseCanvas.GetComponent<CanvasGroup>().alpha = 1.0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {
-            pauseCanvas.SetActive(false);
+            pauseCanvas.GetComponent<CanvasGroup>().alpha = 0.0f;
         }
 
-        paused = playerManager.GetComponent<State_Manager>().pause;
+        paused = playerManager.GetComponentInChildren<State_Manager>().pause;
     }
 
     public void ResumeGame()
     {
-        paused = false;
+        playerManager.GetComponentInChildren<State_Manager>().pause = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
     public void ShowControls()
