@@ -14,6 +14,7 @@ public class State_Manager : MonoBehaviour
 
     public GameObject player_manager;
     string state_to_be;
+    [SerializeField]
     public bool doingTask, inHammerRange, pause;
     public bool npc;
     public bool inTaskRange;
@@ -50,7 +51,6 @@ public class State_Manager : MonoBehaviour
     public QuestScript qs1;
     public QuestScript qs2;
     public Player_Inventory pi;
-
     public Canvas FactionCanvas;
     public Slider KnightsSlider;
     public Slider ThievesSlider;
