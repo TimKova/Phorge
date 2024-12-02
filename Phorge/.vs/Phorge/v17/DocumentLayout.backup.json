@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\player_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -105,7 +105,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -130,8 +130,7 @@
               "RelativeToolTip": "Assets\\Scripts\\SendAwayScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:15:42.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T02:15:42.219Z"
             },
             {
               "$type": "Document",
@@ -143,31 +142,29 @@
               "RelativeToolTip": "Assets\\Scripts\\Player_Manager.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T22:33:09.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T22:33:09.578Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "State_Manager.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State_Manager.cs",
               "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
               "RelativeToolTip": "Assets\\Scripts\\State_Manager.cs",
-              "ViewState": "AgIAAA8BAAAAAAAAAAAqwGkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAAwCcBAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T00:04:46.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T00:04:46.741Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PauseMenu.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\PauseMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PauseMenu.cs",
               "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\PauseMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\PauseMenu.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBkAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwDIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T22:22:25.307Z",
               "EditorCaption": ""
@@ -182,8 +179,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Main_Menu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:17:13.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T17:17:13.023Z"
             },
             {
               "$type": "Document",
@@ -195,8 +191,7 @@
               "RelativeToolTip": "Assets\\QuestScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T01:43:30.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-30T01:43:30.647Z"
             },
             {
               "$type": "Document",
@@ -208,8 +203,7 @@
               "RelativeToolTip": "Assets\\QuestMarkScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T05:13:26.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T05:13:26.337Z"
             },
             {
               "$type": "Document",
@@ -221,8 +215,7 @@
               "RelativeToolTip": "Assets\\NavScript.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAiwIoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T08:04:01.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T08:04:01.417Z"
             },
             {
               "$type": "Document",
@@ -365,7 +358,8 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Editor\\VisualScripting.Core\\Platforms\\AotPreBuilder.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAuwJ8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T19:29:04.526Z"
+              "WhenOpened": "2024-11-20T19:29:04.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|c:\\users\\alexa\\git\\phorge\\phorge\\assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|C:\\Users\\alexa\\git\\Phorge\\Phorge\\assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C736CF8-0608-1379-86DC-AD544036E59A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -152,10 +152,9 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\State_Manager.cs",
               "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs",
               "RelativeToolTip": "Assets\\Scripts\\State_Manager.cs",
-              "ViewState": "AgIAAA8BAAAAAAAAAAAqwGkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAAwCcBAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T00:04:46.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T00:04:46.741Z"
             },
             {
               "$type": "Document",
@@ -165,7 +164,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PauseMenu.cs",
               "ToolTip": "C:\\Users\\alexa\\git\\Phorge\\Phorge\\Assets\\Scripts\\PauseMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\PauseMenu.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwDIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T22:22:25.307Z",
               "EditorCaption": ""
@@ -359,7 +358,8 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Editor\\VisualScripting.Core\\Platforms\\AotPreBuilder.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAuwJ8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T19:29:04.526Z"
+              "WhenOpened": "2024-11-20T19:29:04.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

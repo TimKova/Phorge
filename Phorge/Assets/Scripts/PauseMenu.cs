@@ -19,23 +19,6 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hit;
-
-
-
-            if (Physics.Raycast(ray, out hit))
-            {
-
-                Debug.Log("Clicked object: " + hit.collider.gameObject.name); // Print the name of the clicked object
-
-            }
-
-        }
         if (paused)
         {
             pauseCanvas.enabled = true;
@@ -52,8 +35,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        playerManager.GetComponentInChildren<State_Manager>().pause = false;
         Cursor.lockState = CursorLockMode.Locked;
+        playerManager.GetComponentInChildren<State_Manager>().pause = false;
+        paused = false;
         Time.timeScale = 1;
     }
 
@@ -64,6 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.Log("Quit");
         Application.Quit();
     }
 }
