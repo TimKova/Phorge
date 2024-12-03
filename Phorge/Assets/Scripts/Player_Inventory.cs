@@ -152,12 +152,12 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     //GameData Methods------------------------------------------
     public void LoadData(GameData data)
     {
-        money = data.money;
-        money += 100;
+        //money = data.money;
+        //money += 100;
     }
     public void SaveData(ref GameData data)
     {
-        data.money = money;
+        //data.money = money;
     }
 
     public IngotMaterial getIngot(int matIndex)

@@ -64,11 +64,18 @@ public class Merchant : MonoBehaviour
         print(index);
         float price = playerInventory.ores[index].getPrice();
         print("Buying " + playerInventory.ores[index].getName() + " for " + price);
-        Player_Inventory.money -= price;
-        print("you now have $" + Player_Inventory.money);
-        //return price;
-        playerInventory.purchaseOre(index);
-        setCount(index);
+        if (Player_Inventory.money >= price)
+        {
+            Player_Inventory.money -= price;
+            print("you now have $" + Player_Inventory.money);
+            //return price;
+            playerInventory.purchaseOre(index);
+            setCount(index);
+        }
+        else
+        {
+            print("Not enough Money");
+        }
     }
 
     public void refreshQuantities()
