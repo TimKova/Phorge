@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\State_Manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -117,11 +117,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Player_Inventory.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Player_Inventory.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Inventory.cs",
@@ -144,8 +144,7 @@
               "ViewState": "AgIAADkAAAAAAAAAAIBJwFwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T00:04:46.741Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -201,13 +200,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Merchant.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Merchant.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Merchant.cs",
               "ToolTip": "C:\\Users\\alexa\\Documents\\GitHub\\Phorge\\Phorge\\Assets\\Scripts\\Merchant.cs",
               "RelativeToolTip": "Assets\\Scripts\\Merchant.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEwAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T20:50:19.327Z",
               "EditorCaption": ""
