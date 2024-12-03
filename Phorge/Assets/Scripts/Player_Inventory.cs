@@ -153,6 +153,7 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         money = data.money;
+        money += 100;
     }
     public void SaveData(ref GameData data)
     {
@@ -208,6 +209,25 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
             makeButton(InventoryScreens[3], weapon, weapons.Count - 1);
         }
         return 0;
+    }
+
+    public bool loseWeapon(Weapon weapon)
+    {
+        int hasWeapon = weapons.IndexOf(weapon);
+        if (hasWeapon < 1 )
+        {
+            print("Not enough buster");
+            //print($"Newguy quality = {newGuy.getQuality()}, modifier = {newGuy.getQualityName()}");
+            return false;
+        }
+        else
+        {
+            //weapons.Add(weapon);
+            weapons[weapons.IndexOf(weapon)].spend();
+            //makeButton(InventoryScreens[3], weapon, weapons.Count - 1);
+            totalRefresh();
+        }
+        return true;
     }
 
     public int gainIngot(int matIndex)

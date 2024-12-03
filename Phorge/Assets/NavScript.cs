@@ -129,7 +129,7 @@ public class NavScript : MonoBehaviour
                 if (readyToLeaveLocal == 1)
                 {
                     npc.isStopped = false;
-                    atCounter1= false;
+                    atCounter1 = false;
                     QuestMenu.SetActive(false);
                     q1trigger = 0;
                     npc.destination = QuestRest1.position;
@@ -164,13 +164,24 @@ public class NavScript : MonoBehaviour
         {
             if (this.gameObject.name == "QuestGiver1")
             {
+                if (atCounter1)
+                {
+                    print("RepRed");
+                    atCounter1 = false;
+                }
                 //print("Sup");
                 npc.isStopped = false;
                 npc.destination = QuestRest1.position;
                 //print(npc.destination);
             }
-            else if (this.gameObject.name == "QuestGiver2")
+            else if (this.gameObject.name == "QuestGiver2" && atCounter2)
             {
+                if (atCounter2)
+                {
+                    print("RepRed2");
+                    atCounter2 = false;
+
+                }
                 npc.isStopped = false;
                 npc.destination = QuestRest2.position;
             }
@@ -188,7 +199,7 @@ public class NavScript : MonoBehaviour
         if (other.gameObject.name == "CounterPoint" && this.gameObject.name == "QuestGiver1")
         {
             print("Contact Made 1");
-            atCounter1 = true;   
+            atCounter1 = true;
         }
         if (other.gameObject.name == "CounterPoint2" && this.gameObject.name == "QuestGiver2")
         {

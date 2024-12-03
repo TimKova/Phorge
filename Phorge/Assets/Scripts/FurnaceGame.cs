@@ -49,6 +49,8 @@ public class FurnaceGame : MonoBehaviour
     float maxFlameMagnitude;
     float minFlameMagnitude;
 
+    public AudioSource FurnaceNoise;
+
     float blowerPressCoefficient;
     float originalFlameMagnitude;
 
@@ -233,8 +235,10 @@ public class FurnaceGame : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
         if (Input.GetKey(KeyCode.Mouse0) && blowerPressCoefficient != 100f && pressable && gameStarted)
         {
+            FurnaceNoise.Play();
             flameScale += new Vector3(0.003f, 0.003f, 0.003f);
             blowerPressCoefficient += 1f;
+            FurnaceNoise.Play();
             if (blowerPressCoefficient >= 100f)
             {
                 pressable = false;
@@ -325,7 +329,7 @@ public class FurnaceGame : MonoBehaviour
         {
             print($"Result qual: {ProgressSlider.value}");
             county.text = $"Succesfully Phorged a {Inventory_Item.getQualityModifier(ProgressSlider.value)} {Player_Inventory.materialNames[currentOre]} Ingot!";
-            var tempResult = new IngotMaterial(Player_Inventory.materialNames[currentOre], 1, 90, true);
+            var tempResult = new IngotMaterial(Player_Inventory.materialNames[currentOre], 1, (currentOre+1)*2, true);
             playerInventory.gainIngot(tempResult, ProgressSlider.value);
         }
         //StartCoroutine(startTimer(duration));

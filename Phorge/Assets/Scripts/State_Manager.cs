@@ -9,8 +9,8 @@ using Random = UnityEngine.Random;
 
 public class State_Manager : MonoBehaviour
 {
-    private float BIG_FACTION_CHANGE = 0.1f;
-    private float SMALL_FACTION_CHANGE = 0.05f;
+    public float BIG_FACTION_CHANGE = 0.05f;
+    public float SMALL_FACTION_CHANGE = 0.1f;
 
     public GameObject player_manager;
     string state_to_be;
@@ -39,10 +39,10 @@ public class State_Manager : MonoBehaviour
     //[SerializeField] public List<Slider> sliders;
     public GameObject forgeMusic;
     public GameObject shopMusic;
-    public int thiefRep;
-    public int knightRep;
-    public int beastRep;
-    public int elfRep;
+    public float thiefRep;
+    public float knightRep;
+    public float beastRep;
+    public float elfRep;
     public string activeFaction1;
     public string activeFaction2;
     public bool inInventory;
@@ -56,19 +56,24 @@ public class State_Manager : MonoBehaviour
     public Slider ThievesSlider;
     public Slider ElvesSlider;
     public Slider BeastsSlider;
-    private List<Slider> sliders = new List<Slider>();
+    public List<Slider> sliders = new List<Slider>();
     public bool swapQ1toggle;
     public bool swapQ2toggle;
+    public Canvas winner;
+    public Canvas loser;
+
+    public TMP_Text dayDisplay;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        swapQ1toggle = true; 
+        swapQ1toggle = true;
         swapQ2toggle = true;
-        thiefRep = 0;
-        knightRep = 0;
-        beastRep = 0;
-        elfRep = 0;
+        thiefRep = 0.2f;
+        knightRep = 0.2f;
+        beastRep = 0.2f;
+        elfRep = 0.2f;
         pause = false;
         doingTask = false;
         inInventory = false;
@@ -79,11 +84,13 @@ public class State_Manager : MonoBehaviour
         stageSwitch();
         hideSliders();
         questDisplay.SetActive(false);
-        print(FactionCanvas.transform.childCount + " BWAAAAAAAAA");
+        //print(FactionCanvas.transform.childCount + " BWAAAAAAAAA");
         sliders.Add(KnightsSlider);
         sliders.Add(ThievesSlider);
         sliders.Add(ElvesSlider);
         sliders.Add(BeastsSlider);
+        foreach (Slider slidey in sliders)
+            slidey.value = 0.2f;
         StartCoroutine(profileSwapR());
 
         //StartCoroutine(daytimeroutine());
@@ -140,6 +147,16 @@ public class State_Manager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             sliders[3].value += BIG_FACTION_CHANGE;
+        }
+        if(thiefRep <= 0f || knightRep <= 0f || beastRep <= 0f || elfRep <= 0f)
+        {
+            loser.enabled = true;
+            Application.Quit();
+        }
+        if (thiefRep >= 1 || knightRep >= 1 || beastRep >= 1 || elfRep >= 1)
+        {
+            winner.enabled = true;
+            Application.Quit();
         }
         npcInteraction();
         taskInteraction();
@@ -267,6 +284,7 @@ public class State_Manager : MonoBehaviour
         {
             stage = "workday";
             stageSwitch();
+            clock.runDay();
         }
         if (npcName == "QuestGiver1")
         {
@@ -307,6 +325,7 @@ public class State_Manager : MonoBehaviour
             npcCanvas.enabled = true;
             npcCanvas2.enabled = true;
             npcCanvas3.enabled = true;
+            //dayDisplay.SetText($"Day {clock.internalDays}");
             profileSwap();
 
 
@@ -329,6 +348,13 @@ public class State_Manager : MonoBehaviour
             shopMusic.GetComponent<AudioSource>().Play();
             clockDisplay.SetActive(false);
             NewDay.SetActive(true);
+            //if (navScript1.atCounter1)
+            //{
+            //    qs1.sendAway(1);
+            //}
+            //else if(navScript2.atCounter2) {
+            //    qs2.sendAway(2);
+            //}
         }
     }
 
@@ -359,7 +385,10 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(4).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-
+                if (i == 1)
+                { activeFaction1 = "beast"; }
+                if (i == 2)
+                {activeFaction2 = "beast";}
             }
             else if (randomInt == 1)
             {
@@ -369,7 +398,10 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(4).gameObject.transform.position = AdjustedPos;
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-
+                if (i == 1)
+                { activeFaction1 = "elf"; }
+                if (i == 2)
+                { activeFaction2 = "elf"; }
             }
             else if (randomInt == 2)
             {
@@ -379,7 +411,10 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(true);
                 NPCs[i].transform.GetChild(5).gameObject.transform.position = AdjustedPos;
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(false);
-
+                if (i == 1)
+                { activeFaction1 = "knight"; }
+                if (i == 2)
+                { activeFaction2 = "knight"; }
             }
             else if (randomInt == 3)
             {
@@ -389,7 +424,10 @@ public class State_Manager : MonoBehaviour
                 NPCs[i].transform.GetChild(5).gameObject.SetActive(false);
                 NPCs[i].transform.GetChild(6).gameObject.SetActive(true);
                 NPCs[i].transform.GetChild(6).gameObject.transform.position = AdjustedPos;
-
+                if (i == 1)
+                { activeFaction1 = "thief"; }
+                if (i == 2)
+                { activeFaction2 = "thief"; }
             }
         }
     }
@@ -595,6 +633,17 @@ public class State_Manager : MonoBehaviour
 
             }
         }
+    }
+    private IEnumerator stateExit()
+    {
+        yield return new WaitForSeconds(3);
+        Application.Quit();
+    }
+
+    private void gameExit()
+    {
+        //yield return new WaitForSeconds(3);
+        Application.Quit();
     }
     private IEnumerator profileSwapR()
     {

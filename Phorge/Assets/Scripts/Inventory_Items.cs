@@ -343,6 +343,40 @@ public class Weapon : Inventory_Item
         this.setQuality(quality);
         this.material = material;
     }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is Weapon other)
+        {
+            Debug.Log("This Quality = " + this.getQuality());
+            Debug.Log("Other Quality = " + other.getQuality());
+            Debug.Log("Validity Check = " + (this.getName() == other.getName() && this.getQuality() > other.getQuality() && this.getMaterial() == other.getMaterial()));
+            return (this.getName() == other.getName() && this.getQuality() > other.getQuality() && this.getMaterial() == other.getMaterial());
+        }
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        Debug.Log("hashole");
+
+        return HashCode.Combine(this.getName(), this.getQualityName(), this.getMaterial());
+    }
+
+    public int CompareTo(Weapon other)
+    {
+        if (other == null) return 1;
+
+        int nameComp = this.getName().CompareTo(other.getName());
+        if (nameComp != 0)
+            return nameComp;
+        int matComp = this.getMaterial().CompareTo(other.getMaterial());
+        if (matComp != 0)
+            return matComp;
+        Debug.Log("Fuckhead");
+        return Mathf.CeilToInt((other.getQuality() - this.getQuality()) * 10);
+    }
+
     //Setters-----------------------------------------------------------------------------------------------
     public override string ToString() { return $"{this.getQualityName()} {this.getMaterial()} {this.getName()}"; }
     public string setMaterial(string material) { this.material = material; return this.material; }

@@ -14,7 +14,7 @@ public class NewClockScript : MonoBehaviour
     public bool _24Hour = false;
 
     const int MINUTES_PER_HOUR = 60;
-    const float DAY_SPEED_SCALE = 6f;
+    const float DAY_SPEED_SCALE = 1f;
     const int DAY_DURATION = 24;
     const bool DO_DAY_CYCLE = true;
 
@@ -27,6 +27,8 @@ public class NewClockScript : MonoBehaviour
     public Material NightSky;
     public int internalMinutes;
     public int internalHours;
+    public int internalDays;
+    public string AMorPM;
 
     // Start is called before the first frame update
 
@@ -34,6 +36,10 @@ public class NewClockScript : MonoBehaviour
     {
         tm = FindObjectOfType<Time_Manager>();
         display = GetComponent<TMP_Text>();
+        internalMinutes = 0;
+        internalHours = 0;
+        internalDays = 1;
+        AMorPM = "AM";
         if (DO_DAY_CYCLE)
             StartCoroutine(DayTimer(DAY_DURATION));
     }
@@ -47,16 +53,21 @@ public class NewClockScript : MonoBehaviour
         //}
     }
 
-    IEnumerator DayTimer(int hourDuration)
+    public void runDay()
     {
-        for (internalMinutes = (4*MINUTES_PER_HOUR)+59; internalMinutes < hourDuration * 60; internalMinutes++)
+        StartCoroutine(DayTimer(DAY_DURATION));
+    }
+
+    public IEnumerator DayTimer(int hourDuration)
+    {
+        for (internalMinutes = (4 * MINUTES_PER_HOUR) + 59; internalMinutes < hourDuration * 60; internalMinutes++)
         {
             //print(internalMinutes);
             yield return new WaitForSeconds(1f / DAY_SPEED_SCALE);
             int displayMinutes = internalMinutes % MINUTES_PER_HOUR;
             int displayHours = internalMinutes / MINUTES_PER_HOUR % 24;
-            internalHours = internalHours;
-            display.SetText($"{GetNormalHour(displayHours).ToString("D2")}:{displayMinutes.ToString("D2")}");
+            //internalHours = internalHours;
+            display.SetText($"{GetNormalHour(displayHours).ToString("D2")}:{displayMinutes.ToString("D2")} {AMorPM}");
             switch (displayHours)
             {
                 case 0:
@@ -73,6 +84,9 @@ public class NewClockScript : MonoBehaviour
                     RenderSettings.skybox = DaySky;
                     DynamicGI.UpdateEnvironment();
                     MainLight.intensity = 1f;
+                    break;
+                case 12:
+                    AMorPM = "PM";
                     break;
                 case 14:
                     RenderSettings.skybox = AfternoonSky;
@@ -92,6 +106,7 @@ public class NewClockScript : MonoBehaviour
             }
 
         }
+        AMorPM = "AM";
     }
 
     int GetNormalHour(int militaryHour)
