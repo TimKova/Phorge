@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject playerManager;
     public Canvas pauseCanvas;
 
+    [SerializeField]
+    private Image controls;
+
     private void Start()
     {
         paused = false;
+        controls.gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -27,7 +32,9 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
+            controls.color = new Color(controls.color.r, controls.color.g, controls.color.b, 0);
             pauseCanvas.enabled =false;
+            controls.gameObject.SetActive(false);
         }
 
         paused = playerManager.GetComponentInChildren<State_Manager>().pause;
@@ -43,7 +50,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowControls()
     {
-
+        controls.color = new Color(controls.color.r, controls.color.g, controls.color.b, 1);
+        controls.gameObject.SetActive (true);
     }
 
     public void QuitGame()

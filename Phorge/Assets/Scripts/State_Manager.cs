@@ -40,6 +40,7 @@ public class State_Manager : MonoBehaviour
     public GameObject forgeMusic;
     public GameObject shopMusic;
     public float thiefRep;
+    [SerializeField]
     public float knightRep;
     public float beastRep;
     public float elfRep;
@@ -71,7 +72,7 @@ public class State_Manager : MonoBehaviour
         swapQ1toggle = true;
         swapQ2toggle = true;
         thiefRep = 0.2f;
-        knightRep = 0.2f;
+        knightRep = 02f;
         beastRep = 0.2f;
         elfRep = 0.2f;
         pause = false;
@@ -84,6 +85,8 @@ public class State_Manager : MonoBehaviour
         stageSwitch();
         hideSliders();
         questDisplay.SetActive(false);
+        loser.gameObject.SetActive(false);
+        winner.gameObject.SetActive(false);
         //print(FactionCanvas.transform.childCount + " BWAAAAAAAAA");
         sliders.Add(KnightsSlider);
         sliders.Add(ThievesSlider);
@@ -150,13 +153,15 @@ public class State_Manager : MonoBehaviour
         }
         if(thiefRep <= 0f || knightRep <= 0f || beastRep <= 0f || elfRep <= 0f)
         {
-            loser.enabled = true;
-            Application.Quit();
+            loser.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            StartCoroutine(WinLoseExit());
         }
         if (thiefRep >= 1 || knightRep >= 1 || beastRep >= 1 || elfRep >= 1)
         {
-            winner.enabled = true;
-            Application.Quit();
+            winner.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            StartCoroutine(WinLoseExit());
         }
         npcInteraction();
         taskInteraction();
@@ -312,8 +317,8 @@ public class State_Manager : MonoBehaviour
         else if (pause && Input.GetKeyDown(KeyCode.Escape))
         {
             pause = false;
-            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }//end pauseState
@@ -645,6 +650,13 @@ public class State_Manager : MonoBehaviour
         //yield return new WaitForSeconds(3);
         Application.Quit();
     }
+
+    private IEnumerator WinLoseExit()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        Application.Quit();
+    }
+
     private IEnumerator profileSwapR()
     {
         while (true)
