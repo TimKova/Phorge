@@ -72,7 +72,7 @@ public class State_Manager : MonoBehaviour
         swapQ1toggle = true;
         swapQ2toggle = true;
         thiefRep = 0.2f;
-        knightRep = 02f;
+        knightRep = 0.2f;
         beastRep = 0.2f;
         elfRep = 0.2f;
         pause = false;
@@ -159,6 +159,7 @@ public class State_Manager : MonoBehaviour
         }
         if (thiefRep >= 1 || knightRep >= 1 || beastRep >= 1 || elfRep >= 1)
         {
+            //print($"T: {thiefRep}, K: {knightRep},T: {beastRep},T: {elfRep},");
             winner.gameObject.SetActive(true);
             Time.timeScale = 0;
             StartCoroutine(WinLoseExit());

@@ -56,7 +56,7 @@ public class AnvilGame : MonoBehaviour
 
     // An array representing delays in seconds between HIT targets for minigame
     // # of targets increases automatically for each delay added
-    private float[] offsets = { 1.5f , 1.5f, 1.5f, 2f, 2f, 1.5f, 1f, 1f, 3f, 3f, 1f, 1f };
+    private float[] offsets = { 1.25f, 1.25f, 0.8f, 0.8f, 1f };
 
 
     // Names
@@ -453,7 +453,7 @@ public class AnvilGame : MonoBehaviour
             emptyWeapon.GetComponent<MeshRenderer>().material = weaponMat;
             emptyWeapon.transform.localScale = WEAPON_SCALES[currentWeapon];
             emptyWeapon.tag = "instancedPrefab";
-            playerInventory.gainWeapon(new Weapon(resultQuality, currentIngot.getName(), Player_Inventory.weaponNames[currentWeapon], 1, currentIngot.getPrice()*(0.5f+resultQuality)));
+            playerInventory.gainWeapon(new Weapon(resultQuality, currentIngot.getName(), Player_Inventory.weaponNames[currentWeapon], 1, currentIngot.getPrice() * (0.5f + resultQuality)));
             //}
         }
         resultQuality = 0;

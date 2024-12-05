@@ -61,9 +61,9 @@ public class Player_Inventory : MonoBehaviour, IDataPersistence
         {
             OreMaterial orrey = new OreMaterial(0.17f / numMaterials * (numMaterials - c + 0.5f), 0.5f + 1f / numMaterials * c / 2f, 15f, materialNames[c] + " Ore", 0, materialBasePrices[c], UNLOCKED);
             ores.Add(orrey);
-            IngotMaterial mat = new IngotMaterial(materialNames[c], 1, materialBasePrices[c], UNLOCKED);
+            //IngotMaterial mat = new IngotMaterial(materialNames[c], 1, materialBasePrices[c], UNLOCKED);
             // Save me ig?
-            ingots.Add(mat);
+            //ingots.Add(mat);
             //merchantGoods[c] = mat.isUnlocked();
             print(materialNames[c]);
         }
